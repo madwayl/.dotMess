@@ -1,0 +1,32 @@
+[Added Associations]
+text/x-csrc=code.desktop;dev.zed.Zed.desktop;
+application/x-shellscript=dev.zed.Zed.desktop;
+application/x-desktop=code.desktop;dev.zed.Zed.desktop;
+text/css=code.desktop;
+text/plain=org.gnome.TextEditor.desktop;code.desktop;
+x-scheme-handler/http=org.mozilla.firefox.desktop;
+x-scheme-handler/https=org.mozilla.firefox.desktop;
+text/html=org.mozilla.firefox.desktop;
+x-scheme-handler/chrome=org.mozilla.firefox.desktop;
+image/jpeg=imv-dir.desktop;
+image/png=imv-dir.desktop;
+
+[Default Applications]
+text/html=org.mozilla.firefox.desktop
+x-scheme-handler/http=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+text/css=code.desktop
+text/plain=code.desktop
+x-scheme-handler/chrome=org.mozilla.firefox.desktop
+application/x-extension-htm=org.mozilla.firefox.desktop
+application/x-extension-html=org.mozilla.firefox.desktop
+application/x-extension-shtml=org.mozilla.firefox.desktop
+application/xhtml+xml=org.mozilla.firefox.desktop
+application/x-extension-xhtml=org.mozilla.firefox.desktop
+application/x-extension-xht=org.mozilla.firefox.desktop
+inode/directory=nemo.desktop
+application/x-gnome-saved-search=nemo.desktop
+image/jpeg=imv-dir.desktop
+image/png=imv-dir.desktop

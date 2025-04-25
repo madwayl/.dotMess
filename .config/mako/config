@@ -1,0 +1,71 @@
+sort=-time
+layer=overlay
+background-color=#292724df
+text-color=#458588
+border-color=#458588dd
+padding=10,12,10,12
+margin=12
+outer-margin=15
+
+border-size=2
+border-radius=2
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+font=FantasqueSansM Nerd Font Propo 11
+
+# Set maximum number of visible notifications 
+max-visible=5
+
+progress-color=source #100000dd
+# Set the default timeout to timeout in milliseconds.
+default-timeout=10000
+
+# If set, mako will ignore the expire timeout(value: 0|1 )
+ignore-timeout=0
+
+[urgency=low]
+default-timeout=4
+
+[urgency=normal]
+border-color=#689d6add
+text-color=#689d6a
+default-timeout=6
+
+[urgency=high]
+border-color=#fb4934cc
+text-color=#fb4934
+default-timeout=0
+
+[category=mpd]
+default-timeout=2000
+group-by=category
+
+[app-name=sway]
+history=0
+text-alignment=center
+anchor=bottom-center
+outer-margin=0,0,150
+
+[app-name=notify-send]
+history=0
+anchor=bottom-center
+text-alignment=center
+outer-margin=0,0,150
+
+[app-name=ddc-brightness]
+history=0
+anchor=bottom-center
+text-alignment=center
+outer-margin=0,0,150
+
+[app-name=shikane]
+history=0
+anchor=bottom-center
+text-alignment=center
+outer-margin=0,0,150
+
+[app-name=screenshot]
+on-button-left=exec makoctl invoke 0
+on-button-right=exec makoctl invoke 1

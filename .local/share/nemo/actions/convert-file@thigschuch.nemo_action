@@ -1,0 +1,36 @@
+[Nemo Action]
+Name=Convert File
+Name[ca]=Converteix fitxer
+Name[cs]=Převést soubor
+Name[es]=Convertir archivo
+Name[eu]=Bihurtu fitxategia
+Name[fi]=Muunna tiedosto
+Name[fr]=Convertir le fichier
+Name[hu]=Fájl Konvertálása
+Name[it]=Converti file
+Name[nl]=Bestand converteren
+Name[pt]=Converter ficheiro
+Name[pt_BR]=Converter Arquivo
+Name[tr]=Dosyayı Dönüştür
+Name[uk]=Конвертувати файл
+Comment=Converts a file to a different format
+Comment[ca]=Converteix un fitxer a un format diferent
+Comment[cs]=Převádí soubor na jiný formát
+Comment[es]=Convierte un archivo a un formato diferente
+Comment[eu]=Fitxategi bat beste formatu batera bihurtzen du
+Comment[fi]=Muuntaa tiedoston toiseen formaattiin
+Comment[fr]=Convertit un fichier dans un autre format
+Comment[hu]=Más formátumba konvertál egy fájlt
+Comment[it]=Converte un file in un formato differente
+Comment[nl]=Converteert een bestand naar een ander formaat
+Comment[pt]=Converte um ficheiro para um formato diferente
+Comment[pt_BR]=Converte um arquivo para outro formato
+Comment[tr]=Bir dosyayı farklı bir biçime dönüştürür
+Comment[uk]=Конвертує файл в інший формат
+
+Icon-Name=gtk-convert
+Extensions=bmp;gif;heic;ico;jpeg;jpg;png;tiff;webp;aac;aiff;flac;m4a;mp3;ogg;opus;wav;wma;3gp;avi;flv;mkv;mov;mp4;webm;
+Selection=s
+
+Exec=<convert-file@thigschuch/action.py %F>
+Dependencies=python3;ffmpeg;convert;

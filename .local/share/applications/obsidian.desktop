@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Name=Obsidian
+Comment=Knowledge base that works on local Markdown files
+Exec=bash -c "~/.bin/Obsidian.AppImage --no-sandbox --ozone-platform=wayland --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations %U --disable-gpu"
+Icon=obsidian
+Type=Application
+StartupNotify=true
+Terminal=false
+Categories=Utility;TextEditor;Office;
+MimeType=x-scheme-handler/obsidian;

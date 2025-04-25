@@ -1,0 +1,7 @@
+[Nemo Action]
+Name=Toggle Dual Pane
+Comment=Open/Close Dual Pane 
+Exec=ydotool key 61:1 61:0
+Selection=None
+Extensions=any;
+Icon-Name=view-dual
