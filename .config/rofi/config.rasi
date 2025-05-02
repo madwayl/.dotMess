@@ -9,7 +9,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser,ssh,window";
+	modi:                       "drun,run,filebrowser";
     show-icons:                 false;
     display-drun:               "  Apps";
     display-run:                "  Run";
@@ -32,7 +32,7 @@ configuration {
 * {
     border-colour:               var(selected);
     handle-colour:               var(selected);
-    handle-colour:               LightGoldenRodYellow/45%;
+    handle-colour:             #d79a21ee;
 
     background-colour:           var(background);
     background-colour:           Black/70%;
@@ -50,7 +50,7 @@ configuration {
     active-background:           Black/70%;
 
     active-foreground:           var(background);
-    selected-normal-background:  LightGoldenRodYellow/55%;
+    selected-normal-background:  #d79a21ee;
 
     selected-normal-foreground:  var(background);
     selected-urgent-background:  var(active);
@@ -79,7 +79,7 @@ window {
     width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
-	background-color:            Beige/10%;
+	background-color:           Beige/10%;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -157,7 +157,7 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
-    placeholder-color:           Beige/60%;
+    placeholder-color:           #d79a21ee;
 }
 num-filtered-rows {
     enabled:                     true;
@@ -188,7 +188,7 @@ case-indicator {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       10;
+    lines:                       12;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   true;
@@ -238,7 +238,7 @@ element-icon {
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
-	highlight:                   bold LightGoldenRodYellow/90%;
+	highlight:                   bold #EBDBB2FF;
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;

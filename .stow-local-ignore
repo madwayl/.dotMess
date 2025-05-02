@@ -21,6 +21,6 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-*.jpg
-*.jpeg
-*.png
+.*\.jpg
+.*\.jpeg
+.*\.png
