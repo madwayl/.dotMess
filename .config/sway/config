@@ -32,6 +32,7 @@ set $rofi_cmd rofi \
 # set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 set $menu $rofi_cmd -modi "drun,run,ssh,filebrowser,window,  Web:~/.config/rofi/scripts/rofi-web-search.py,calc" \
     -show drun \
+    -sorting-method fzf -matching fuzzy \
     -calc-command "echo -n '{result}' | wl-copy" -calc-command-history \
     -automatic-save-to-history
 
@@ -57,8 +58,9 @@ output * bg ~/.local/share/wallpapers/tmp/wallpaper.png fill
 
 ### Desktop Setup
 
-exec_always '/opt/shikane/shikane'
-exec_always '/opt/shikane/shikanectl switch default-room'
+exec_always '$HOME/.bin/shikane'
+exec_always '$HOME/.bin/shikanectl switch default-room'
+exec_always 'echo "default-room" > "$HOME/.config/shikane/.current_profile"'
 bindsym $mod+p exec_always --no-startup-id '~/.config/sway/scripts/cycle-monitors.sh'
 
 # set $Display 1 2-Default, 2 1-Off, 3 1-Only
@@ -145,7 +147,7 @@ exec nm-applet --indicator
 
     # Start your launcher
     bindsym $mod+d exec $menu
-
+    
     # Launch VS Code
     bindsym $mod+Alt+c exec code
 
@@ -348,7 +350,8 @@ shadow_blur_radius 60
 
 for_window [title="Picture-in-Picture"] floating enable, sticky enable, resize set 512 px 288 px, move position 1300 px 680 px
 
-for_window [title="^Extension:*"] floating enable, resize set 712 px 388 px
+for_window [title="^Extension:*Firefox$"] floating enable, resize set 512 px 912 px
+for_window [title="Sign in – Google accounts — Mozilla Firefox"] floating enable, resize set 912 px 912 px
 
 layer_effects "waybar" {
     blur enable;
@@ -367,7 +370,7 @@ layer_effects "rofi" {
     blur_radius 1;
     blur_passes 1;
     # blur_ignore_transparent enable;
-    blur_brightness 0.0;
+    blur_brightness 1.5;
     shadows enable;
     shadows_on_csd enable;
     shadow_blur_radius 60;
