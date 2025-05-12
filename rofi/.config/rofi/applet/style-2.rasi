@@ -1,4 +1,10 @@
 /**
+ * ░█▀▄░█▀█░█▀▀░▀█▀░░░█▀█░█▀█░█▀█░█░░░█▀▀░▀█▀
+ * ░█▀▄░█░█░█▀▀░░█░░░░█▀█░█▀▀░█▀▀░█░░░█▀▀░░█░
+ * ░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀░▀░▀░░░▀░░░▀▀▀░▀▀▀░░▀░
+ * ░█▀▀░█▀▀░█▀▄░█▀▀░█▀▀░█▀█░█▀▀░█░█░█▀█░▀█▀  
+ * ░▀▀█░█░░░█▀▄░█▀▀░█▀▀░█░█░▀▀█░█▀█░█░█░░█░  
+ * ░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░  
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
@@ -135,33 +141,33 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            Black/40%;
+    background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
 
 element alternate.urgent,
 element selected.active {
     background-color:            var(urgent);
-    text-color:                  var(background);
+    text-color:                  var(background-alt);
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
     background-color:            var(active);
-    text-color:                  var(background);
+    text-color:                  var(background-alt);
 }
 element selected.normal {
     background-color:            var(selected);
-    text-color:                  var(background);
+    text-color:                  var(background-alt);
 }
 
 element normal.active {
-    background-color:  #c73e3e;  /* Style for the last element */
+    background-color:  @urgent;  /* Style for the last element */
     font-weight: bold;
-    color: white;
+    color: @foreground;
 }
 
 element selected.active {
-    background-color:  #f2594b;          /* Style for the last element */
-    color: #3c1f1e;
+    background-color:  @urgent;          /* Style for the last element */
+    color: @background-alt;
 }
