@@ -1,12 +1,13 @@
-# ⌁ ZSH CONFIG ⌁
-
+# 
+# ░▀▀█░█▀▀░█░█░░░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█
+# ░▄▀░░▀▀█░█▀█░░░█░░░█░█░█░█░█▀▀░░█░░█░█░█░█░█▀▄░█▀█░░█░░░█░░█░█░█░█
+# ░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
+#            ⌁ ZSH CONFIG SOURCED FROM THE INTERNET ⌁
+#
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Load POsh
+# Load POSH
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/my-theme.omp.toml)"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -43,10 +44,9 @@ fi
 source "$ZINIT_HOME/zinit.zsh"
 
   zinit light zsh-users/zsh-syntax-highlighting
-  zinit light zsh-users/zsh-completions
   zinit light zsh-users/zsh-autosuggestions
+  zinit light zsh-users/zsh-completions
   zinit light Aloxaf/fzf-tab
-  zinit light jeffreytse/zsh-vi-mode
 
 autoload -Uz compinit && compinit
 
@@ -143,3 +143,4 @@ autoload -U colors zsh-mime-setup select-word-style
 # Shell Integrations
   eval "$(fzf --zsh)" # Fuzzy Finder
   eval "$(zoxide init --cmd cd zsh)" # Zoxide 'cd'
+if [ -e /home/mzaql/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mzaql/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
