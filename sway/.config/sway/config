@@ -1,3 +1,11 @@
+#
+# ░█▀▀░█░█░█▀█░█░█        
+# ░▀▀█░█▄█░█▀█░░█░        
+# ░▀▀▀░▀░▀░▀░▀░░▀░        
+# ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀
+# ░█░░░█░█░█░█░█▀▀░░█░░█░█
+# ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀
+#
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -30,7 +38,7 @@ set $rofi_cmd rofi \
 # executables from PATH
 # TODO: add window with the next release of rofi-wayland
 # set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu $rofi_cmd -modi "drun,run,ssh,filebrowser,window,  Web:~/.config/rofi/scripts/rofi-web-search.py,calc" \
+set $menu $rofi_cmd -modi "drun,run,ssh,filebrowser,window,:~/.config/rofi/scripts/rofi-web-search.py,calc" \
     -show drun \
     -sorting-method fzf -matching fuzzy \
     -calc-command "echo -n '{result}' | wl-copy" -calc-command-history \
@@ -48,37 +56,6 @@ exec mako
 
 # set $wallpaper_path $(find $HOME/.local/share/wallpapers -type f | shuf -n 1)
 output * bg ~/.local/share/wallpapers/tmp/wallpaper.png fill
-
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Desktop Setup
-
-exec_always '$HOME/.bin/shikane'
-exec_always '$HOME/.bin/shikanectl switch default-room'
-exec_always 'echo "default-room" > "$HOME/.config/shikane/.current_profile"'
-bindsym $mod+p exec_always --no-startup-id '~/.config/sway/scripts/cycle-monitors.sh'
-
-# set $Display 1 2-Default, 2 1-Off, 3 1-Only
-# mode "$Display" {
-#     bindsym 1 exec_always 'p/opt/shikanectl switch default-room', mode "default"
-#     bindsym 2 exec_always '/opt/shikanectl switch default-off', mode "default"
-#     bindsym 3 exec_always '/opt/shikanectl switch default', mode "default"
-
-#     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
-#     bindsym $mod+p mode "default"
-# }
-
-### External Monitor Brightness
-bindsym --locked Shift+XF86MonBrightnessUp exec_always '~/.config/sway/scripts/external-brightness.sh + 5'
-bindsym --locked Shift+XF86MonBrightnessDown exec_always '~/.config/sway/scripts/external-brightness.sh - 5'
-
 
 ### Idle configuration
 #
@@ -289,113 +266,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Clipboard
-# https://www.reddit.com/r/swaywm/comments/16ifbaa/i_finally_got_copyq_to_work_on_sway_with/
-exec copyq --start-server
-exec export YDOTOOL_SOCKET=/tmp/.ydotool_socket
-exec ydotoold
-
-for_window [app_id="com.github.hluk.copyq"] floating enable; resize set 700 300; move position pointer; blur true, opacity 0.90
-bindsym $mod+alt+v exec 'copyq show'
-
-set $gnome-schema org.gnome.desktop.interface
-
-# Appearance
-# gaps inner 10px
-# gaps outer 30px
-
-##########
-# Colors #
-##########
-set $bg      #161616
-set $bg2     #262626
-set $bg3     #525252
-set $fg      #cecece
-set $red     #da1e28
-set $blue    #33B1FF
-set $purple  #be95ff
-
-set $black   #000000
-set $white   #ffffff
-
-# Class                 Border  Backgr. Text    Indigator Child border
-client.focused          $bg3    $bg     $fg     $bg3      $bg3
-client.focused_inactive $bg2    $bg     $bg3    $bg2      $bg2
-client.unfocused        $bg2    $bg     $bg3    $bg2      $bg2
-client.urgent           $bg2    $red    $white  $red      $red
-client.placeholder      $black  $black  $white  $black    $black
-client.background       $fg
-
-########################
-# Layer Rules #
-########################
-# find out what layer is what with swaymsg -r -t get_outputs |
-
-# Borderless
-for_window [class="^.*"] border pixel 0, blur true, opacity 0.95
-for_window [class=".*"] inhibit_idle fullscreen
-for_window [app_id=".*"] inhibit_idle fullscreen
-
-blur enable
-# blur_xray enable
-# blur_passes 3
-blur_radius 10
-# blur_noise 0.0
-# blur_contrast 1.0
-smart_corner_radius on
-corner_radius 5
-default_dim_inactive 0.1
-shadows on
-shadow_blur_radius 60
-
-for_window [title="Picture-in-Picture"] floating enable, sticky enable, resize set 512 px 288 px, move position 1300 px 680 px
-
-for_window [title="^Extension:*Firefox$"] floating enable, resize set 512 px 912 px
-for_window [title="Sign in – Google accounts — Mozilla Firefox"] floating enable, resize set 912 px 912 px
-
-layer_effects "waybar" {
-    blur enable;
-    # blur_xray enable;
-    blur_radius 8;
-    # blur_passes 3;
-
-    # blur_ignore_transparent enable;
-    shadows enable;
-    shadows_on_csd enable;
-    shadow_blur_radius 30;
-}
-
-layer_effects "rofi" {
-    blur enable;
-    blur_radius 1;
-    blur_passes 1;
-    # blur_ignore_transparent enable;
-    blur_brightness 1.5;
-    shadows enable;
-    shadows_on_csd enable;
-    shadow_blur_radius 60;
-}
-
-layer_effects "mako" {
-    blur enable;
-    blur_radius 2;
-    blur_passes 3;
-    # blur_ignore_transparent enable;
-    blur_brightness 1.0;
-    shadows enable;
-    shadows_on_csd enable;
-    shadow_blur_radius 60;
-}
-
-layer_effects "gtk-layer-shell"  {
-    blur enable; 
-    blur_ignore_transparent enable; 
-    blur_brightness 0.75; 
-    corner_radius 2;
-}
-
-# Gaps
-gaps inner 10
 # Only enable gaps on a workspace when there is at least one container
 # smart_gaps on
 
