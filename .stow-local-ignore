@@ -2,11 +2,11 @@ RCS
 .+,v
 
 CVS
-\.\#.+       # CVS conflict files / emacs lock files
+\.\#.+ # CVS conflict files / emacs lock files
 \.cvsignore
 
 \.svn
-_darcs
+\_darcs
 \.hg
 
 \.git
@@ -14,13 +14,15 @@ _darcs
 \.gitmodules
 \.git-repo
 
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
+.+~ # emacs backup files
+\#.\*\# # emacs autosave files
 
-^/README.*
-^/LICENSE.*
+^/README._
+^/LICENSE._
 ^/COPYING
 
-.*\.jpg
-.*\.jpeg
-.*\.png
+._\.jpg
+._\.jpeg
+.\*\.png
+
+wallpapers
