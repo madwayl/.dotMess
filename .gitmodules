@@ -1,9 +1,0 @@
-[submodule ".oh-my-bash"]
-	path = .oh-my-bash
-	url = https://github.com/ohmybash/oh-my-bash.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/ohmyzsh/oh-my-zsh.git
-[submodule ".git-repo/powerlevel10k"]
-	path = .git-repo/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
