@@ -1,4 +1,10 @@
 /**
+ * ░█▀▄░█▀█░█▀▀░▀█▀░░░█░█░▀█▀░▀█▀░█░░░▀█▀░▀█▀░█░█
+ * ░█▀▄░█░█░█▀▀░░█░░░░█░█░░█░░░█░░█░░░░█░░░█░░░█░
+ * ░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀▀▀░░▀░░▀▀▀░▀▀▀░▀▀▀░░▀░░░▀░
+ * ░█▀█░█▀█░█░█░█▀▀░█▀▄░█▄█░█▀▀░█▀█░█░█      
+ * ░█▀▀░█░█░█▄█░█▀▀░█▀▄░█░█░█▀▀░█░█░█░█      
+ * ░▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀   
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
@@ -36,11 +42,10 @@ configuration {
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
-    transparency:                "real";
+    transparency:                "screenshot";
     location:                    center;
     anchor:                      center;
     fullscreen:                  true;
-    // width:                       1366px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -67,8 +72,6 @@ mainbox {
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
-    width:50%;
-
     children:                    [ "message", "listview" ];
 
 }
@@ -125,6 +128,7 @@ message {
 
 }
 textbox {
+    font: "FantasqueSansM Nerd Font Propo 16";
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;
@@ -178,6 +182,8 @@ element {
     background-color:            Black/80%;
     text-color:                  @foreground;
     cursor:                      pointer;
+    width: 2%;
+
 }
 element-text {
     font:                        var(element-font);
@@ -190,7 +196,7 @@ element-text {
 }
 element selected.normal {
     background-color:            var(selected);
-    text-color:                  var(background);
+    text-color:                  var(background-alt);
 }
 
  element normal.active {
@@ -200,6 +206,6 @@ element selected.normal {
   }
 
    element selected.active {
-    background-color:  #f2594b;          /* Style for the last element */
-    color: #3c1f1e;
+    background-color:  @urgent;          /* Style for the last element */
+    color: @background-alt;
   }

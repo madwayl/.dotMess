@@ -1,4 +1,10 @@
 /**
+ * ░█▀▄░█▀█░█▀▀░▀█▀░░░█▀█░█▀▄░▀█▀░█▄█░█▀█░█▀▄░█░█      
+ * ░█▀▄░█░█░█▀▀░░█░░░░█▀▀░█▀▄░░█░░█░█░█▀█░█▀▄░░█░      
+ * ░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀░░░▀░▀░▀▀▀░▀░▀░▀░▀░▀░▀░░▀░      
+ * ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█
+ * ░█░░░█░█░█░█░█▀▀░░█░░█░█░█░█░█▀▄░█▀█░░█░░░█░░█░█░█░█
+ * ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
@@ -11,12 +17,12 @@
 configuration {
 	modi:                       "drun,run,filebrowser";
     show-icons:                 false;
-    display-drun:               "  Apps";
-    display-run:                "  Run";
-    display-filebrowser:        "  Files";
-    display-window:             "  Windows";
-	display-ssh:                "  SSH";
-    display-calc:               "  Calc";
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	display-ssh:                "";
+    display-calc:               "";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
 
@@ -31,47 +37,48 @@ configuration {
 
 * {
     border-colour:               var(selected);
-    handle-colour:               var(selected);
-    handle-colour:             #d79a21ee;
+    
+    handle-colour:              var(selected);
 
-    background-colour:           var(background);
-    background-colour:           Black/70%;
-
+    background-colour:           var(background-alt);
     foreground-colour:           var(foreground);
+    
     alternate-background:        var(background-alt);
-    alternate-background:        Black/70%;
 
-    normal-background:           Black/40%;
+    normal-background:           var(background-alt);
+    normal-foreground:           var(selected);
 
-    normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
     urgent-foreground:           var(background);
+    
     active-background:           var(active);
-    active-background:           Black/70%;
-
+    active-background:           var(background);
+    
     active-foreground:           var(background);
-    selected-normal-background:  #d79a21ee;
 
-    selected-normal-foreground:  var(background);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(background-alt);
+    
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: Black/40%;
+    
+    selected-active-background:  var(background);
+    selected-active-foreground:  var(selected);
 
+    alternate-normal-background: var(background-alt);
     alternate-normal-foreground: var(foreground);
+
     alternate-urgent-background: var(urgent);
     alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-background: Black/70%;
 
-    alternate-active-foreground: var(background);
+    alternate-active-background: var(background);
+    alternate-active-foreground: var(foreground);
 }
 
 /*****----- Main Window -----*****/
 window {
     /* properties for window widget */
-    transparency:                "screenshot";
+    transparency:                "real";
 	blur:						 80;
     location:                    center;
     anchor:                      center;
@@ -79,7 +86,7 @@ window {
     width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
-	background-color:           Beige/10%;
+	background-color:           var(background);
 
     /* properties for all widgets */
     enabled:                     true;
@@ -104,7 +111,7 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     20px;
     margin:                      0px;
     padding:                     20px;
     border:                      0px solid;
@@ -116,11 +123,11 @@ mainbox {
 
 /*****----- A Custom Box -----*****/
 custombox {
-    spacing:                     10px;
+    spacing:                     20px;
     background-color:            inherit;
     text-color:                  @foreground-colour;
-    orientation:                 horizontal;
-    children:                    [ "mode-switcher", "listview" ];
+    orientation:                 vertical;
+    children:                    [ "listview", "mode-switcher" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -132,8 +139,8 @@ inputbar {
     border:                      0px solid;
     border-radius:               3px;
     border-color:                @border-colour;
-    background-color:            @alternate-background;
-    text-color:                  @foreground-colour;
+    background-color:            @selected;
+    text-color:                  @background-alt;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 
@@ -157,7 +164,7 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search...";
-    placeholder-color:           #d79a21ee;
+    placeholder-color:           @background-alt;
 }
 num-filtered-rows {
     enabled:                     true;
@@ -191,7 +198,7 @@ listview {
     lines:                       12;
     cycle:                       true;
     dynamic:                     true;
-    scrollbar:                   true;
+    scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
@@ -223,7 +230,7 @@ element {
     border:                      0px solid;
     border-radius:               3px;
     border-color:                @border-colour;
-    background-color:            transparent;
+    background-color:            @background-alt;
     text-color:                  @foreground-colour;
     cursor:                      pointer;
 }
@@ -248,36 +255,37 @@ element-text {
 mode-switcher{
     enabled:                     true;
     expand:                      false;
-    orientation:                 vertical;
-    spacing:                     10px;
+    orientation:                 horizontal;
+    spacing:                     20px;
     margin:                      0px;
     padding:                     0px 0px;
     border:                      0px solid;
-    border-radius:               2px;
+    border-radius:               4px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
 }
 button {
-    padding:                     0px 20px 0px 20px;
+    padding:                     20px 20px 20px 20px;
     border:                      0px solid;
-    border-radius:               2px;
+    border-radius:               4px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  inherit;
     vertical-align:              0.5;
-    horizontal-align:            0.0;
+    horizontal-align:            0.5;
+    font:   "FantasqueSansM Nerd Font Propo 20";
     cursor:                      pointer;
 }
 button selected {
-    background-color:            var(selected-normal-background);
-    text-color:                  var(selected-normal-foreground);
+    text-color:            var(selected-normal-foreground);
+    background-color:                  var(selected-normal-background);
 }
 
 /*****----- Message -----*****/
 message {
     enabled:                     true;
-    margin:                      0px;
+    margin:                      -10px 0px 0px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px 0px 0px 0px;

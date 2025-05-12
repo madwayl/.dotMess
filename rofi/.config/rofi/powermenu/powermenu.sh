@@ -17,13 +17,13 @@ theme='style-3'
 uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 # Options
-shutdown='  '
-reboot='  '
-lock='  '
-suspend='  '
-logout='  '
-yes='   '
-no='   '
+shutdown=''
+reboot=''
+lock=''
+suspend=''
+logout=''
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {
@@ -62,8 +62,6 @@ run_cmd() {
 		elif [[ $1 == '--reboot' ]]; then
 			systemctl reboot
 		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'sway' ]]; then

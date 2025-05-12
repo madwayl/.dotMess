@@ -1,4 +1,10 @@
 /**
+ * ░█▀▄░█▀█░█▀▀░▀█▀░░░█▀█░█▀█░█▀█░█░░░█▀▀░▀█▀      
+ * ░█▀▄░█░█░█▀▀░░█░░░░█▀█░█▀▀░█▀▀░█░░░█▀▀░░█░      
+ * ░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀░▀░▀░░░▀░░░▀▀▀░▀▀▀░░▀░      
+ * ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▄░█▄█░█▀█░▀█▀░▀█▀░█▀█░█▀█
+ * ░█░░░█░█░█░█░█▀▀░░█░░█▀▄░█░█░█▀█░░█░░░█░░█░█░█░█
+ * ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀░▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
@@ -46,12 +52,12 @@ message {
     margin:                      0px;
     padding:                     20px;
     border-radius:               4px;
-    background-color:            Black/40%;
+    background-color:            @background-alt;
     text-color:                  @foreground;
 }
 textbox {
-   // background-color:            inherit;
-    background-color:            Black/5%;
+//  background-color:            inherit;
+    background-color:            transparent;
 
     text-color:                  inherit;
     vertical-align:              0.5;
@@ -84,13 +90,12 @@ element {
     padding:                     60px 10px;
     border-radius:               4px;
     background-color:            @background-alt;
-        background-color:            Black/40%;
 
     text-color:                  @foreground;
     cursor:                      pointer;
 }
 element-text {
-    font:                        "FantasqueSansM Mono Nerd Font 48";
+    font:                        "FantasqueSansM Nerd Font Propo 48";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
@@ -99,11 +104,11 @@ element-text {
 }
 element selected.normal {
     background-color:            var(selected);
-    text-color:                  var(background);
+    text-color:                  var(background-alt);
 }
 
 element selected.active {
-    background-color:          #c73e3e;  /* Style for the last element */
+    color:          @background-alt;  /* Style for the last element */
     font-weight:                 bold;
-    color: white;
+    background-color: @urgent;
 }
