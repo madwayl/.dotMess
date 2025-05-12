@@ -1,20 +1,77 @@
+/**
+ *
+ * ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄              
+ * ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄              
+ * ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀              
+ * ░█▀▀░█▀▀░█▀▀░░░█▀▀░▀█▀░█░█░█░░░█▀▀░█▀▀
+ * ░█░░░▀▀█░▀▀█░░░▀▀█░░█░░░█░░█░░░█▀▀░▀▀█
+ * ░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀░░▀░░░▀░░▀▀▀░▀▀▀░▀▀▀
+ *
+ */
+
+/* Colors (gruvbox) */
+@define-color black #181818;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color gray #a89984;
+@define-color brgray #928374;
+@define-color brred #fb4934;
+@define-color brgreen #b8bb26;
+@define-color bryellow #fabd2f;
+@define-color brblue #83a598;
+@define-color brpurple #d3869b;
+@define-color braqua #8ec07c;
+@define-color white #ebdbb2;
+@define-color bg2 #504945;
+
+
+@define-color warning @bryellow;
+@define-color critical @red;
+@define-color mode @black;
+@define-color unfocused @bg2;
+@define-color focused @braqua;
+@define-color inactive @purple;
+@define-color sound @brpurple;
+@define-color network @purple;
+@define-color memory @braqua;
+@define-color cpu @green;
+@define-color temp @brgreen;
+@define-color layout @bryellow;
+@define-color battery @aqua;
+@define-color date @black;
+@define-color time @white;
+
 * {
     /* all: initial; */
     font-family:
         "FantasqueSansM Nerd Font Propo", "Font Awesome 6 Free",
         "Font Awesome 6 Brands", FontAwesome, monospace;
     font-size: 14px;
+    font-weight: 900;
+    /* Reset GTK Theme */
+    /* border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; */
 }
 
 window#waybar {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, monospace; */
-    background-color: rgba(251, 241, 199, 0.059);
+    background-color: rgba(80, 73, 69, 0.267);
     /* background-color: rgba(22, 22, 22, 0.75); */
     border-bottom: 0px;
-    color: #ebdbb2;
-    transition-property: background-color;
-    transition-duration: .5s;
+    color: @white;
+    /* transition-property: background-color;
+    transition-duration: .5s; */
     margin: 5px;
 }
 
@@ -75,14 +132,14 @@ button:hover {
 } */
 
 #workspaces {
-    background-color: rgba(10, 10, 10, 0.8);
+    background-color: @black;
     border-radius: 3px;
 }
 
 #workspaces button {
     padding: 2px 12.5px;
     background-color: transparent;
-    color: #ebdbb2;
+    color: @white;
     border-radius: 0;
 
     /* nice color transitions for workspace buttons */
@@ -106,20 +163,20 @@ button:hover {
 }
 
 #workspaces button:hover {
-    color: #d79a21;
+    color: @yellow;
     /* background-color: rgba(37, 36, 35, 0.75); */
 }
 
 #workspaces button.focused {
-    color: #1d2021;
+    color: @black;
     /* Gruvbox dark hard orange */
-    background-color: rgba(240, 176, 49, 0.85);
+    background-color: @yellow;
     /* Gruvbox light text color */
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.urgent {
-    background-color: #b16286;
+    background-color: @brpurple;
 }
 
 #idle_inhibitor,
@@ -140,14 +197,14 @@ button:hover {
 #network,
 #bluetooth {
     padding: 7px 12.5px;
-    background-color: rgba(10, 10, 10, 0.85);
-    color: #ebdbb2;
+    background-color: @black;
+    color: @white;
     border-radius: 3px;
 }
 
 #mode {
-    background-color: rgba(104, 157, 106, 0.85);
-    color: #282828;
+    background-color: @brgreen;
+    color: @black;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -167,21 +224,21 @@ button:hover {
 
 #battery.charging,
 #battery.plugged {
-    background-color: rgba(152, 152, 26, 0.85);
-    color: #282828;
+    background-color: @green;
+    color: @black;
 }
 
 @keyframes blink {
     to {
-        background-color: rgba(40, 40, 40, 0.85);
-        color: #ebdbb2;
+        background-color: @black;
+        color: @white;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #cc241d;
-    color: #ebdbb2;
+    background-color: @red;
+    color: @white;
     animation-name: blink;
     animation-duration: 1s;
     animation-timing-function: steps(12);
@@ -190,11 +247,11 @@ button:hover {
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @black;
 }
 
 #wireplumber.muted {
-    background-color: #458588;
+    color: @braqua;
 }
 
 #tray>.passive {
@@ -206,20 +263,20 @@ label:focus {
 }
 
 #mpris {
-    background-color: rgba(215, 154, 33, 0.85);
-    color: #3d2807;
-    transition-property: background-color;
+    color: @bryellow;
+    /* color: @black; */
+    transition-property: color;
     transition-duration: .75s;
 }
 
 #mpris.playing {
-    background-color: rgba(152, 152, 26, 0.85);
-    color: #282828;
+    color: @brgreen;
+    /* color: @black; */
 }
 
 #pulseaudio {
-    background-color: rgba(215, 154, 33, 0.85);
-    color: #3d2807;
+    background-color: @black;
+    color: @yellow;
 }
 
 #tray menu {
@@ -228,12 +285,12 @@ label:focus {
 
 #tray>.needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    background-color: @red;
 }
 
 #tray>.passive {
     -gtk-icon-effect: dim;
-    background-color: rgba(40, 40, 40, 0.85);
+    background-color: @black;
 }
 
 #scratchpad.empty {
@@ -241,10 +298,9 @@ label:focus {
 }
 
 #custom-powermenu {
-    background-color: #cc241d;
-    color: rgba(60, 31, 30, 0.9);
+    color: @red;
 }
 
-#custom-powermenu:hover {
-    background-color: rgba(204, 36, 29, 0.85);
+#clock {
+    color: @green;
 }
