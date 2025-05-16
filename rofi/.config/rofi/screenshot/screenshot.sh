@@ -156,7 +156,8 @@ shotwin () {
 cast() {
 	if [[ ! -e '/tmp/cast' ]]; then
 		file="Screenshot_${time}.mp4"
-		wf-recorder --file=${dir}/${file} &
+		output=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true) | .name')
+		wf-recorder --file=${dir}/${file} --output=$output &
 		echo "$!" > '/tmp/cast'
 	else
 		kill $(cat /tmp/cast)
