@@ -66,7 +66,7 @@
 window#waybar {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, monospace; */
-    background-color: rgba(80, 73, 69, 0.267);
+    background-color: rgba(0, 0, 0, 0.25);
     /* background-color: rgba(22, 22, 22, 0.75); */
     border-bottom: 0px;
     color: @white;
@@ -190,6 +190,7 @@ button:hover {
 #wireplumber,
 #pulseaudio,
 #custom-powermenu,
+#custom-recording,
 #tray,
 #mpris,
 #load,
@@ -299,6 +300,10 @@ label:focus {
 
 #custom-powermenu {
     color: @red;
+}
+
+#custom-recording {
+    color: @brred;
 }
 
 #clock {
