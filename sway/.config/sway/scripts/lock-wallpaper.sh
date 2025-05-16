@@ -4,7 +4,7 @@
 # and applies a Gaussian blur effect to it, saving the result as /tmp/lockscreen.png.
 # It uses the `magick` command from ImageMagick to perform the image processing.
 
-wallpaper_choice=$(find ~/.dotfiles/.local/share/wallpapers -type f | shuf -n 1)
+wallpaper_choice=$(find ~/.dotfiles/wallpapers -type f | shuf -n 1)
 
 cp $wallpaper_choice $HOME/.local/share/wallpapers/tmp/wallpaper.png
 cp $wallpaper_choice /usr/share/sddm/tmp/wallpaper.png
