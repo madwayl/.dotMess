@@ -86,7 +86,7 @@ window {
     width:                       800px;
     x-offset:                    0px;
     y-offset:                    0px;
-	background-color:           var(background);
+	background-color:           Black/25%;
 
     /* properties for all widgets */
     enabled:                     true;
