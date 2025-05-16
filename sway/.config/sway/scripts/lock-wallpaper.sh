@@ -6,11 +6,15 @@
 
 wallpaper_choice=$(find ~/.dotfiles/wallpapers -type f | shuf -n 1)
 
-cp $wallpaper_choice $HOME/.local/share/wallpapers/tmp/wallpaper.png
+cp $wallpaper_choice ~/.local/share/wallpapers/tmp/wallpaper.png
 cp $wallpaper_choice /usr/share/sddm/tmp/wallpaper.png
 
 /usr/bin/magick $wallpaper_choice -filter Gaussian -resize 20% -blur 2x20 /tmp/lockscreen.png
 
-# export WAYLAND_DISPLAY="wayland-1"
-~/.nix-profile/bin/swww query || ~/.nix-profile/bin/swww-daemon
-~/.nix-profile/bin/swww img $wallpaper_choice
+export WAYLAND_DISPLAY="wayland-1"
+
+if ! pgrep -x swww-daemon > /dev/null; then
+    ~/.nix-profile/bin/swww-daemon &
+fi
+
+~/.nix-profile/bin/swww img ~/.local/share/wallpapers/tmp/wallpaper.png

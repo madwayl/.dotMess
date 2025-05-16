@@ -56,6 +56,7 @@ exec mako
 
 # set $wallpaper_path $(find $HOME/.local/share/wallpapers -type f | shuf -n 1)
 output * bg ~/.local/share/wallpapers/tmp/wallpaper.png fill
+exec_always ~/.nix-profile/bin/swww-daemon
 
 ### Idle configuration
 #
