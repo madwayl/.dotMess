@@ -6,8 +6,8 @@
 ## Applets : Screenshot
 
 # Import Current Theme
-type="$HOME/.config/rofi/applet/"
-style='style-2.rasi'
+type="$HOME/.config/rofi/screenshot/"
+style='screenshot.rasi'
 theme="$type/$style"
 
 # Theme Elements
@@ -176,6 +176,12 @@ castarea() {
 	fi
 }
 
+# 5
+shotall() {
+	wl-copy < $(grimshot save screen ${dir}/${file})
+	notify_view
+}
+
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
@@ -187,7 +193,7 @@ run_cmd() {
 	elif [[ "$1" == '--opt4' ]]; then
 		castarea
 	elif [[ "$1" == '--opt5' ]]; then
-		shot10
+		shotall
 	fi
 }
 
