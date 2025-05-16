@@ -27,6 +27,7 @@
     "sway/window"
   ],
   "modules-right": [
+    "custom/recording",
     "idle_inhibitor",
     // "load",
     // "wireplumber",
@@ -174,7 +175,8 @@
     // "timezone": "America/New_York",
     "format": "{:%a %d %b %H:%M:%S}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%Y-%m-%d}",
+    "interval": 1
   },
   "cpu": {
     "format": "{usage}%  ",
@@ -342,6 +344,14 @@
     "format": "⏻",
     "tooltip": false,
     "on-click": "~/.config/rofi/powermenu/powermenu.sh"
+  },
+  "custom/recording": {
+    "interval": 1,
+    "format": "󰻃 {}",
+    "tooltip": false,
+    "exec": "echo $(ps -p $(pgrep wf-recorder) -o etime= | xargs)",
+    "on-click": "pkill wf-recorder",
+    "exec-if": "pgrep wf-recorder"
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
