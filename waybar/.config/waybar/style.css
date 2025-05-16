@@ -191,6 +191,7 @@ button:hover {
 #pulseaudio,
 #custom-powermenu,
 #custom-recording,
+#custom-screen-sharing,
 #tray,
 #mpris,
 #load,
@@ -304,6 +305,10 @@ label:focus {
 
 #custom-recording {
     color: @brred;
+}
+
+#custom-screen-sharing {
+    color: @red;
 }
 
 #clock {

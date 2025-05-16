@@ -27,6 +27,7 @@
     "sway/window"
   ],
   "modules-right": [
+    "custom/screen-sharing",
     "custom/recording",
     "idle_inhibitor",
     // "load",
@@ -299,8 +300,8 @@
     "scroll-step": 1,
     "smooth-scrolling-threshold": 1,
     "max-volume": 100,
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-middle-click": "pavucontrol",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click": "pavucontrol",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
   },
@@ -323,8 +324,8 @@
     "max-volume": 100,
     "scroll-step": 2,
     "smooth-scrolling-threshold": 1,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-middle-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
   },
@@ -350,8 +351,16 @@
     "format": "󰻃 {}",
     "tooltip": false,
     "exec": "echo $(ps -p $(pgrep wf-recorder) -o etime= | xargs)",
-    "on-click": "pkill wf-recorder",
+    "on-click": "pkill wf-recorder && rm /tmp/cast || rm /tmp/castarea",
     "exec-if": "pgrep wf-recorder"
+  },
+  "custom/screen-sharing": {
+    "format": " {}", // Or "LIVE" or whatever icon/text you want
+    "tooltip": false,
+    "interval": 1,
+    "exec": "echo 'LIVE'", // Or a script that returns something dynamic
+    "exec-if": "~/.config/waybar/scripts/check-recording.sh",
+    "on-click": "pkill -f wf-recorder"
   },
   "bluetooth": {
     // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
