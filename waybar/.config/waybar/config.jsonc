@@ -392,6 +392,6 @@
     "format-disconnected": "󰤫",
     // "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "tooltip-format": "{ifname} via {gwaddr}",
-    "on-click-right": "nm-applet --indicator"
+    "on-click": "~/.config/rofi/network-manager/ronema/ronema"
   }
 }

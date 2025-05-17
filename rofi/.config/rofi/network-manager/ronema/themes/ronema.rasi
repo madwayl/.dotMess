@@ -1,0 +1,159 @@
+
+/*****----- Global Properties -----*****/
+@import                          "../../../shared/colors.rasi"
+@import                          "../../../shared/fonts.rasi"
+
+*{
+
+	background-color:				@transparent;
+	text-color:						@foreground;
+	bordercolor:                 	@accent;
+	separatorcolor:              	@accent;
+
+	/* normal */
+	normal-foreground:       		@foreground;
+	selected-normal-foreground:		@background-alt;
+	alternate-normal-foreground: 	@foreground;
+
+	normal-background:           	@transparent;
+	selected-normal-background:  	@selected;
+	alternate-normal-background:	@transparent;
+
+	/* urgent */
+	urgent-foreground:           	@urgent;
+	selected-urgent-foreground:  	@urgent;
+	alternate-urgent-foreground: 	@foreground;
+
+	urgent-background:           	@urgent;
+	selected-urgent-background:  	@accent;
+	alternate-urgent-background: 	@background-alt;
+
+	/* active */
+	active-foreground:           	@accent;
+	selected-active-foreground:  	@accent;
+	alternate-active-foreground: 	@accent;
+
+	active-background:           	@transparent;
+	selected-active-background:  	@transparent;
+	alternate-active-background: 	@transparent;
+
+}
+
+window {
+	text-color:			@foreground;
+	background-color:	@background;
+	border-radius: 		4px;
+	padding: 			10px;
+	location:                    northeast;
+    anchor:                      northeast;
+
+	x-offset:                    -20px;
+	y-offset:                    20px;
+
+	vertical-align:  0.5;
+}
+
+mainbox {
+	border:		0;
+	padding: 	0;
+
+}
+
+inputbar {
+		border: 2px;
+	border-color: red;
+	vertical-align: 0.95;
+	padding: 2px;
+}
+
+textbox {
+	text-color: @foreground;
+	vertical-align: 0.5;
+
+}
+
+listview {
+	spacing:		2px;
+	dynamic:		true;
+	fixed-height:	false;
+	border:			0;
+	scrollbar:		false;
+	text-color:		@separatorcolor;
+
+	padding: 4px 2px 2px;
+}
+
+element {
+	border-radius:	4px;
+	padding: 6px 10px;
+	vertical-align:  0.5;
+}
+
+element-text {
+	background-color: inherit;
+	text-color:       inherit;
+}
+
+element.normal.normal {
+	text-color:			@normal-foreground;
+	background-color:	@normal-background;
+}
+
+element.normal.urgent {
+	text-color:			@urgent-foreground;
+	background-color:	@urgent-background;
+}
+element.normal.active {
+	text-color:			@active-foreground;
+	background-color:	@active-background;
+	font: 				"\FantasqueSansM Nerd Font Propo \15 \Bold";
+}
+element.selected.normal {
+	text-color:			@selected-normal-foreground;
+	background-color:	@selected-normal-background;
+}
+element.selected.urgent {
+	text-color:			@selected-urgent-foreground;
+	background-color:	@selected-urgent-background;
+}
+element.selected.active {
+	text-color:			@selected-active-foreground;
+	background-color:	@selected-active-background;
+	font: 				"FantasqueSansM Nerd Font Propo 12 Bold";
+}
+element.alternate.normal {
+	text-color:			@alternate-normal-foreground;
+	background-color:	@alternate-normal-background;
+}
+element.alternate.urgent {
+	text-color:			@alternate-urgent-foreground;
+	background-color:	@alternate-urgent-background;
+}
+element.alternate.active {
+	text-color:			@alternate-active-foreground;
+	background-color:	@alternate-active-background;
+	font: 				"FantasqueSansM Nerd Font Propo 15 Bold";
+}
+mode-switcher {
+	border:	0;
+}
+button selected {
+	text-color:			@selected-normal-foreground;
+	background-color:	@selected-normal-background;
+}
+button normal {
+	text-color:	@foreground;
+}
+inputbar {
+	children: [textbox-prompt-colon,entry];
+}
+textbox-prompt-colon{
+	expand:	false;
+	margin: 0 0 2px;
+	padding: 4px;
+
+	str:	":";
+}
+entry {
+	placeholder:	"";
+}
