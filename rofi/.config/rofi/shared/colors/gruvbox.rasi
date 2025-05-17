@@ -13,4 +13,6 @@
     selected:       #d79921D1;
     active:         #98971AFF;
     urgent:         #c73e3eFF;
+
+    accent:           @selected;
 }

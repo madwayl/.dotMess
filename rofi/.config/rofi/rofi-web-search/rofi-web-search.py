@@ -154,7 +154,7 @@ def validate_config(c):
 
 if __name__ == "__main__":
     try:
-        fname = os.path.expanduser('~/.config/rofi-web-search/config.json')
+        fname = os.path.expanduser('~/.config/rofi/rofi-web-search/config/config.json')
         if os.path.exists(fname):
             try:
                 config = json.loads(open(fname, 'r').read())
