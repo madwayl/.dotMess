@@ -15,4 +15,8 @@
 
 /* Import color-scheme from `colors` directory */
 
-@import "~/.config/rofi/colors/gruvbox.rasi"
+@import "./colors/gruvbox.rasi"
+
+* {
+	transparent:					#ffffff00;
+}

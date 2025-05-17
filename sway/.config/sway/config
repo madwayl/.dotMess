@@ -38,7 +38,7 @@ set $rofi_cmd rofi \
 # executables from PATH
 # TODO: add window with the next release of rofi-wayland
 # set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
-set $menu $rofi_cmd -modi "drun,run,ssh,filebrowser,window,:~/.config/rofi/scripts/rofi-web-search.py,calc" \
+set $menu $rofi_cmd -modi "drun,run,ssh,filebrowser,window,:~/.config/rofi/rofi-web-search/rofi-web-search.py,calc" \
     -show drun \
     -sorting-method fzf -matching fuzzy \
     -calc-command "echo -n '{result}' | wl-copy" -calc-command-history \
