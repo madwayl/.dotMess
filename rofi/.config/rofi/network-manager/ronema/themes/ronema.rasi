@@ -4,7 +4,6 @@
 @import                          "../../../shared/fonts.rasi"
 
 *{
-
 	background-color:				@transparent;
 	text-color:						@foreground;
 	bordercolor:                 	@accent;
@@ -36,7 +35,6 @@
 	active-background:           	@transparent;
 	selected-active-background:  	@transparent;
 	alternate-active-background: 	@transparent;
-
 }
 
 window {
@@ -44,13 +42,13 @@ window {
 	background-color:	@background;
 	border-radius: 		4px;
 	padding: 			10px;
-	location:                    northeast;
-    anchor:                      northeast;
+	location:           northeast;
+    anchor:             northeast;
 
-	x-offset:                    -20px;
-	y-offset:                    20px;
+	x-offset:           -20px;
+	y-offset:           20px;
 
-	vertical-align:  0.5;
+	background-color:           Black/25%;
 }
 
 mainbox {
@@ -60,10 +58,21 @@ mainbox {
 }
 
 inputbar {
-		border: 2px;
-	border-color: red;
-	vertical-align: 0.95;
-	padding: 2px;
+    enabled:     true;
+    spacing:     10px;
+    margin:      0px;
+    padding:     8px 12px;
+    border:      0px solid;
+	children:    [textbox-prompt-colon, entry];
+}
+
+textbox-prompt-colon{
+	expand:		false;
+	str:		":";
+}
+
+entry {
+	placeholder:	"";
 }
 
 textbox {
@@ -90,8 +99,9 @@ element {
 }
 
 element-text {
-	background-color: inherit;
+	background-color: transparent;
 	text-color:       inherit;
+	highlight:        bold #EBDBB2FF;
 }
 
 element.normal.normal {
@@ -106,7 +116,6 @@ element.normal.urgent {
 element.normal.active {
 	text-color:			@active-foreground;
 	background-color:	@active-background;
-	font: 				"\FantasqueSansM Nerd Font Propo \15 \Bold";
 }
 element.selected.normal {
 	text-color:			@selected-normal-foreground;
@@ -119,7 +128,6 @@ element.selected.urgent {
 element.selected.active {
 	text-color:			@selected-active-foreground;
 	background-color:	@selected-active-background;
-	font: 				"FantasqueSansM Nerd Font Propo 12 Bold";
 }
 element.alternate.normal {
 	text-color:			@alternate-normal-foreground;
@@ -132,28 +140,17 @@ element.alternate.urgent {
 element.alternate.active {
 	text-color:			@alternate-active-foreground;
 	background-color:	@alternate-active-background;
-	font: 				"FantasqueSansM Nerd Font Propo 15 Bold";
 }
+
 mode-switcher {
 	border:	0;
 }
+
 button selected {
 	text-color:			@selected-normal-foreground;
 	background-color:	@selected-normal-background;
 }
+
 button normal {
 	text-color:	@foreground;
-}
-inputbar {
-	children: [textbox-prompt-colon,entry];
-}
-textbox-prompt-colon{
-	expand:	false;
-	margin: 0 0 2px;
-	padding: 4px;
-
-	str:	":";
-}
-entry {
-	placeholder:	"";
 }

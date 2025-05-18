@@ -29,8 +29,6 @@ CASE_SENSITIVE="true"
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
-export XDG_CONFIG_HOME=$HOME/.config
-export EDITOR=nvim
 
 # Set ZSH Plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -143,4 +141,5 @@ autoload -U colors zsh-mime-setup select-word-style
 # Shell Integrations
   eval "$(fzf --zsh)" # Fuzzy Finder
   eval "$(zoxide init --cmd cd zsh)" # Zoxide 'cd'
+
 if [ -e /home/mzaql/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mzaql/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
