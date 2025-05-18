@@ -1,24 +1,35 @@
 #!/usr/bin/env bash
-
-DIR="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/"
-
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WIRELESS_INTERFACES=($(nmcli device | awk '$2=="wifi" {print $1}'))
 WIRELESS_INTERFACES_PRODUCT=()
-
 WLAN_INT=0
-
 WIRED_INTERFACES=($(nmcli device | awk '$2=="ethernet" {print $1}'))
 WIRED_INTERFACES_PRODUCT=()
-
 VPN_PATTERN='(wireguard|vpn)'
 
 function initialization() {
-	source "$DIR/ronema.conf"
-	source "$DIR/languages/${LANGUAGE}.lang"
+	source "$DIR/ronema.conf" || \
+		source "${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/ronema.conf" || \
+			exit
 
-	RASI_DIR="$DIR/themes/${THEME}"; 
-	ICON_DIR="$DIR/icons"; 
-	
+	source "$DIR/languages/${LANGUAGE}.lang" || \
+		source "${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/languages/${LANGUAGE}.lang" || \
+			exit
+	{ 
+		[[ -f "$DIR/themes/${THEME}" ]] && \ 
+			RASI_DIR="$DIR/themes/${THEME}"; 
+	} || { 
+		[[ -f "${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/themes/${THEME}" ]] && \
+			RASI_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/themes/${THEME}"; 
+	} || exit
+
+	{ 
+		[[ -d "$DIR/icons" ]] && ICON_DIR="$DIR/icons" ; 
+	} || { 
+		[[ -d "${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/icons" ]] && \
+			ICON_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/rofi/network-manager/ronema/icons" ; 
+	} || exit
+
 	for i in "${WIRELESS_INTERFACES[@]}"; do 
 		WIRELESS_INTERFACES_PRODUCT+=("$(nmcli -f general.product device show "$i" | awk '{print $2}')"); 
 	done
@@ -31,50 +42,23 @@ function initialization() {
 }
 
 function notification() {
-	[[ "$NOTIFICATIONS" == "true" && \
-		-x "$(command -v notify-send)" ]] && {
-		
-		[[ $NOTIFICATIONS_ICONS == true ]] && \
-			ICON="-i $ICON_DIR/$3" || ICON=""
+	[[ "$NOTIFICATIONS" == "true" && -x "$(command -v notify-send)" ]] && {
+		[[ $NOTIFICATIONS_ICONS == true ]] &&  ICON="-i $ICON_DIR/$3" || ICON=""
 		notify-send -r "5" -u "normal" $1 "$2" $ICON
-
 	}
 }
-
 function wireless_interface_state() {
 
 	[[ ${#WIRELESS_INTERFACES[@]} -eq "0" ]] || {
-		
-		ACTIVE_SSID=$(
-			nmcli device status | \
-				grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | \
-					awk '{print $4}'
-		)
-
-		WIFI_CON_STATE=$(
-			nmcli device status | \
-				grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | \
-					awk '{print $3}'
-		)
-
-		{ 
-			[[ "$WIFI_CON_STATE" == "unavailable" ]] && \ 
-				WIFI_LIST="${SELECTION_WIFI_DISABLED}" && \
-					WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_WIFI_ON}" && \
-						OPTIONS="${WIFI_LIST}\n${WIFI_SWITCH}\n${SELECTION_PREFIX}${SELECTION_SCAN}\n";
-		} || { 
-			[[ "$WIFI_CON_STATE" =~ "connected" ]] && {
-				PROMPT=${WIRELESS_INTERFACES_PRODUCT[WLAN_INT]}[${WIRELESS_INTERFACES[WLAN_INT]}]
-				WIFI_LIST=$(nmcli --fields SSID,SECURITY,BARS device wifi list ifname "${WIRELESS_INTERFACES[WLAN_INT]}")
-
-				wifi_list
-
-				[[ "$ACTIVE_SSID" == "--" ]] && \
-					WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_SCAN}\n${SELECTION_PREFIX}${SELECTION_MANUAL_HIDDEN}\n${SELECTION_PREFIX}${SELECTION_WIFI_OFF}" || \
-					WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_SCAN}\n${SELECTION_PREFIX}${SELECTION_DISCONECT}\n${SELECTION_PREFIX}${SELECTION_MANUAL_HIDDEN}\n${SELECTION_PREFIX}${SELECTION_WIFI_OFF}"
-					OPTIONS="${WIFI_LIST}\n${WIFI_SWITCH}\n"
-			}; 
-		}
+		ACTIVE_SSID=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $4}')
+		WIFI_CON_STATE=$(nmcli device status | grep "^${WIRELESS_INTERFACES[WLAN_INT]}." | awk '{print $3}')
+		{ [[ "$WIFI_CON_STATE" == "unavailable" ]] && WIFI_LIST="${SELECTION_WIFI_DISABLED}" && WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_WIFI_ON}" && OPTIONS="${WIFI_LIST}\n${WIFI_SWITCH}\n${SELECTION_PREFIX}${SELECTION_SCAN}\n"; } || { [[ "$WIFI_CON_STATE" =~ "connected" ]] && {
+			PROMPT=${WIRELESS_INTERFACES_PRODUCT[WLAN_INT]}[${WIRELESS_INTERFACES[WLAN_INT]}]
+			WIFI_LIST=$(nmcli --fields SSID,SECURITY,BARS device wifi list ifname "${WIRELESS_INTERFACES[WLAN_INT]}")
+			wifi_list
+			[[ "$ACTIVE_SSID" == "--" ]] && WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_SCAN}\n${SELECTION_PREFIX}${SELECTION_MANUAL_HIDDEN}\n${SELECTION_PREFIX}${SELECTION_WIFI_OFF}" || WIFI_SWITCH="${SELECTION_PREFIX}${SELECTION_SCAN}\n${SELECTION_PREFIX}${SELECTION_DISCONECT}\n${SELECTION_PREFIX}${SELECTION_MANUAL_HIDDEN}\n${SELECTION_PREFIX}${SELECTION_WIFI_OFF}"
+			OPTIONS="${WIFI_LIST}\n${WIFI_SWITCH}\n"
+		}; }
 	}
 }
 function ethernet_interface_state() {

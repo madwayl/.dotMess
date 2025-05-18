@@ -59,7 +59,7 @@ case "$next_profile" in
             pkill -f "/usr/bin/wl-mirror -S --fullscreen-output DP-1 --fullscreen eDP-1"
             rm -f /run/user/1000/pipectl.1000.wl-present.pipe
         fi
-        $HOME/.bin/shikanectl switch $next_profile
+        ~/.nix-profile/bin/shikanectl switch $next_profile
         ;;
     mirror)
         /usr/bin/wl-mirror -S --fullscreen-output DP-1 --fullscreen eDP-1
