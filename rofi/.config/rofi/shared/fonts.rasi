@@ -10,3 +10,7 @@
 * {
     font: "FantasqueSansM Nerd Font Propo 12";
 }
+
+// element-text selected.active{
+//     font: "FantasqueSansM Nerd Font Propo bold 12";
+// }

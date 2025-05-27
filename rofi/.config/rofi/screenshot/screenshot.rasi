@@ -32,19 +32,19 @@ USE_ICON=YES
 /*****----- Main Window -----*****/
 window {
     transparency:                "screenshot";
-    location:                    east;
-    anchor:                      east;
+    location:                    south;
+    anchor:                      south;
     fullscreen:                  false;
-    width:                       120px;
-    x-offset:                    -20px;
-    y-offset:                    0px;
+    width:                       800px;
+    x-offset:                    0px;
+    y-offset:                    -50px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
     border-radius:               4px;
     border-color:                @selected;
     cursor:                      "default";
-    background-color:            Beige/5%;
+    background-color:            @window-background;
 }
 
 /*****----- Main Box -----*****/
@@ -54,7 +54,7 @@ mainbox {
     margin:                      0px;
     padding:                     15px;
     background-color:            transparent;
-    children:                    [ "listview" ];
+    children:                    [ "inputbar", "listview" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -67,7 +67,7 @@ inputbar {
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [ "textbox-prompt-colon", "prompt"];
+    children:                    [ "textbox-prompt-colon", "prompt", "message"];
 }
 
 textbox-prompt-colon {
@@ -76,14 +76,17 @@ textbox-prompt-colon {
     padding:                     10px 13px;
     border-radius:               0px;
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @background-alt;
+    border-radius:               4px;
 }
+
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               0px;
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @background-alt;
+    text-color:                  @selected;
+    border-radius:               4px;
 }
 
 /*****----- Message -----*****/
@@ -96,23 +99,27 @@ message {
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
+    border-radius:               4px;
 }
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
+    border-radius:               4px;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
+    // set in Script File
     columns:                     6;
     lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
-    layout:                      vertical;
-    
+    flow:                       horizontal;
+    layout:                     horizontal;
+
     spacing:                     15px;
     background-color:            transparent;
     cursor:                      "default";

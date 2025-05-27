@@ -21,9 +21,10 @@ configuration {
     me-accept-entry: "!MousePrimary";
 }
 
+
 /*****----- Global Properties -----*****/
-@import                          ".config/rofi/shared/colors.rasi"
-@import                          ".config/rofi/shared/fonts.rasi"
+@import                          "../shared/colors.rasi"
+@import                          "../shared/fonts.rasi"
 
 /*****----- Main Window -----*****/
 window {

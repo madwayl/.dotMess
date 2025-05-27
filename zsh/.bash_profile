@@ -7,7 +7,5 @@ fi
 
 # User specific environment and startup programs
 
-pactl load-module module-switch-on-connect
-
 # Display Managerfirefox  -P
 if [ -e /home/mzaql/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mzaql/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

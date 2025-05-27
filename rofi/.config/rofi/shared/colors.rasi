@@ -19,4 +19,5 @@
 
 * {
 	transparent:					#ffffff00;
+	window-background:				 Black/35%;
 }

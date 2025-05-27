@@ -111,8 +111,6 @@ prompt {
     background-color:            @active;
     text-color:                  @background;
     text-style:                  bold;
-    
-    
 }
 
 /*****----- Message -----*****/

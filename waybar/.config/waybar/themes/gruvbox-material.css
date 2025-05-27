@@ -1,0 +1,61 @@
+/* Colors (original-gruvbox) */
+
+@define-color o-black #181818;
+@define-color o-red #cc241d;
+@define-color o-green #98971a;
+@define-color o-yellow #d79921;
+@define-color o-blue #458588;
+@define-color o-purple #b16286;
+@define-color o-aqua #689d6a;
+@define-color o-gray #a89984;
+@define-color o-brgray #928374;
+@define-color o-brred #fb4934;
+@define-color o-brgreen #b8bb26;
+@define-color o-bryellow #fabd2f;
+@define-color o-brblue #83a598;
+@define-color o-brpurple #d3869b;
+@define-color o-braqua #8ec07c;
+@define-color o-white #ebdbb2;
+@define-color o-bg2 #504945;
+
+/* Gruvbox Material Scheme */
+
+@define-color bg_dim #141617;
+@define-color bg0 #1d2021;
+@define-color bg1 #282828;
+@define-color bg2 #282828;
+@define-color bg3 #3c3836;
+@define-color bg4 #3c3836;
+@define-color bg5 #504945;
+
+@define-color bg_statusline1 #282828;
+@define-color bg_statusline2 #32302f;
+@define-color bg_statusline3 #504945;
+
+@define-color bg_diff_green #32361a;
+@define-color bg_visual_green #333e34;
+@define-color bg_diff_red #3c1f1e;
+@define-color bg_visual_red #442e2d;
+@define-color bg_diff_blue #0d3138;
+@define-color bg_visual_blue #2e3b3b;
+@define-color bg_visual_yellow #473c29;
+@define-color bg_current_word #32302f;
+
+@define-color fg0 #e2cca9;
+@define-color fg1 #e2cca9;
+
+@define-color red #f2594b;
+@define-color orange #f28534;
+@define-color yellow #e9b143;
+@define-color green #b0b846;
+@define-color aqua #8bba7f;
+@define-color blue #80aa9e;
+@define-color purple #d3869b;
+
+@define-color bg_red #db4740;
+@define-color bg_green #b0b846;
+@define-color bg_yellow #e9b143;
+
+@define-color grey0 #7c6f64;
+@define-color grey1 #928374;
+@define-color grey2 #a89984;

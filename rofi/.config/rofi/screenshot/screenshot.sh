@@ -20,8 +20,8 @@ mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
 	# win_width='400px'
 # elif [[ "$theme" == *'type-3'* ]]; then
 	list_col='1'
-	list_row='5'
-	win_width='120px'
+	list_row='6'
+	win_width='513px'
 # elif [[ "$theme" == *'type-5'* ]]; then
 # 	list_col='1'
 # 	list_row='5'
@@ -77,7 +77,7 @@ rofi_cmd() {
 		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
 		-theme-str 'textbox-prompt-colon {str: "";}' \
 		-dmenu \
-		-p "$prompt" \
+		-p "$mesg" \
 		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme} \
@@ -112,6 +112,9 @@ notify_view() {
             rm ${dir}/"$file"
 			${notify_cmd_shot} "Screenshot Deleted." 
 			;;
+		*)
+			exit
+			;;
     esac
 	# if [[ -e "$dir/$file" ]]; then
 	# 	${notify_cmd_shot} "Screenshot Saved."
@@ -130,7 +133,7 @@ countdown () {
 
 # 1
 shotnow () {
-	wl-copy < $(grimshot save output ${dir}/${file})
+	wl-copy < $(grimblast save output ${dir}/${file})
 	notify_view
 }
 
@@ -148,7 +151,7 @@ shot10 () {
 
 # 2
 shotwin () {
-	wl-copy < $(grimshot save anything ${dir}/${file})
+	wl-copy < $(grimblast save area ${dir}/${file})
 	notify_view
 }
 
@@ -156,8 +159,8 @@ shotwin () {
 cast() {
 	if [[ ! -e '/tmp/cast' ]]; then
 		file="Screenshot_${time}.mp4"
-		output=$(swaymsg -t get_outputs | jq -r '.[] | select(.focused == true) | .name')
-		wf-recorder --file=${dir}/${file} --output=$output &
+		output=$(hyprctl -j monitors | jq --raw-output '.[] | select(.focused==true) | .name')
+		wl-screenrec --filename=${dir}/${file} --output=$output --low-power=off > /dev/null 2>&1 &
 		echo "$!" > '/tmp/cast'
 	else
 		kill $(cat /tmp/cast)
@@ -169,7 +172,7 @@ cast() {
 castarea() {
 	if [[ ! -e '/tmp/castarea' ]]; then
 		file="Screenshot_${time}.mp4"
-		wf-recorder -g "$(slurp)" --file=${dir}/${file} &
+		wl-screenrec -g "$(slurp)" --filename=${dir}/${file} --low-power=off > /dev/null 2>&1 &
 		echo "$!" > '/tmp/castarea'
 	else
 		kill $(cat /tmp/castarea)
@@ -179,7 +182,7 @@ castarea() {
 
 # 5
 shotall() {
-	wl-copy < $(grimshot save screen ${dir}/${file})
+	wl-copy < $(grimblast save screen ${dir}/${file})
 	notify_view
 }
 
