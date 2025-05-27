@@ -1,0 +1,300 @@
+/**
+ *
+ * ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄              
+ * ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄              
+ * ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀              
+ * ░█▀▀░█▀▀░█▀▀░░░█▀▀░▀█▀░█░█░█░░░█▀▀░█▀▀
+ * ░█░░░▀▀█░▀▀█░░░▀▀█░░█░░░█░░█░░░█▀▀░▀▀█
+ * ░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀░░▀░░░▀░░▀▀▀░▀▀▀░▀▀▀
+ *
+ */
+
+@import "themes/gruvbox-material.css";
+@import "themes/animations.css";
+
+* {
+    /* all: initial; */
+    font-family:
+        "FantasqueSansM Nerd Font Propo", "Font Awesome 6 Free",
+        "Font Awesome 6 Brands", FontAwesome, monospace;
+    font-size: 14px;
+    font-weight: 900;
+    /* Reset GTK Theme */
+    /* border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; */
+}
+
+window#waybar {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
+    /* background-color: rgba(22, 22, 22, 0.75); */
+    border-bottom: 0px;
+    color: @white;
+    transition-property: background-color;
+    transition-duration: .5s;
+    margin: 5px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+
+/* 
+window#waybar.empty {
+    background-color: transparent;
+}
+
+window#waybar.solo {
+    background-color: #FFFFFF;
+} */
+
+.modules-right {
+    margin: 10px 10px 10px 0;
+}
+
+.modules-center {
+    margin: 10px 0 10px 0;
+}
+
+.modules-left {
+    margin: 10px 0 10px 10px;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+}
+
+
+/* All Modules - Common Setup */
+#cava,
+#submap,
+#mpris,
+#window,
+#idle_inhibitor,
+#clock,
+#battery,
+#backlight,
+#wireplumber,
+#pulseaudio,
+#custom-powermenu,
+#custom-recording,
+#custom-screen-sharing,
+#tray,
+#custom-notification,
+#network,
+#bluetooth {
+    padding: 7px 12.5px;
+    background: linear-gradient(60deg, @bg_dim, @bg0);
+    color: @fg0;
+    border-radius: 3px;
+}
+
+#idle_inhibitor,
+#clock,
+#battery,
+#backlight,
+#wireplumber,
+#pulseaudio,
+#custom-powermenu,
+#custom-recording,
+#custom-screen-sharing,
+#tray,
+#custom-notification,
+#network,
+#bluetooth {
+    background: linear-gradient(120deg, @bg_dim, @bg0);
+}
+
+#window {
+    background: linear-gradient(270deg, @bg_dim, @bg0);
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+/* 
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ebdbb2;
+} */
+
+/* Workspaces */
+
+#workspaces {
+    background-color: @bg_dim;
+    border-radius: 3px;
+}
+
+#workspaces button {
+    padding: 2px 12.5px;
+    background-color: transparent;
+    color: @fg0;
+    border-radius: 0;
+
+    /* nice color transitions for workspace buttons */
+    transition-property: background-color;
+    transition-duration: .75s;
+    min-width: 0;
+    background: linear-gradient(60deg, @o-black 20%, @bg_dim 80%);
+    transition: color 0.5s cubic-bezier(.55, -0.68, .48, 1.682), background-color 0.5s cubic-bezier(.55, -0.68, .48, 1.682), border 0.5s ease-in-out;
+}
+
+#workspaces button.active {
+    /* transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682); */
+    color: @bg_dim;
+    background: linear-gradient(60deg, @o-yellow 0%, @yellow 80%);
+}
+
+#workspaces button.active:hover {
+    color: @bg_visual_yellow;
+    background: linear-gradient(90deg, @o-yellow 0%, @yellow 60%);
+}
+
+#workspaces button:hover {
+    color: @o-bryellow;
+}
+
+#workspaces button:hover:nth-child(1),
+#workspaces button.active:nth-child(1),
+#workspaces button.active:hover:nth-child(1),
+#workspaces button:nth-child(1) {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+#workspaces button:hover:nth-last-child(1),
+#workspaces button.active:nth-last-child(1),
+#workspaces button.active:hover:nth-last-child(1),
+#workspaces button:nth-last-child(1) {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#workspaces button.urgent {
+    animation: urgent-rotateGradient 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+/* Submap */
+
+#submap {
+    background: linear-gradient(60deg, @bg_green 30%, @green 70%);
+    color: @bg_dim;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+#cava {
+    padding: 0 5px;
+}
+
+/* Battery */
+
+#battery.charging,
+#battery.plugged {
+    animation: battery-rotateGradient 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    color: @bg_dim;
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @fg0;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: @bg_dim;
+}
+
+#wireplumber.muted {
+    color: @aqua;
+}
+
+/* Tray */
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @red;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* MPRIS */
+
+#mpris {
+    color: @yellow;
+    /* color: @black; */
+    transition-property: color;
+    transition-duration: .75s;
+}
+
+#mpris.playing {
+    color: @bg_dim;
+    animation: mpris-linearGradient 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* color: @black; */
+}
+
+#pulseaudio {
+    background-color: @bg_dim;
+    color: @yellow;
+}
+
+#clock {
+    color: @green;
+}
+
+#custom-powermenu {
+    color: @bg_dim;
+    background: linear-gradient(270deg, @o-red 0%, @red 80%);
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-powermenu:hover {
+    background: linear-gradient(240deg, @o-red 0%, @red 60%);
+}
+
+#custom-recording {
+    background-color: @red;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-screen-sharing {
+    color: @red;
+    background-color: @fg;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+}

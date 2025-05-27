@@ -1,0 +1,130 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+console_title_template = '{{ .Folder }}'
+terminal_background = 'p:t-background'
+version = 3
+final_space = true
+
+[palette]
+  main-bg = '#1d2021'            # Dark hard background
+  main-fg = '#ebdbb2'            # Default foreground (light beige)
+  t-background = 'p:main-bg'     # Terminal background (pointer to main-bg)
+
+  # Syntax / UI Tokens
+  blue-black = '#3c3836'         # Dark gray-blue used for selection or inactive
+  celeste-blue = '#83a598'       # Soft desaturated cyan (types / functions)
+  light-sky-blue = '#83a598'     # Same as celeste-blue, alternative name
+  pastal-grey = '#665c54'        # Used for comments / subtle UI
+  pistachio-green = '#b8bb26'    # Bright green (identifiers, success messages)
+  white-blue = '#d5c4a1'         # Off-white, hint of blue (light foreground)
+
+  # 16-color terminal palette
+  terminal-black = '#1d2021'     # Same as background
+  terminal-red = '#fb4934'       # Error / critical
+  terminal-green = '#a9b665'     # Less saturated green than pistachio
+  terminal-yellow = '#fabd2f'    # Bright yellow (warnings, keywords)
+  terminal-blue = '#458588'      # Muted deep blue (info / functions)
+  terminal-magenta = '#d3869b'   # Warm pink/magenta (strings / numbers)
+  terminal-cyan = '#8ec07c'      # Balanced teal (punctuation / classes)
+  terminal-white = '#ebdbb2'     # Default light foreground
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = false
+
+## Real Prompt
+# Block 1 [LEFT]
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = 'blue'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    foreground = 'p:blue-black'
+    type = 'git'
+    style = 'plain'
+    template = '{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+
+# Block 1 [RIGHT]
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hide'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'yellow'
+    background = 'transparent'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      style = 'roundrock'
+      threshold = 1000
+
+
+# Block 2 [LEFT]
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '$'
+    foreground = 'green'
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      '{{if gt .Code 0}}red{{end}}',
+      '{{if eq .Code 0}}cyan{{end}}',
+    ]
+
+# Block 2 [RIGHT]
+
+[[blocks]]
+  type = 'rprompt'
+  alignment = 'right'
+
+  [[blocks.segments]]
+    time_format = "15:04:05"
+    template = '{{ .CurrentDate | date .Format }}'
+    foreground = 'magenta'
+    style = 'plain'
+    type = 'time'
+
+# OTHERS
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}red{{end}}",
+    "{{if eq .Code 0}}cyan{{end}}",
+  ]
+  background = 'transparent'
+  template = '$ '
+  filler = '{{ .Code }} {{ .Shell }} >'
+
+[secondary_prompt]
+  foreground = 'black'
+  background = 'transparent'
+  template = '$> '
+

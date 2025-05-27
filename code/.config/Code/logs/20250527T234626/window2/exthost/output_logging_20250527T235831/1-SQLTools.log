@@ -1,0 +1,121 @@
+[1748370513300] INFO  (ext): SQLTools is starting
+[1748370513304] INFO  (ext): initializing language client...
+[1748370513305] INFO  (ext): Registering client for languages [{"scheme":"sqltools"},{"language":"sql","scheme":"untitled"},{"language":"sql","scheme":"file"},{"language":"sql","scheme":"sqltools"}]
+    ns: "lc"
+[1748370513312] INFO  (ext): loading plugins...
+[1748370513313] INFO  (ext): registering Formatter Plugin.
+    plugin: {
+      "name": "Formatter Plugin"
+    }
+[1748370513313] INFO  (ext): registering Connection Manager Plugin.
+    plugin: {
+      "name": "Connection Manager Plugin"
+    }
+[1748370513314] INFO  (ext): registering CodeLens Plugin.
+    plugin: {
+      "name": "CodeLens Plugin",
+      "registeredLanguages": []
+    }
+[1748370513315] INFO  (ext): registering Dependency Manager Plugin.
+    plugin: {
+      "name": "Dependency Manager Plugin",
+      "installingDrivers": []
+    }
+[1748370513318] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370513319] INFO  (ext): registering History Manager Plugin.
+    plugin: {
+      "name": "History Manager Plugin"
+    }
+[1748370513320] INFO  (ext): registering Bookmarks Manager Plugin.
+    plugin: {
+      "name": "Bookmarks Manager Plugin"
+    }
+[1748370513321] INFO  (ext): registering Authentication Provider Plugin.
+    plugin: {
+      "name": "Authentication Provider Plugin",
+      "isRegistered": false
+    }
+[1748370513321] INFO  (ext): registering Object Drop-in Provider (plugin).
+    plugin: {
+      "type": "plugin",
+      "name": "Object Drop-in Provider",
+      "isRegistered": false
+    }
+[1748370513322] INFO  (ext): SQLTools activation completed. 22.578329 ms
+[1748370513322] INFO  (ext): Formatter Plugin registered!
+[1748370513322] INFO  (ext): CodeLens Plugin registered!
+[1748370513322] INFO  (ext): Dependency Manager Plugin registered!
+[1748370513323] INFO  (ext): Connection Manager Plugin registered!
+[1748370513323] INFO  (ext): History Manager Plugin registered!
+[1748370513323] INFO  (ext): Bookmarks Manager Plugin registered!
+[1748370513323] INFO  (ext): Authentication Provider Plugin registered!
+[1748370513323] INFO  (ext): Object Drop-in Provider (plugin) registered!
+[1748370513453] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370513529] INFO  (ext): registering MySQL/MariaDB/TiDB Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-mysql",
+      "name": "MySQL/MariaDB/TiDB Plugin",
+      "type": "driver"
+    }
+[1748370513530] INFO  (ext): registering PostgreSQL/Cockroach Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-pg",
+      "name": "PostgreSQL/Cockroach Plugin",
+      "type": "driver"
+    }
+[1748370513602] INFO  (ls): SQLTools Server started!
+===============================
+Using node runtime?: no
+ExecPath: /opt/visual-studio-code/code 
+===============================
+[1748370514709] INFO  (ext): LanguageClient ready
+    ns: "lc"
+[1748370514725] INFO  (ext): EXECUTING COMMAND => sqltools.refreshTree
+[1748370514726] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370514707] INFO  (ls): Initialized with node version:v20.19.0
+[1748370514711] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1748370514711] INFO  (ls): request to register plugin: "/home/madwayl/.vscode/extensions/mtxr.sqltools-driver-mysql-0.6.4/out/ls/plugin.js"
+[1748370514847] INFO  (ls): Driver mysql registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514848] INFO  (ls): Driver mariadb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514848] INFO  (ls): Driver tidb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514849] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1748370514849] INFO  (ls): request to register plugin: "/home/madwayl/.vscode/extensions/mtxr.sqltools-driver-pg-0.5.5/out/ls/plugin.js"
+[1748370514898] INFO  (ls): Driver postgresql registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514899] INFO  (ls): Driver aws redshift registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514899] INFO  (ls): Driver cockroachdb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748370514966] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370515101] INFO  (ext): MySQL/MariaDB/TiDB Plugin (driver) registered!
+[1748370515182] INFO  (ext): PostgreSQL/Cockroach Plugin (driver) registered!
+[1748370515361] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370516760] INFO  (ext): EXECUTING COMMAND => sqltools.refreshTree
+[1748370516760] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370518564] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370520389] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370522490] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370524788] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370526564] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748370527269] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"

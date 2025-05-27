@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+
+display="$1"
+operation=$2
+value=$3
+echo 'start'
+
+case $display in
+"all")
+    brightnessctl --device='intel_backlight' s ${value}%${operation}
+    #!/usr/bin/env bash
+
+    monitors=$(ddcutil detect | awk '
+        /I2C bus:/ {
+            match($3, /i2c-([0-9]+)/, m)
+            busnum = m[1]
+        }
+        /Model:/ {model = $2}
+        /Serial number:/ {
+            serial = $3
+            printf "{ \"bus\": %s, \"model\": \"%s\", \"serial\": \"%s\" }\n", busnum, model, serial
+        }' | jq -s .
+    )
+
+    jq -c '.[]' $monitors | while read i; do
+        # do stuff with $i
+        ddcutil --sleep-multiplier=0.1 --skip-ddc-checks --bus=$bus setvcp 10 ${operation} ${value}
+    done
+
+    for item in "${$monitors[@]}"; do
+        serial=$(jq --raw-output '.serial' <<< "$item")
+
+        if [[ $serial -eq "" ]]; 
+        model=$(jq --raw-output '.model' <<< "$item")
+        bus=$(jq --raw-output '.bus' <<< "$item")
+        ddcutil --sleep-multiplier=0.1 --skip-ddc-checks --bus=$bus setvcp 10 ${operation} ${value}
+        # do your stuff
+    done
+
+    ;;
+"focused")
+    focused_monitor = $(hyprctl -j monitors | jq '.[] | select(.focused==true) | .name')
+    if [[ "$focused_monitor"  == "eDP-1" ]]; then
+        brightness=$(brightnessctl --device='intel_backlight' s ${operation}${value}% | awk '/Current brightness/ {gsub(/[(%)]/,"",$4); print $4}')
+    else
+        # Identify and retrieve the serial number of the display which has the focus.
+        display_serial_num=$(hyprctl -j monitors | jq -r '.[] | select(.focused==true) | .serial')
+        ddcutil --sleep-multiplier=0.1 --skip-ddc-checks --sn $display_serial_num setvcp 10 ${operation} ${value}
+        # get brightness value
+        brightness=$(ddcutil --sn $display_serial_num getvcp 10 | grep -oP 'current value =\s*\K\d+')
+    fi
+    ;;
+*)
+    echo "wrong usage\Value Passed : $@" ;;
+esac
+
+# Then we change its brightness level.
+# ddcutil --sn "$display_serial_num" setvcp 10 $@
+
+
+# makoctl dismiss -g app-name="ddc-brightness"
+# Notification Sender
+# notify-send \
+#     --app-name="ddc-brightness" \
+#     --urgency=low \
+#     --expire-time=1000 \
+#     --hint int:value:$brightness \
+#     "Brightness" \
+#     "Display: $focused_monitor Level: $brightness"

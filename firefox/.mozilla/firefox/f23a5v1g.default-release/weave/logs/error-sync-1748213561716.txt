@@ -1,0 +1,220 @@
+1748213285795	Sync.LogManager	DEBUG	Flushing file log
+1748213285796	Sync.LogManager	DEBUG	Log cleanup threshold time: 1747349285796
+1748213285797	Sync.LogManager	DEBUG	Done deleting files.
+1748213287919	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213287919	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213287922	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213287923	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213287923	Sync.Service	INFO	Starting sync at 2025-05-26 04:18:07 in browser session QeVl2r7C5Suw
+1748213287923	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213287927	Sync.Status	INFO	Resetting Status.
+1748213287927	Sync.Status	DEBUG	Status.service: error.sync.failed => success.status_ok
+1748213287928	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213288614	Sync.Resource	DEBUG	GET success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/info/collections
+1748213288614	Sync.Service	DEBUG	Fetching server configuration: https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/info/configuration
+1748213288614	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213289786	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748213289786	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213289787	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213289788	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213291480	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213291480	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213291483	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213291484	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213291484	Sync.Service	INFO	Starting sync at 2025-05-26 04:18:11 in browser session QeVl2r7C5Suw
+1748213291484	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213291484	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213316699	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748213316700	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213316702	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213316705	Sync.SyncScheduler	DEBUG	Woke from sleep.
+1748213316706	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213316709	Sync.SyncScheduler	DEBUG	Online, will sync in 2s.
+1748213316709	Sync.SyncScheduler	DEBUG	Next sync in 2000 ms. (why=wake_notification)
+1748213316711	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213318712	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213318712	Sync.Service	INFO	Starting sync at 2025-05-26 04:18:38 in browser session QeVl2r7C5Suw
+1748213318713	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213318713	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213320384	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213322265	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213322266	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213322268	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213322271	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213322271	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213322271	Sync.Service	INFO	Starting sync at 2025-05-26 04:18:42 in browser session QeVl2r7C5Suw
+1748213322272	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213322272	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213364521	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748213364522	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213364524	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213364527	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213370386	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213370386	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213370392	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213370393	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213370393	Sync.Service	INFO	Starting sync at 2025-05-26 04:19:30 in browser session QeVl2r7C5Suw
+1748213370393	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213370393	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213371722	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748213371722	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213371723	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213371725	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213372925	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213372925	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213372929	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213372930	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213372930	Sync.Service	INFO	Starting sync at 2025-05-26 04:19:32 in browser session QeVl2r7C5Suw
+1748213372930	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213372930	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213373983	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213400762	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213463777	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748213463777	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748213463779	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213463781	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213463787	Sync.SyncScheduler	DEBUG	Woke from sleep.
+1748213463788	Sync.SyncScheduler	DEBUG	Online, will sync in 2s.
+1748213463789	Sync.SyncScheduler	DEBUG	Next sync in 2000 ms. (why=wake_notification)
+1748213463789	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213465913	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213465913	Sync.Service	INFO	Starting sync at 2025-05-26 04:21:05 in browser session QeVl2r7C5Suw
+1748213465913	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213465914	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213476617	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748213476617	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748213476620	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748213476623	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213476624	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748213476624	Sync.Service	INFO	Starting sync at 2025-05-26 04:21:16 in browser session QeVl2r7C5Suw
+1748213476624	Sync.Service	DEBUG	Exception calling anonymous function: LockException: Could not acquire lock. Label: "service.js: sync".(resource://services-sync/util.sys.mjs:43:5) JS Stack trace: LockException@util.sys.mjs:43:5
+throwLockException@util.sys.mjs:127:11
+WrappedLock@util.sys.mjs:141:15
+_lockedSync@service.sys.mjs:1368:6
+sync/<@service.sys.mjs:1337:18
+WrappedCatch@util.sys.mjs:112:27
+sync@service.sys.mjs:1338:7
+1748213476625	Sync.Service	INFO	Cannot start sync: already syncing?
+1748213477683	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213479474	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213482506	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213483279	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748213484530	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213485615	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213487768	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213487827	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213487875	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213487883	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213488654	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213488654	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213488657	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213488661	Sync.Engine.Tabs	INFO	Posting 1 records of 9431 bytes with batch=true
+1748213488662	FirefoxAccounts	DEBUG	FxAccountsProfileClient: Requested profile
+1748213488662	FirefoxAccounts	DEBUG	getOAuthToken enter
+1748213488662	FirefoxAccounts	TRACE	getCachedToken returning cached token
+1748213488662	FirefoxAccounts	DEBUG	getOAuthToken returning a cached token
+1748213488662	Services.Common.RESTRequest	DEBUG	GET request to https://profile.accounts.firefox.com/v1/profile
+1748213488663	Sync.Collection	DEBUG	POST Length: 9431
+1748213489320	Services.Common.RESTRequest	DEBUG	GET https://profile.accounts.firefox.com/v1/profile 304
+1748213489387	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213489389	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213505706	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213505811	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213510728	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213510728	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213510732	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213510733	Sync.Engine.Tabs	INFO	Posting 1 records of 9431 bytes with batch=true
+1748213510733	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213510734	Sync.Collection	DEBUG	POST Length: 9431
+1748213511229	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213511233	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213515970	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213516030	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213516502	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213519534	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213520764	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213520976	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213520976	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213520979	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213520980	Sync.Engine.Tabs	INFO	Posting 1 records of 9367 bytes with batch=true
+1748213520981	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213520982	Sync.Collection	DEBUG	POST Length: 9367
+1748213521313	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213521315	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213525659	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213525662	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213526668	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213530675	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213530675	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213530679	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213530681	Sync.Engine.Tabs	INFO	Posting 1 records of 9687 bytes with batch=true
+1748213530682	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213530682	Sync.Collection	DEBUG	POST Length: 9687
+1748213531757	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213531760	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213546699	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213546704	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213551883	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213551883	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213551890	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213551892	Sync.Engine.Tabs	INFO	Posting 1 records of 9451 bytes with batch=true
+1748213551893	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213551894	Sync.Collection	DEBUG	POST Length: 9451
+1748213552327	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213552330	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213554997	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213555122	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213559688	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213560004	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/open-uri
+1748213560004	FirefoxAccounts	TRACE	Getting command keys: https://identity.mozilla.com/cmd/close-uri/v1
+1748213560009	Sync.Engine.Tabs	INFO	Uploading 1 outgoing records
+1748213560012	Sync.Engine.Tabs	INFO	Posting 1 records of 9283 bytes with batch=true
+1748213560013	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748213560013	Sync.Collection	DEBUG	POST Length: 9283
+1748213560450	Sync.Collection	DEBUG	POST success 200 https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/storage/tabs?batch=true&commit=true
+1748213560452	Sync.Telemetry	INFO	Notification for engine tabs but it isn't current
+1748213560618	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change: scheduling a quick-write in 5000ms
+1748213560682	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213560722	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213560727	Sync.Engine.Tabs.Tracker	DEBUG	Detected a tab change, but a quick-write is already scheduled
+1748213561711	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/info/configuration failed: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1748213561711	Sync.Service	WARN	Failed to fetch info/configuration: [Exception... "Abort"  nsresult: "0x80004004 (NS_ERROR_ABORT)"  location: "<unknown>"  data: no] No traceback available
+1748213561711	Sync.ErrorHandler	ERROR	Sync encountered an error: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.sys.mjs:96:13) JS Stack trace: sync@enginesync.sys.mjs:96:13
+1748213561712	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1748213561716	Sync.Service	DEBUG	Exception calling anonymous function: Error: Aborting sync, remote setup failed(resource://services-sync/stages/enginesync.sys.mjs:96:13) JS Stack trace: sync@enginesync.sys.mjs:96:13

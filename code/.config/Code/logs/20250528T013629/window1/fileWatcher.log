@@ -1,0 +1,2 @@
+2025-05-28 01:36:40.391 [error] [File Watcher] Unexpected error: inotify_add_watch on '/home/madwayl/.dotfiles/code/.config/Code/logs/20250527T224750' failed: No such file or directory (EUNKNOWN) (path: /home/madwayl/.dotfiles)
+2025-05-28 01:36:40.391 [error] [File Watcher (universal)] inotify_add_watch on '/home/madwayl/.dotfiles/code/.config/Code/logs/20250527T224750' failed: No such file or directory

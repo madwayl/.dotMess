@@ -1,0 +1,19 @@
+2025-05-28 01:03:00.217 [info] ChatSessionStore: Migrating 0 chat sessions from storage service to file system
+2025-05-28 01:03:00.286 [info] Started local extension host with pid 16883.
+2025-05-28 01:03:00.510 [info] ComputeTargetPlatform: linux-x64
+2025-05-28 01:03:00.855 [info] Ignoring configured affinity for 'asvetliakov.vscode-neovim' because extension host(s) are already running. Reload window.
+2025-05-28 01:03:00.889 [info] Placing extension(s) asvetliakov.vscode-neovim on a separate extension host.
+2025-05-28 01:03:01.241 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-05-28 01:03:01.395 [info] Started local extension host with pid 16965.
+2025-05-28 01:03:03.060 [warning] 
+
+----------------------------------------------
+***	Installation has been modified on disk ***
+----------------------------------------------
+
+
+2025-05-28 01:03:03.159 [info] [perf] Render performance baseline is 17ms
+2025-05-28 01:04:30.589 [info] Importing Profile (Default): No keybindings to apply...
+2025-05-28 01:04:30.593 [info] Importing Profile (Default): No tasks to apply...
+2025-05-28 01:05:02.549 [info] Importing Profile (Default): No keybindings to apply...
+2025-05-28 01:05:02.556 [info] Importing Profile (Default): No tasks to apply...

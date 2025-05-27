@@ -1,0 +1,106 @@
+[1748373628691] INFO  (ext): SQLTools is starting
+[1748373628694] INFO  (ext): initializing language client...
+[1748373628695] INFO  (ext): Registering client for languages [{"scheme":"sqltools"},{"language":"sql","scheme":"untitled"},{"language":"sql","scheme":"file"},{"language":"sql","scheme":"sqltools"}]
+    ns: "lc"
+[1748373628700] INFO  (ext): loading plugins...
+[1748373628701] INFO  (ext): registering Formatter Plugin.
+    plugin: {
+      "name": "Formatter Plugin"
+    }
+[1748373628701] INFO  (ext): registering Connection Manager Plugin.
+    plugin: {
+      "name": "Connection Manager Plugin"
+    }
+[1748373628702] INFO  (ext): registering CodeLens Plugin.
+    plugin: {
+      "name": "CodeLens Plugin",
+      "registeredLanguages": []
+    }
+[1748373628703] INFO  (ext): registering Dependency Manager Plugin.
+    plugin: {
+      "name": "Dependency Manager Plugin",
+      "installingDrivers": []
+    }
+[1748373628705] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748373628705] INFO  (ext): registering History Manager Plugin.
+    plugin: {
+      "name": "History Manager Plugin"
+    }
+[1748373628706] INFO  (ext): registering Bookmarks Manager Plugin.
+    plugin: {
+      "name": "Bookmarks Manager Plugin"
+    }
+[1748373628707] INFO  (ext): registering Authentication Provider Plugin.
+    plugin: {
+      "name": "Authentication Provider Plugin",
+      "isRegistered": false
+    }
+[1748373628708] INFO  (ext): registering Object Drop-in Provider (plugin).
+    plugin: {
+      "type": "plugin",
+      "name": "Object Drop-in Provider",
+      "isRegistered": false
+    }
+[1748373628709] INFO  (ext): SQLTools activation completed. 17.209452 ms
+[1748373628709] INFO  (ext): Formatter Plugin registered!
+[1748373628709] INFO  (ext): CodeLens Plugin registered!
+[1748373628709] INFO  (ext): Dependency Manager Plugin registered!
+[1748373628710] INFO  (ext): Connection Manager Plugin registered!
+[1748373628710] INFO  (ext): History Manager Plugin registered!
+[1748373628710] INFO  (ext): Bookmarks Manager Plugin registered!
+[1748373628710] INFO  (ext): Authentication Provider Plugin registered!
+[1748373628710] INFO  (ext): Object Drop-in Provider (plugin) registered!
+[1748373628889] INFO  (ext): registering MySQL/MariaDB/TiDB Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-mysql",
+      "name": "MySQL/MariaDB/TiDB Plugin",
+      "type": "driver"
+    }
+[1748373628890] INFO  (ext): registering PostgreSQL/Cockroach Plugin (driver).
+    plugin: {
+      "extensionId": "mtxr.sqltools-driver-pg",
+      "name": "PostgreSQL/Cockroach Plugin",
+      "type": "driver"
+    }
+[1748373628896] INFO  (ls): SQLTools Server started!
+===============================
+Using node runtime?: no
+ExecPath: /opt/visual-studio-code/code 
+===============================
+[1748373628936] INFO  (ext): LanguageClient ready
+    ns: "lc"
+[1748373628934] INFO  (ls): Initialized with node version:v20.19.0
+[1748373628939] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1748373628939] INFO  (ls): request to register plugin: "/home/madwayl/.vscode/extensions/mtxr.sqltools-driver-mysql-0.6.4/out/ls/plugin.js"
+[1748373629091] INFO  (ls): Driver mysql registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629091] INFO  (ls): Driver mariadb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629091] INFO  (ls): Driver tidb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629091] INFO  (ls): REQUEST RECEIVED => ls/RegisterPlugin
+[1748373629091] INFO  (ls): request to register plugin: "/home/madwayl/.vscode/extensions/mtxr.sqltools-driver-pg-0.5.5/out/ls/plugin.js"
+[1748373629138] INFO  (ls): Driver postgresql registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629138] INFO  (ls): Driver aws redshift registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629138] INFO  (ls): Driver cockroachdb registered!
+    place: "driver-map"
+    ns: "ls-context"
+[1748373629852] INFO  (ext): MySQL/MariaDB/TiDB Plugin (driver) registered!
+[1748373629855] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748373629858] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748373629987] INFO  (ext): PostgreSQL/Cockroach Plugin (driver) registered!
+[1748373631052] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"
+[1748373631052] INFO  (ext): EXECUTING COMMAND => sqltools.refreshTree
+[1748373631052] INFO  (ext): Connection explorer changed. Will be updated.
+    ns: "conn-man:explorer"

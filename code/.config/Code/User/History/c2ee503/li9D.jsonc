@@ -1,0 +1,50 @@
+//
+// ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄                       
+// ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄                       
+// ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀                       
+// ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░░░░▀▀█░█▀▀░█▀█░█▀█░█▀▀
+// ░█░░░█░█░█░█░█▀▀░░█░░█░█░░░░░░█░▀▀█░█░█░█░█░█░░
+// ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀░░▀▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+//
+// -*- mode: jsonc -*-
+{
+  "layer": "bottom",
+  "output": [
+    "*"
+  ],
+  "position": "top",
+  // "height": 43,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "spacing": 6,
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces",
+    // "custom/media",
+    "cava",
+    "hyprland/submap",
+    // "sway/scratchpad",
+    "mpris"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "custom/screen-sharing",
+    "custom/recording",
+    "idle_inhibitor",
+    // "load",
+    // "wireplumber",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "backlight",
+    "tray",
+    "battery",
+    // "network",
+    // "bluetooth",
+    "clock",
+    "custom/powermenu"
+  ]
+}

@@ -1,0 +1,413 @@
+//
+// ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄                       
+// ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄                       
+// ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀                       
+// ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░░░░▀▀█░█▀▀░█▀█░█▀█░█▀▀
+// ░█░░░█░█░█░█░█▀▀░░█░░█░█░░░░░░█░▀▀█░█░█░█░█░█░░
+// ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀░░▀▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+//
+// -*- mode: jsonc -*-
+{
+  "ipc": true,
+  "layer": "overlay", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 30, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 6, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": [
+    "sway/workspaces",
+    // "custom/media",
+    "cava",
+    "sway/mode",
+    "sway/scratchpad",
+    "mpris"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    "custom/screen-sharing",
+    "custom/recording",
+    "idle_inhibitor",
+    // "load",
+    // "wireplumber",
+    // "pulseaudio",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "backlight",
+    "battery",
+    "tray",
+    // "network",
+    // "bluetooth",
+    "clock",
+    "custom/powermenu"
+  ],
+  "hyprland/workspaces": {
+    "rotate": 0,
+    "all-outputs": false,
+    "active-only": false,
+    "on-click": "activate",
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+    "persistent-workspaces": {}
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "rotate": 0,
+    "separate-outputs": true,
+    "rewrite": {
+      "madwayl@HotSauce:(.*)": "$1 ",
+      "(.*) — Mozilla Firefox": "$1 󰈹",
+      "(.*)Mozilla Firefox": "Firefox 󰈹",
+      "(.*) - Visual Studio Code": "$1 󰨞",
+      "(.*)Visual Studio Code": "Code 󰨞",
+      "(.*) - Code - OSS": "$1 󰨞",
+      "(.*)Code - OSS": "Code 󰨞",
+      "(.*) — Dolphin": "$1 󰉋",
+      "(.*)Spotify": "Spotify 󰓇",
+      "(.*)Steam": "Steam 󰓓",
+      "(.*) - Discord": "$1  ",
+      "(.*)Netflix": "Netflix 󰝆 ",
+      "(.*) — Google chrome": "$1  ",
+      "(.*)Google chrome": "Google chrome  ",
+      "(.*) — Github": "$1  ",
+      "(.*)Github": "Github ",
+      "(.*)Spotify Free": "Spotify 󰓇",
+      "(.*)Spotify Premiun": "Spotify 󰓇",
+    },
+    "max-length": 50
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  "cava": {
+    "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "framerate": 30,
+    "autosens": 1,
+    "bars": 14,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pipewire",
+    "source": "auto",
+    "stereo": true,
+    "bar_delimiter": 0,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "hide_on_silence": true,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+  "mpris": {
+    "format": "  {status_icon}  {dynamic}",
+    "interval": 1,
+    "dynamic-len": 40,
+    "status-icons": {
+      "playing": "▶",
+      "paused": "⏸",
+      "stopped": " "
+    },
+    "dynamic-order": [
+      "title",
+      "artist"
+    ]
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": [
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 5,
+    "consume-icons": {
+      "on": " "
+    },
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1"
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰈈",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 10
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "format": "{:%a %d %b %H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+    "interval": 1
+  },
+  "cpu": {
+    "format": "{usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "wireplumber": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% ",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "battery#bat2": {
+    "bat": "BAT2",
+    "interval": 1
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
+    }
+  },
+  // "pulseaudio": {
+  //   // "scroll-step": 1, // %, can be a float
+  //   "format": "{icon} {volume}% | {format_source}",
+  //   "format-bluetooth": "{volume}% {icon} {format_source}",
+  //   "format-bluetooth-muted": " {icon} {format_source}",
+  //   "format-muted": " {format_source}",
+  //   "format-source": "",
+  //   "format-source-muted": "",
+  //   "format-icons": {
+  //     "headphone": "",
+  //     "hands-free": "",
+  //     "headset": "",
+  //     "phone": "",
+  //     "portable": "",
+  //     "car": "",
+  //     "default": ["", "", ""]
+  //   },
+  //   "on-click": "pavucontrol",
+  //   "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  // },
+  "pulseaudio#input": {
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+  },
+  "pulseaudio#output": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "max-volume": 100,
+    "scroll-step": 2,
+    "smooth-scrolling-threshold": 1,
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
+  },
+  "custom/media": {
+    "format": "{0}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null", // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/powermenu": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/powermenu/powermenu.sh"
+  },
+  "custom/recording": {
+    "interval": 1,
+    "format": "󰻃 {}",
+    "tooltip": false,
+    "exec": "echo $(ps -p $(pgrep wf-recorder) -o etime= | xargs)",
+    "on-click": "pkill wf-recorder && rm /tmp/cast || rm /tmp/castarea",
+    "exec-if": "pgrep wf-recorder"
+  },
+  "custom/screen-sharing": {
+    "format": " {}", // Or "LIVE" or whatever icon/text you want
+    "tooltip": false,
+    "interval": 1,
+    "exec": "echo 'LIVE'", // Or a script that returns something dynamic
+    "exec-if": "~/.config/waybar/scripts/check-recording.sh",
+    "on-click": "pkill -f wf-recorder"
+  },
+  "bluetooth": {
+    // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+    // "format": "󰂯 {status}",
+    // format-* handles every state, so default format is not necessary.
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": "󰂱 {num_connections}",
+    // "tooltip-format": "{controller_alias}\t{controller_address}",
+    // "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    // "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "{icon} {essid}",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    // "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+    "format-ethernet": "󰈀",
+    "format-linked": "{ifname} 󰈀",
+    "format-disconnected": "󰤫",
+    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname}: {gwaddr} ({signalStrength}%)",
+    "interval": 5,
+    "on-click": "~/.config/rofi/network-manager/ronema/ronema",
+    "on-middle-click": "nm-connection-editor"
+  }
+}

@@ -1,0 +1,1 @@
+2025-05-27 23:58:31.729 [error] Failed to set sticky bit on /tmp/madwayl-code-zsh: Error: ENOENT: no such file or directory, chmod '/tmp/madwayl-code-zsh'

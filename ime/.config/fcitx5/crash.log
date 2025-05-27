@@ -1,0 +1,25 @@
+=========================
+Fcitx 5.1.12 -- Get Signal No.: 11
+Date: try "date -d @1748000143" if you are using GNU date ***
+ProcessID: 134695
+fcitx5(+0xebfc) [0x57f174e96bfc]
+/usr/lib/libc.so.6(+0x3def0) [0x749b4204def0]
+/usr/lib/libQt5Widgets.so.5(_ZN11QGridLayoutD2Ev+0xf0) [0x749b3b373eb0]
+/usr/lib/libQt5Widgets.so.5(_ZN11QGridLayoutD0Ev+0x16) [0x749b3b373f76]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD2Ev+0x18e) [0x749b3b37c19e]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD0Ev+0x16) [0x749b3b37c5a6]
+/usr/lib/libQt5Core.so.5(_ZN14QObjectPrivate14deleteChildrenEv+0x8d) [0x749b3a6da1cd]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD2Ev+0x379) [0x749b3b37c389]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD0Ev+0x16) [0x749b3b37c5a6]
+/usr/lib/libQt5Core.so.5(_ZN14QObjectPrivate14deleteChildrenEv+0x8d) [0x749b3a6da1cd]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD2Ev+0x379) [0x749b3b37c389]
+/usr/lib/libQt5Widgets.so.5(_ZN11QScrollAreaD0Ev+0x16) [0x749b3b4f6136]
+/usr/lib/libQt5Core.so.5(_ZN14QObjectPrivate14deleteChildrenEv+0x8d) [0x749b3a6da1cd]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD2Ev+0x379) [0x749b3b37c389]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD0Ev+0x16) [0x749b3b37c5a6]
+/usr/lib/libQt5Core.so.5(_ZN14QObjectPrivate14deleteChildrenEv+0x8d) [0x749b3a6da1cd]
+/usr/lib/libQt5Widgets.so.5(_ZN7QWidgetD2Ev+0x379) [0x749b3b37c389]
+/usr/lib/fcitx5/fcitx5imemojipicker.so(_Z8gui_mainiPPc+0x317) [0x749b3bacc177]
+/usr/lib/libstdc++.so.6(+0xe51a4) [0x749b422e51a4]
+/usr/lib/libc.so.6(+0x957eb) [0x749b420a57eb]
+/usr/lib/libc.so.6(+0x11918c) [0x749b4212918c]

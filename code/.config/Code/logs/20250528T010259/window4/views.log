@@ -1,0 +1,46 @@
+2025-05-28 01:02:59.957 [info] Added view workbench.panel.chat.view.copilot in the container workbench.panel.chat and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.panel.chat.view.copilot in workbench.panel.chat
+2025-05-28 01:02:59.957 [info] Added view outline in the container workbench.view.explorer and showing it. undefined false undefined
+2025-05-28 01:02:59.957 [info] Added view timeline in the container workbench.view.explorer and showing it. undefined false undefined
+2025-05-28 01:02:59.957 [info] Added views:outline in workbench.view.explorer
+2025-05-28 01:02:59.957 [info] Added view workbench.view.search in the container workbench.view.search and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.view.search in workbench.view.search
+2025-05-28 01:02:59.957 [info] Added view workbench.scm in the container workbench.view.scm and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.scm.history in the container workbench.view.scm and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.scm in workbench.view.scm
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.variablesView in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.watchExpressionsView in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.callStackView in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.breakPointsView in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.welcome in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.debug.loadedScriptsView in the container workbench.view.debug and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.panel.repl.view in the container workbench.panel.repl and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added view workbench.panel.markers.view in the container workbench.panel.markers and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.panel.markers.view in workbench.panel.markers
+2025-05-28 01:02:59.957 [info] Added view workbench.panel.output in the container workbench.panel.output and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.panel.output in workbench.panel.output
+2025-05-28 01:02:59.957 [info] Added view terminal in the container terminal and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:terminal in terminal
+2025-05-28 01:02:59.957 [info] Added views:timeline in workbench.view.explorer
+2025-05-28 01:02:59.957 [info] Added view workbench.explorer.emptyView in the container workbench.view.explorer and showing it. undefined undefined undefined
+2025-05-28 01:02:59.957 [info] Added views:workbench.explorer.emptyView in workbench.view.explorer
+2025-05-28 01:03:00.226 [info] Added views:workbench.debug.welcome in workbench.view.debug
+2025-05-28 01:03:01.013 [info] Added view jsBrowserBreakpoints in the container workbench.view.debug and showing it. undefined false undefined
+2025-05-28 01:03:01.013 [info] Added view jsExcludedCallers in the container workbench.view.debug and showing it. undefined false undefined
+2025-05-28 01:03:01.013 [info] Added view jsDebugNetworkTree in the container workbench.view.debug and showing it. undefined false undefined
+2025-05-28 01:03:01.017 [info] Added view github-actions.current-branch in the container workbench.view.extension.github-actions and showing it. undefined false undefined
+2025-05-28 01:03:01.017 [info] Added view github-actions.workflows in the container workbench.view.extension.github-actions and showing it. undefined false undefined
+2025-05-28 01:03:01.017 [info] Added view github-actions.settings in the container workbench.view.extension.github-actions and showing it. undefined false undefined
+2025-05-28 01:03:01.018 [info] Added view github-actions.empty-view in the container workbench.view.extension.github-actions and showing it. undefined false undefined
+2025-05-28 01:03:01.018 [info] Added views:github-actions.empty-view in workbench.view.extension.github-actions
+2025-05-28 01:03:01.021 [info] Added views:remoteTargets in workbench.view.remote
+2025-05-28 01:03:01.022 [info] Added views:remoteHub.views.workspaceRepositories in workbench.view.remote
+2025-05-28 01:03:01.022 [info] Added view sqltoolsViewConnectionExplorer in the container workbench.view.extension.sqltoolsActivityBarContainer and showing it. undefined false undefined
+2025-05-28 01:03:01.022 [info] Added view sqltoolsViewBookmarksExplorer in the container workbench.view.extension.sqltoolsActivityBarContainer and showing it. undefined false undefined
+2025-05-28 01:03:01.023 [info] Added view sqltoolsViewHistoryExplorer in the container workbench.view.extension.sqltoolsActivityBarContainer and showing it. undefined false undefined
+2025-05-28 01:03:01.023 [info] Added views:sqltoolsViewConnectionExplorer,sqltoolsViewBookmarksExplorer,sqltoolsViewHistoryExplorer in workbench.view.extension.sqltoolsActivityBarContainer
+2025-05-28 01:03:01.454 [info] Added views:workbench.panel.repl.view in workbench.panel.repl
+2025-05-28 01:03:01.800 [info] View visibility state changed: remoteTargets is now visible Remote Explorer
+2025-05-28 01:03:01.800 [info] View visibility state changed: remoteHub.views.workspaceRepositories is now visible Remote Explorer
+2025-05-28 01:03:01.942 [info] Added views:~remote.forwardedPorts in ~remote.forwardedPortsContainer
+2025-05-28 01:03:02.384 [info] Removed views:remoteHub.views.workspaceRepositories,remoteTargets from workbench.view.remote

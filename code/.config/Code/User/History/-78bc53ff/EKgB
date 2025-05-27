@@ -1,0 +1,176 @@
+#!/usr/bin/env zsh
+
+function _load_zsh_plugins {
+    unset -f _load_zsh_plugins
+
+
+}
+
+# Function to display a slow load warning
+# the intention is for hyprdots users who might have multiple zsh initialization
+function _slow_load_warning {
+    local lock_file="/tmp/.load_warning.lock"
+    local load_time=$SECONDS
+
+    # Check if the lock file exists
+    if [[ ! -f $lock_file ]]; then
+        # Create the lock file
+        touch $lock_file
+
+        # Display the warning if load time exceeds the limit
+        time_limit=3
+        if ((load_time > time_limit)); then
+            cat <<EOF
+    ⚠️ Warning: Shell startup took more than ${time_limit} seconds.
+EOF
+        fi
+    fi
+}
+
+function _load_persistent_aliases {
+    # Persistent aliases are loaded after the plugin is loaded
+    # This way omz will not override them
+    unset -f _load_persistent_aliases
+
+    if [[ -x "$(command -v eza)" ]]; then
+
+    fi
+
+}
+
+# best fzf aliases ever
+_fuzzy_change_directory() {
+    local initial_query="$1"
+    local selected_dir
+    local fzf_options=('--preview=ls -p {}' '--preview-window=right:60%')
+    fzf_options+=(--height "80%" --layout=reverse --preview-window right:60% --cycle)
+    local max_depth=7
+
+    if [[ -n "$initial_query" ]]; then
+        fzf_options+=("--query=$initial_query")
+    fi
+
+    #type -d
+    selected_dir=$(find . -maxdepth $max_depth \( -name .git -o -name node_modules -o -name .venv -o -name target -o -name .cache \) -prune -o -type d -print 2>/dev/null | fzf "${fzf_options[@]}")
+
+    if [[ -n "$selected_dir" && -d "$selected_dir" ]]; then
+        cd "$selected_dir" || return 1
+    else
+        return 1
+    fi
+}
+
+# NEEDED
+_fuzzy_edit_search_file_content() {
+    # [f]uzzy [e]dit  [s]earch [f]ile [c]ontent
+    local selected_file
+    selected_file=$(grep -irl "${1:-}" ./ | fzf --height "80%" --layout=reverse --preview-window right:60% --cycle --preview 'cat {}' --preview-window right:60%)
+
+    if [[ -n "$selected_file" ]]; then
+        if command -v "$EDITOR" &>/dev/null; then
+            "$EDITOR" "$selected_file"
+        else
+            echo "EDITOR is not specified. using neovim.  (export EDITOR in ~/.zshrc)"
+            nvim "$selected_file"
+        fi
+    else
+        echo "No file selected or search returned no results."
+    fi
+}
+
+# NEEDED
+_fuzzy_edit_search_file() {
+    local initial_query="$1"
+    local selected_file
+    local fzf_options=()
+    fzf_options+=(--height "80%" --layout=reverse --preview-window right:60% --cycle)
+    local max_depth=5
+
+    if [[ -n "$initial_query" ]]; then
+        fzf_options+=("--query=$initial_query")
+    fi
+
+    # -type f: only find files
+    selected_file=$(find . -maxdepth $max_depth -type f 2>/dev/null | fzf "${fzf_options[@]}")
+
+    if [[ -n "$selected_file" && -f "$selected_file" ]]; then
+        if command -v "$EDITOR" &>/dev/null; then
+            "$EDITOR" "$selected_file"
+        else
+            echo "EDITOR is not specified. using neovim.  (export EDITOR in ~/.zshrc)"
+            nvim "$selected_file"
+        fi
+    else
+        return 1
+    fi
+}
+
+function _load_post_init() {
+    #! Never load time consuming functions here
+    _load_persistent_aliases
+    autoload -U compinit && compinit
+
+    # Initiate fzf
+    if command -v fzf &>/dev/null; then
+        eval "$(fzf --zsh)"
+    fi
+
+    # zsh-autosuggestions won't work on first prompt when deferred
+    if typeset -f _zsh_autosuggest_start > /dev/null; then
+        _zsh_autosuggest_start
+    fi
+
+    # User rc file always overrides
+    [[ -f $HOME/.zshrc ]] && source $HOME/.zshrc
+
+}
+
+function _load_if_terminal {
+    if [ -t 1 ]; then
+
+        unset -f _load_if_terminal
+
+        # Load POSH
+        export PATH=$HOME/.bin:$HOME/.local/bin:/usr/local/bin:$PATH
+        eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/my-theme.omp.toml)"
+
+            # Set ZSH Plugins
+        ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+        if [ ! -d "$ZINIT_HOME" ]; then
+            mkdir -p "$(dirname "$ZINIT_HOME")"
+            git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+        fi
+
+        # Load Zinit
+        source "$ZINIT_HOME/zinit.zsh"
+        # Load plugins
+        _load_zsh_plugins
+
+        # Load zsh hooks module once
+
+        #  Below this line are the commands that are executed after the prompt appears
+
+        autoload -Uz add-zsh-hook
+
+        # TODO: add handlers in pm.sh
+        # for these aliases please manually add the following lines to your .zshrc file.(Using yay as the aur helper)
+        # pc='yay -Sc' # remove all cached packages
+        # po='yay -Qtdq | ${PM_COMMAND[@]} -Rns -' # remove orphaned packages
+
+        # Warn if the shell is slow to load
+        add-zsh-hook -Uz precmd _slow_load_warning
+        
+        
+            ffec='_fuzzy_edit_search_file_content' \
+            ffcd='_fuzzy_change_directory' \
+            ffe='_fuzzy_edit_search_file'
+
+                # Some binds won't work on first prompt when deferred
+
+        bindkey -v
+
+    fi
+}
+
+#? Override this environment variable in ~/.zshrc

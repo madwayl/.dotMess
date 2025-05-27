@@ -1,0 +1,242 @@
+{
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "emmet.includeLanguages": {
+        "postcss": "css"
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.terminal.executeInFileDir": true,
+    "debugpy.debugJustMyCode": false,
+    "python.testing.cwd": "${fileDirname}",
+    // Font
+    "editor.fontFamily": "FantasqueSansM Nerd Font, JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "FantasqueSansM Nerd Font, JetBrainsMono Nerd Font, Cascadia Code",
+    // "editor.fontFamily": "Geist Mono",
+    "scm.inputFontFamily": "FantasqueSansM Nerd Font",
+    // "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "chat.editor.fontFamily": "FantasqueSansM Nerd Font",
+    "debug.console.fontFamily": "FantasqueSansM Nerd Font",
+    "editor.codeLensFontFamily": "FantasqueSansM Nerd Font",
+    "notebook.output.fontFamily": "FantasqueSansM Nerd Font",
+    "markdown.preview.fontFamily": "FantasqueSansM Nerd Font",
+    "editor.inlayHints.fontFamily": "FantasqueSansM Nerd Font",
+    // UI
+    "editor.minimap.enabled": true,
+    "window.commandCenter": false,
+    "window.titleSeparator": " : ",
+    "indentRainbow.colorOnWhiteSpaceOnly": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.horizontal": "auto",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 10,
+    "editor.guides.indentation": false,
+    "editor.guides.bracketPairs": true,
+    //UX
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": true,
+    "editor.inlayHints.padding": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on",
+    "editor.accessibilitySupport": "off",
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "diffEditor.codeLens": true,
+    "diffEditor.wordWrap": "on",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.minimumContrastRatio": 7,
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "editor.minimap.renderCharacters": false,
+    // "window.zoomLevel": -0.3,
+    "workbench.tree.indent": 15,
+    // "editor.minimap.enabled": false,
+    // "editor.bracketPairColorization.enabled": false,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.editor.tabSizingFixedMaxWidth": 200,
+    // "editor.guides.indentation": false,
+    "editor.guides.highlightActiveIndentation": false,
+    "update.mode": "none",
+    "workbench.activityBar.location": "bottom",
+    "workbench.editor.pinnedTabsOnSeparateRow": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "msg.tabPosition.newShellConsole": "Beside Right",
+    "msg.tabPosition.newConnection": "Beside Right",
+    "terminal.integrated.fontSize": 14,
+    "workbench.editor.revealIfOpen": true,
+    // Theme
+    "workbench.colorTheme": "Gruvbox Glass",
+    "workbench.iconTheme": "gruvbox-material-icons",
+    "workbench.productIconTheme": "fluent-icons",
+    // EXTENSIONS
+    // Test My Code
+    "testMyCode.downloadOldSubmission": true,
+    "testMyCode.hideMetaFiles": true,
+    "testMyCode.updateExercisesAutomatically": true,
+    "testMyCode.insiderVersion": true,
+    "testMyCode.logLevel": "errors",
+    // Live Preview
+    "livePreview.debugOnExternalPreview": true,
+    "livePreview.serverKeepAliveAfterEmbeddedPreviewClose": 0,
+    "livePreview.showServerStatusNotifications": false,
+    // Comment Anchor
+    "commentAnchors.tags.displayInSidebar": false,
+    "commentAnchors.tags.sortMethod": "type",
+    "commentAnchors.tags.anchors": {
+        "ANCHOR": {
+            "scope": "file",
+            "iconColor": "default",
+            "highlightColor": "#A8C023",
+            "styleMode": "comment"
+        },
+        "TODO": {
+            "iconColor": "blue",
+            "highlightColor": "#3ea8ff",
+            "scope": "workspace",
+            "styleMode": "comment"
+        },
+        "FIXME": {
+            "iconColor": "red",
+            "highlightColor": "#F44336",
+            "scope": "workspace",
+            "styleMode": "comment"
+        },
+        "STUB": {
+            "iconColor": "purple",
+            "highlightColor": "#BA68C8",
+            "scope": "file",
+            "styleMode": "comment"
+        },
+        "NOTE": {
+            "iconColor": "orange",
+            "highlightColor": "#FFB300",
+            "scope": "file",
+            "styleMode": "comment"
+        },
+        "REVIEW": {
+            "iconColor": "green",
+            "highlightColor": "#64DD17",
+            "scope": "workspace",
+            "styleMode": "comment"
+        },
+        "SECTION": {
+            "iconColor": "blurple",
+            "highlightColor": "#896afc",
+            "scope": "workspace",
+            "behavior": "region",
+            "styleMode": "comment"
+        },
+        "LINK": {
+            "iconColor": "#2ecc71",
+            "highlightColor": "#2ecc71",
+            "scope": "workspace",
+            "behavior": "link",
+            "styleMode": "comment"
+        }
+    },
+    "commentAnchors.showCursor": true,
+    "commentAnchors.tags.rulerStyle": "center",
+    // Custom CSS
+    "vscode_custom_css.imports": [
+        "file://${userHome}/.config/Code/CustomStyles/base.css",
+        "file:///home/mzaql/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ],
+    "redhat.telemetry.enabled": false,
+    "files.associations": {
+        ".gitignore": "ignore",
+        ".env*": "dotenv"
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "yaml.schemas": {
+        "/home/mzaql/.vscode/extensions/continue.continue-1.0.7-linux-x64/config-yaml-schema.json": [
+            ".continue/**/*.yaml"
+        ]
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "python": false
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.tokenColorCustomizations": {
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        },
+        "textMateRules": [
+            {
+                "scope": "keyword.other.dotenv",
+                "settings": {
+                    "foreground": "#FF000000"
+                }
+            }
+        ]
+    },
+    "window.menuBarVisibility": "compact",
+    "animations.Install-Method": "Custom CSS and JS",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+        "jk": {
+            // Use lua to execute any logic
+            "command": "vscode-neovim.lua",
+            "args": [
+                [
+                    "local code = require('vscode')",
+                    "code.action('vscode-neovim.escape')",
+                    "code.action('workbench.action.files.save')",
+                ],
+            ],
+        },
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[shellscript]": {
+        "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+    },
+    "[properties]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+        // "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "python.analysis.typeCheckingMode": "standard",
+}

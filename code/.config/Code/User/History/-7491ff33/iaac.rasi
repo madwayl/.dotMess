@@ -1,0 +1,16 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Fonts
+ *
+ **/
+
+* {
+    font: "FantasqueSansM Nerd Font Propo 12";
+}
+
+element-text normal active {
+    font: "FantasqueSansM Nerd Font Propo bold 12";
+}

@@ -1,0 +1,20 @@
+1748000134260	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748000213505	Sync.SyncScheduler	DEBUG	Network link status changed to "down". Offline?: false
+1748000213505	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748000213505	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=schedule)
+1748000213507	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748000225771	Sync.SyncScheduler	DEBUG	Network link status changed to "up". Offline?: false
+1748000225771	Sync.SyncScheduler	DEBUG	Network link looks up. Syncing.
+1748000225774	Sync.SyncScheduler	DEBUG	Network link status changed to "changed". Offline?: false
+1748000225775	Sync.Service	DEBUG	User-Agent: Firefox/138.0.4 (Linux x86_64) FxSync/1.140.0.20250518015817.desktop
+1748000225775	Sync.Service	INFO	Starting sync at 2025-05-23 17:07:05 in browser session wt9PXLXT_ZJY
+1748000225775	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1748000225778	Sync.Status	INFO	Resetting Status.
+1748000225778	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1748000225778	FirefoxAccounts	TRACE	not checking freshness of profile as it remains recent
+1748000241122	Sync.Resource	WARN	GET request to https://sync-1-us-west1-g.sync.services.mozilla.com/1.5/195504406/info/collections failed: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1748000241122	Sync.Status	DEBUG	Status.sync: success.sync => error.login.reason.network
+1748000241122	Sync.Status	DEBUG	Status.service: success.status_ok => error.sync.failed
+1748000241122	Sync.ErrorHandler	ERROR	Sync encountered an error: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
+1748000241123	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms. (why=reschedule)
+1748000241127	Sync.Service	DEBUG	Exception calling anonymous function: [Exception... "The lookup of the hostname failed"  nsresult: "0x804b001e (NS_ERROR_UNKNOWN_HOST)"  location: "<unknown>"  data: no] No traceback available
