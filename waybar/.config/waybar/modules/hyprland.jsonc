@@ -1,0 +1,53 @@
+{
+    "hyprland/workspaces": {
+        "rotate": 0,
+        "all-outputs": false,
+        "active-only": false,
+        "on-click": "activate",
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "persistent-workspaces": {}
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "rotate": 0,
+        "separate-outputs": true,
+        "rewrite": {
+            "madwayl@HotSauce:(.*)": "$1",
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*)Mozilla Firefox": "󰈹 Firefox",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "(.*)Visual Studio Code": "󰨞 Code",
+            "(.*) : VSCodium": " : $1",
+            "(.*) - Code - OSS": "󰨞 $1",
+            "(.*)Code - OSS": "󰨞 Code",
+            "(.*) — nemo": "󰉋 $1",
+            "(.*)Spotify": "Spotify 󰓇",
+            "(.*)Steam": "Steam 󰓓",
+            "(.*) - Discord": "$1  ",
+            "(.*)Netflix": "Netflix 󰝆 ",
+            "(.*) — Google chrome": "$1  ",
+            "(.*)Google chrome": "Google chrome  ",
+            "(.*) — Github": "$1  ",
+            "(.*)Github": "Github ",
+            "(.*)Spotify Free": "Spotify 󰓇",
+            "(.*)Spotify Premiun": "Spotify 󰓇"
+        },
+        "max-length": 50
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>",
+        "max-length": 8,
+        "tooltip": false
+    },
+}

@@ -25,5 +25,9 @@ CVS
 ._\.jpeg
 .\*\.png
 
-wallpapers
-docs
+\wallpapers
+\docs
+
+.zsh_history
+.zcompdump
+.zcompdump.*

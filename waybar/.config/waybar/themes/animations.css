@@ -11,30 +11,29 @@
 @keyframes blink {
     to {
         background-color: @bg_dim;
-        color: @fg0;
     }
 }
 
 
-@keyframes battery-rotateGradient {
+@keyframes wiggly-rotateGradient {
     0% {
-        background: linear-gradient(0deg, @bg_visual_green 0%, @green 80%);
+        background: linear-gradient(0deg, @green_s1 10%, @green 700%);
     }
 
     25% {
-        background: linear-gradient(90deg, @o-brgreen 20%, @green 80%);
+        background: linear-gradient(90deg, @green_sl1 20%, @green 80%);
     }
 
     50% {
-        background: linear-gradient(180deg, @o-brgreen 30%, @green 60%);
+        background: linear-gradient(180deg, @green 10%, @green_s1 70%, @aqua_s1);
     }
 
     75% {
-        background: linear-gradient(270deg, @o-brgreen 20%, @green 80%);
+        background: linear-gradient(270deg, @green_sl1 20%, @green 80%);
     }
 
     100% {
-        background: linear-gradient(360deg, @bg_visual_green 0%, @green 80%);
+        background: linear-gradient(360deg, @green_s1 10%, @green 90%);
     }
 }
 
@@ -62,24 +61,48 @@
 }
 
 
-@keyframes mpris-linearGradient {
+@keyframes long-gradient {
     0% {
-        background: linear-gradient(0deg, @o-br-yellow 20%, @yellow 100%);
+        background-position: 0% 100%;
     }
 
-    25% {
-        background: linear-gradient(0deg, @o-br-yellow 40%, @yellow 80%);
+    10% {
+        background-position: 10% 90%;
+    }
+
+    20% {
+        background-position: 20% 80%;
+    }
+
+    30% {
+        background-position: 30% 70%;
+    }
+
+    40% {
+        background-position: 40% 60%;
     }
 
     50% {
-        background: linear-gradient(0deg, @o-br-yellow 60%, @yellow 60%);
+        background-position: 50% 50%;
     }
 
-    75% {
-        background: linear-gradient(0deg, @o-br-yellow 80%, @yellow 40%);
+    60% {
+        background-position: 60% 40%;
+    }
+
+    70% {
+        background-position: 70% 30%;
+    }
+
+    80% {
+        background-position: 80% 20%;
+    }
+
+    90% {
+        background-position: 90% 10%;
     }
 
     100% {
-        background: linear-gradient(0deg, @o-br-yellow 100%, @yellow 20%);
+        background-position: 100% 0%;
     }
 }
