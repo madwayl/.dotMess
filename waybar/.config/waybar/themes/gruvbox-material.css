@@ -59,3 +59,37 @@
 @define-color grey0 #7c6f64;
 @define-color grey1 #928374;
 @define-color grey2 #a89984;
+
+/* Saturation 40% */
+@define-color red_s1 #f24739;
+@define-color orange_s1 #f2721d;
+@define-color yellow_s1 #e9a800;
+@define-color green_s1 #a7c000;
+@define-color aqua_s1 #65c26b;
+@define-color blue_s1 #4eb9ac;
+@define-color purple_s1 #d34295;
+
+@define-color red_s1 #ef4d40;
+@define-color orange_s1 #ef8740;
+@define-color yellow_s1 #efab40;
+@define-color green_s1 #a1fc33;
+@define-color aqua_s1 #40ef85;
+@define-color blue_s1 #40efcc;
+@define-color purple_s1 #ef4085;
+
+
+@define-color red_sl1 #cc3c32;
+@define-color orange_sl1 #cc6d32;
+@define-color yellow_sl1 #cc9832;
+@define-color green_sl1 #9ccc32;
+@define-color aqua_sl1 #32cc76;
+@define-color blue_sl1 #32ccaf;
+@define-color purple_sl1 #cc3273;
+
+@define-color red_sl2 #992e28;
+@define-color orange_sl2 #995628;
+@define-color yellow_sl2 #997c28;
+@define-color green_sl2 #789928;
+@define-color aqua_sl2 #28994f;
+@define-color blue_sl2 #289983;
+@define-color purple_sl2 #992853;
