@@ -1,0 +1,6 @@
+SUBSYSTEM=="i2c-dev", ACTION=="add|change",\
+	KERNEL=="i2c-[0-9]*",\
+	ATTR{name}=="AUX USBC2/DDI TC2/PHY TC2",\
+	TAG+="ddcci",\
+	TAG+="systemd",\
+	ENV{SYSTEMD_WANTS}+="ddcci@%k.service"

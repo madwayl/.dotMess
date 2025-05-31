@@ -19,9 +19,9 @@ mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
 	# list_row='5'
 	# win_width='400px'
 # elif [[ "$theme" == *'type-3'* ]]; then
-	list_col='1'
-	list_row='6'
-	win_width='513px'
+list_col='1'
+list_row='6'
+win_width='513px'
 # elif [[ "$theme" == *'type-5'* ]]; then
 # 	list_col='1'
 # 	list_row='5'
@@ -91,9 +91,9 @@ run_rofi() {
 
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
-geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
+# geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
 dir="$(xdg-user-dir PICTURES)/Screenshots"
-file="Screenshot_${time}_${geometry}.png"
+file="Screenshot_${time}.png"
 
 if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
@@ -102,20 +102,20 @@ fi
 # notify and view screenshot
 notify_view() {
 	notify_cmd_shot='notify-send -u low --wait --expire-time=5000'
-	action=$(${notify_cmd_shot} --app-name=screenshot --action=edit --action=remove "Copied to clipboard.")
+	action=$(${notify_cmd_shot} --app-name=screenshot --action=Edit --action=Remove "Copied to clipboard." -i ${dir}/${file})
 	# ksnip ${dir}/"$file"
 	case $action in
-        0)
+		0)
 			ksnip ${dir}/"$file"
 			;;
-        1)
-            rm ${dir}/"$file"
+		1)
+			rm ${dir}/"$file"
 			${notify_cmd_shot} "Screenshot Deleted." 
 			;;
 		*)
 			exit
 			;;
-    esac
+	esac
 	# if [[ -e "$dir/$file" ]]; then
 	# 	${notify_cmd_shot} "Screenshot Saved."
 	# else
@@ -124,12 +124,12 @@ notify_view() {
 }
 
 # countdown
-countdown () {
-	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 "Taking shot in : $sec"
-		sleep 1
-	done
-}
+# countdown () {
+# 	for sec in `seq $1 -1 1`; do
+# 		dunstify -t 1000 --replace=699 "Taking shot in : $sec"
+# 		sleep 1
+# 	done
+# }
 
 # 1
 shotnow () {
@@ -137,17 +137,17 @@ shotnow () {
 	notify_view
 }
 
-shot5 () {
-	countdown '5'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
-	notify_view
-}
+# shot5 () {
+# 	countdown '5'
+# 	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
+# 	notify_view
+# }
 
-shot10 () {
-	countdown '10'
-	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
-	notify_view
-}
+# shot10 () {
+# 	countdown '10'
+# 	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
+# 	notify_view
+# }
 
 # 2
 shotwin () {
@@ -204,21 +204,21 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-    $option_1)
+	$option_1)
 		run_cmd --opt1
-        ;;
-    $option_2)
+		;;
+	$option_2)
 		run_cmd --opt2
-        ;;
-    $option_3)
+		;;
+	$option_3)
 		run_cmd --opt3
-        ;;
-    $option_4)
+		;;
+	$option_4)
 		run_cmd --opt4
-        ;;
-    $option_5)
+		;;
+	$option_5)
 		run_cmd --opt5
-        ;;
+		;;
 esac
 
 

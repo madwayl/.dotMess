@@ -9,13 +9,17 @@
 // -*- mode: jsonc -*-
 [
     {
-        "layer": "bottom",
+        "layer": "overlay",
         "output": [
-            "DP-1"
+            "DP-1",
+            "HDMI*"
         ],
         "include": [
-            "~/.config/waybar/default-modules.jsonc",
-            "~/.config/waybar/custom-modules.jsonc"
+            "~/.config/waybar/default.jsonc",
+            "~/.config/waybar/modules/hyprland.jsonc",
+            "~/.config/waybar/modules/media.jsonc",
+            "~/.config/waybar/modules/brightness.jsonc",
+            "~/.config/waybar/modules/custom-modules.jsonc"
         ],
         "position": "top",
         // Choose the order of the modules
@@ -24,7 +28,6 @@
             // "custom/media",
             "cava",
             "hyprland/submap",
-            // "sway/scratchpad",
             "mpris"
         ],
         "modules-center": [
@@ -37,14 +40,15 @@
             // "load",
             // "wireplumber",
             "pulseaudio#output",
-            "pulseaudio#input",
-            "backlight",
+            // "pulseaudio#input",
+            // "backlight",
             "tray",
             "battery",
             // "network",
             // "bluetooth",
             "clock",
-            "custom/powermenu"
+            "custom/powermenu",
+            "custom/notification"
         ]
     },
     {
@@ -53,17 +57,19 @@
             "eDP-1"
         ],
         "include": [
-            "~/.config/waybar/default-modules.jsonc",
-            "~/.config/waybar/custom-modules.jsonc"
+            "~/.config/waybar/default.jsonc",
+            "~/.config/waybar/modules/hyprland.jsonc",
+            "~/.config/waybar/modules/media.jsonc",
+            "~/.config/waybar/modules/brightness.jsonc",
+            "~/.config/waybar/modules/custom-modules.jsonc"
         ],
         "position": "top",
         // Choose the order of the modules
         "modules-left": [
             "hyprland/workspaces",
             // "custom/media",
-            "cava",
+            // "cava",
             "hyprland/submap",
-            // "sway/scratchpad",
             "mpris"
         ],
         "modules-center": [
@@ -76,14 +82,15 @@
             // "load",
             // "wireplumber",
             "pulseaudio#output",
-            "pulseaudio#input",
-            "backlight",
+            // "pulseaudio#input",
+            // "backlight",
             "tray",
             "battery",
             // "network",
             // "bluetooth",
             "clock",
-            "custom/powermenu"
+            "custom/powermenu",
+            "custom/notification"
         ]
     }
 ]
