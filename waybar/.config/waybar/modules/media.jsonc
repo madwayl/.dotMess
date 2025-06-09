@@ -1,14 +1,22 @@
 {
+    // Group PulseAudio
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio#output",
+            "pulseaudio#input"
+        ]
+    },
     // Audio Input
     "pulseaudio#input": {
         "format-source": " {volume}%",
-        "format-source-muted": " off",
+        "format-source-muted": "",
         "format": "{format_source}",
         "scroll-step": 1,
         "smooth-scrolling-threshold": 1,
         "max-volume": 100,
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click-middle": "pavucontrol",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     },
@@ -31,10 +39,44 @@
         "max-volume": 100,
         "scroll-step": 2,
         "smooth-scrolling-threshold": 1,
-        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "on-click": "pavucontrol",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+    "wireplumber#sink": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "󰕾",
+                ""
+            ]
+        },
+        "max-volume": 140
+    },
+    "wireplumber#source": {
+        "format": " {volume}%",
+        "format-muted": "",
+        "on-click": "wpctl set-mute   @DEFAULT_SINK@ toggle",
+        "on-click-middle": "qpwgraph",
+        "on-click-right": "pavucontrol",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 1%-",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 1%+",
+        "tooltip-format": "{source_desc} | {source_volume}%",
+        "scroll-step": 5,
     },
     // Media Add-ons
     "cava": {
@@ -84,4 +126,13 @@
             "artist"
         ]
     },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    }
 }

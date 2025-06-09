@@ -16,3 +16,14 @@ export XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-"$(xdg-user-dir PICTURES)"}"
 export XDG_VIDEOS_DIR="${XDG_VIDEOS_DIR:-"$(xdg-user-dir VIDEOS)"}"
 
 export ZDOTDIR=$HOME/.config/zsh
+
+export SSH_AUTH_SOCK=$XDG_CONFIG_HOME/.bitwarden-ssh-agent.sock
+export BITWARDEN_SSH_AUTH_SOCK=$XDG_CONFIG_HOME/.bitwarden-ssh-agent.sock
+
+# /other directories
+
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+export GOPATH="$XDG_DATA_HOME"/go
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export CARGO_HOME="$XDG_DATA_HOME"/cargo

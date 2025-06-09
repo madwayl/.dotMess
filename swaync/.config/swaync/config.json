@@ -1,6 +1,5 @@
 {
     "$schema": "/etc/xdg/swaync/configSchema.json",
-    "control-center-height": 5,
     "control-center-width": 500,
     "control-center-layer": "overlay",
     "control-center-margin-bottom": 8,
@@ -61,6 +60,10 @@
                     "active": true,
                     "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && pactl set-source-mute @DEFAULT_SOURCE@ 1 || pactl set-source-mute @DEFAULT_SOURCE@ 0'",
                     "update-command": "sh -c 'pactl get-source-mute @DEFAULT_SOURCE@ | grep yes && echo true || echo false'"
+                },
+                {
+                    "label": "",
+                    "command": "hyprpicker -an"
                 }
             ]
         },
@@ -88,13 +91,6 @@
         },
         "dnd": {
             "text": "Do Not Disturb"
-        },
-        "backlight": {
-            "label": ""
-        },
-        "backlight#ddcci10": {
-            "label": "󱄄",
-            "device": "ddcci10"
         }
     },
     "widgets": [
@@ -103,8 +99,6 @@
         "notifications",
         "buttons-grid",
         "volume",
-        "backlight",
-        "backlight#ddcci10",
         "mpris"
     ]
 }

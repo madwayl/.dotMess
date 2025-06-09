@@ -102,7 +102,7 @@ fi
 # notify and view screenshot
 notify_view() {
 	notify_cmd_shot='notify-send -u low --wait --expire-time=5000'
-	action=$(${notify_cmd_shot} --app-name=screenshot --action=Edit --action=Remove "Copied to clipboard." -i ${dir}/${file})
+	action=$(${notify_cmd_shot} --app-name=screenshot --action=Edit --action=Remove "Screenshot" "Copied to clipboard" -i ${dir}/${file})
 	# ksnip ${dir}/"$file"
 	case $action in
 		0)

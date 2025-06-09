@@ -28,3 +28,10 @@ Type=oneshot
 ExecStart=/bin/bash -c 'echo Trying to attach ddcci to %i && success=0 && i=0 && id=$(echo %i | cut -d "-" -f 2) && while ((success < 1)) && ((i++ < 5)); do /usr/bin/ddcutil getvcp 10 -b $id && { success=1 && echo ddcci 0x37 > /sys/bus/i2c/devices/%i/new_device && echo "ddcci attached to %i"; } || sleep 5; done'
 Restart=no
 ```
+
+Issues with device/resource busy error
+
+only runs after : sudo modprobe -r ddcci_backlight ddcci && sudo modprobe ddcci
+
+Check with i2detect to check on monitor address status
+t

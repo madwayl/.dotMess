@@ -10,8 +10,9 @@ handle_windowtitlev2 () {
         *"(Bitwarden"*"Password Manager) - Bitwarden"* | "Sign in - Google accounts"*)
         hyprctl --batch \
             "dispatch togglefloating address:0x$windowaddress;"\
-            "dispatch resizewindowpixel exact 700px 350px,address:0x$windowaddress;"\
+            "dispatch resizewindowpixel exact 480 650, address:0x$windowaddress;"\
             "dispatch centerwindow"
+            # "dispatch movecursortocorner, 1, address:0x$windowaddress;"\
         ;;
     #   specificwindowtitle) commands;;
     esac
@@ -27,7 +28,7 @@ handle() {
     case $event in
         windowtitlev2) handle_windowtitlev2 "$data";;
     #   anyotherevent) handle_otherevent "$data";;
-        *) echo "unhandled event: $event" ;;
+        # *) echo "unhandled event: $event" ;;
     esac
 }
 

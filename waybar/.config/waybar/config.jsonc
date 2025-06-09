@@ -9,7 +9,7 @@
 // -*- mode: jsonc -*-
 [
     {
-        "layer": "overlay",
+        "layer": "top",
         "output": [
             "DP-1",
             "HDMI*"
@@ -37,11 +37,14 @@
             "custom/screen-sharing",
             "custom/recording",
             "idle_inhibitor",
+            // "keyboard-state",
             // "load",
-            // "wireplumber",
-            "pulseaudio#output",
+            "group/audio",
+            // "pulseaudio#output",
+            // "wireplumber#sink",
+            // "wireplumber#source",
             // "pulseaudio#input",
-            // "backlight",
+            "custom/backlight",
             "tray",
             "battery",
             // "network",
@@ -52,7 +55,7 @@
         ]
     },
     {
-        "layer": "bottom",
+        "layer": "top",
         "output": [
             "eDP-1"
         ],
@@ -79,11 +82,14 @@
             "custom/screen-sharing",
             "custom/recording",
             "idle_inhibitor",
+            // "keyboard-state",
             // "load",
-            // "wireplumber",
-            "pulseaudio#output",
+            "group/audio",
+            // "pulseaudio#output",
+            // "wireplumber#sink",
+            // "wireplumber#source",
             // "pulseaudio#input",
-            // "backlight",
+            "backlight",
             "tray",
             "battery",
             // "network",
