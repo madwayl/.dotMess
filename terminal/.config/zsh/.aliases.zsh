@@ -24,3 +24,4 @@ alias l.="eza -a | grep -E '^\.'"
 
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"

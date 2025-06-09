@@ -43,12 +43,13 @@ export SAVEHIST=100000
 
 # Colored man pages (with bat)
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+export BITWARDEN_SSH_AUTH_SOCK=$XDG_CONFIG_HOME/.bitwarden-ssh-agent.sock
 
 setopt EXTENDED_HISTORY       # Write the history file in the ':start:elapsed;command' format
 
 setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits
 
-setopt SHARE_HISTORY          # Share history between all sessions
+# setopt SHARE_HISTORY          # Share history between all sessions
 
 setopt HIST_EXPIRE_DUPS_FIRST # Expire a duplicate event first when trimming history
 

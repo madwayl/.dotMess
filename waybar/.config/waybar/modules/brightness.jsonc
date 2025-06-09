@@ -14,4 +14,24 @@
             ""
         ]
     },
+    "custom/backlight": {
+        "exec": "echo \"{\\\"percentage\\\": $(cat $XDG_RUNTIME_DIR/brightness/10)}\"",
+        "return-type": "json",
+        "interval": "once",
+        "on-scroll-up": "$XDG_CONFIG_HOME/hypr/scripts/brightness-control.sh 'focused' + 5 10",
+        "on-scroll-down": "$XDG_CONFIG_HOME/hypr/scripts/brightness-control.sh 'focused' - 5 10",
+        "format": "{icon} {percentage}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "signal": 2
+    }
 }
