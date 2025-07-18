@@ -18,6 +18,12 @@ handle_windowtitlev2 () {
     esac
 }
 
+handle_newmonitor() {
+    $HOME/.config/hypr/scripts/random-wallpaper.sh $HOME/.dotMess/wallpapers
+    ags quit && ags run
+    $XDG_CONFIG_HOME/hypr/scripts/brightness-control.sh init &
+}
+
 handle() {
     # $1 Format: `EVENT>>DATA`
     # example: `workspace>>2`
@@ -27,6 +33,7 @@ handle() {
 
     case $event in
         windowtitlev2) handle_windowtitlev2 "$data";;
+        monitoradded) handle_newmonitor
     #   anyotherevent) handle_otherevent "$data";;
         # *) echo "unhandled event: $event" ;;
     esac
