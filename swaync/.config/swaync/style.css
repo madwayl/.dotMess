@@ -7,10 +7,12 @@
     box-shadow: unset;
     color: @fg0;
     outline-style: none;
+    --noti-bg-hover: none;
 }
 
 .notification-row {
     outline: none;
+    border: none;
 }
 
 .control-center .notification-row {
@@ -20,14 +22,18 @@
 .notification-background .notification,
 .notification .notification-content {
     margin-bottom: unset;
-    border-radius: 7px;
+    border-radius: 6px;
+}
+
+.notification .notification-default-action {
+    background-color: none;
 }
 
 .floating-notifications scrolledwindow {
     all: unset;
 }
 
-.dloating-notifications scrolledwindow scrollbar {
+.floating-notifications scrolledwindow scrollbar {
     all: unset;
     min-height: 0;
     min-width: 0;
@@ -38,7 +44,7 @@
 
 .notification-background .notification box,
 .notification-background .notification widget {
-    border: unset;
+    border: none;
     border-radius: 6px;
 }
 
@@ -53,30 +59,46 @@
 }
 
 .notification-background .notification .notification-content {
-    border: 2px solid @grey0;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.notification-group {
+    background: none;
 }
 
 /*  Notification Button */
 
-.notification-row .notification-background .notification scrolledwindow {
-    margin-top: -5px;
-    background-color: @grey0;
-    border: 2px solid @grey0;
-    border-radius: 0px 0px 6px 6px;
-
+.notification.critical .notification-action button {
+    border-radius: 6px;
 }
 
-.notification-row .notification-background .notification .notification-action,
-.notification-row .notification-background .notification .notification-default-action {
+.notification-row .notification-background .notification .notification-action {
     background-color: @grey0;
-    border: 2px solid @grey0;
-
     transition: background 0.15s ease-in-out;
 
     color: @bg_dim;
-    padding: 2px;
-    min-height: 18px;
+    border-radius: 6px;
+    /* min-height: 18px; */
 
+}
+
+.notification-row .notification-background .notification .notification-alt-actions {
+    padding: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    border-radius: 0px;
+    margin-top: -7px;
+    /* margin-bottom: 2px; */
+
+}
+
+.notification-row .notification-background .notification .notification-default-action {
+    padding: 0px;
 }
 
 .notification-row .notification-background .notification .text-button label {
@@ -88,6 +110,11 @@
 
 .notification.low .notification-content,
 .notification.normal .notification-content {
+    background: none;
+}
+
+.notification-background .notification.normal,
+.notification-background .notification.low {
     background: linear-gradient(120deg, @bg0, @bg_dim);
 }
 
@@ -111,6 +138,18 @@
 /* Notification (Critical) + Control Center/Floating */
 
 .notification.critical .notification-content {
+    background: none;
+}
+
+.notification.critical .notification-action button {
+    background: @bg_dim;
+}
+
+.notification.critical .notification-action button.text-button label {
+    color: @red_sl1;
+}
+
+.notification-background .notification.critical {
     background: linear-gradient(120deg, @red_sl1, @red_sl2);
 }
 
@@ -121,6 +160,10 @@
 
 .notification.critical .notification-content label {
     color: @bg_dim;
+}
+
+.notification.critical .notification-action {
+    background-color: @bg-dim;
 }
 
 /* Notification (Inner Content) + Control Center/Floating */
@@ -220,6 +263,12 @@
     background-color: rgba(128, 128, 128, 0.7);
 }
 
+/* Control Center - Notification Group */
+
+.notification-group-headers {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
 
 /* Control Center - DND widget */
 
@@ -283,7 +332,8 @@
 }
 
 .widget-buttons-grid>flowbox {
-    padding: unset;
+    padding: 15px;
+    padding-bottom: 5px;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:first-child {
@@ -306,7 +356,7 @@
     border-radius: 6px;
 }
 
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {}
+/* .widget-buttons-grid>flowbox>flowboxchild>button:hover {} */
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
     /* OnePlus McClaren edition Orange accent */
@@ -322,7 +372,7 @@
 
 .widget-volume,
 .widget-backlight,
-widget-baclight#ddcci10 {
+.widget-backlight#ddcci10 {
     background-color: transparent;
     border: none;
     border-radius: 5px;
@@ -334,14 +384,6 @@ widget-baclight#ddcci10 {
     -gtk-outline-radius: 1.159rem;
 }
 
-.control-center trough slider {
-    /* OnePlus McClaren edition Orange accent */
-    color: @yellow;
-    /* background-color: @orange; */
-    border-radius: 100%;
-    min-height: 1.25rem;
-}
-
 .widget-volume label,
 .widget-backlight label,
 .widget-backlight#ddcci10 label {
@@ -350,28 +392,32 @@ widget-baclight#ddcci10 {
     padding-bottom: 0px;
 }
 
-.control-center trough {
-    background-color: @yellow;
-    border-radius: 999999999px;
-    -gtk-outline-radius: 9999px;
-    min-width: 0.845rem;
-    min-height: 4px;
-    background-color: transparent;
+.widget-volume label {
+    margin-bottom: 10px;
 }
 
-.control-center slider {
+.widget-volume highlight {
+    background-color: @yellow;
+}
+
+.widget-volume trough slider {
+    /* OnePlus McClaren edition Orange accent */
+    color: @yellow;
+    /* background-color: @yellow; */
+    border-radius: 100%;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+
     border-radius: 9999px;
     -gtk-outline-radius: 9999px;
-    min-width: 0.273rem;
-    min-height: 2.045rem;
     background-color: @bg0;
 }
 
-.control-center slider:hover {
+.widget-volume slider:hover {
     background-color: rgba(128, 128, 128, 0.25);
 }
 
-.control-center slider:active {
+.widget-volume slider:active {
     background-color: @bg0;
 }
 
@@ -379,6 +425,7 @@ widget-baclight#ddcci10 {
     padding: 1px;
     margin: 2px;
     margin-right: -1px;
+    background: none;
 }
 
 .widget-volume button label {
@@ -390,10 +437,9 @@ widget-baclight#ddcci10 {
 
 .widget-mpris {
     background-color: transparent;
-    padding: 10px;
+    padding: 0 10px;
     margin: 1px;
     margin-top: 12px;
-
 }
 
 .widget-mpris-player {
