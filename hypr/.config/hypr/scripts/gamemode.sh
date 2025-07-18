@@ -23,7 +23,9 @@ if [ "$HYPRGAMEMODE" = 1 ]; then
         keyword layerrule noanim,rofi
         "
         hyprctl 'keyword windowrulev2 opaque,class:(.*)' # ensure all windows are opaque
+        killall waybar
         exit
 else
         hyprctl reload config-only -q
+        waybar &> /dev/null &
 fi
