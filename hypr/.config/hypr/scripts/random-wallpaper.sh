@@ -19,6 +19,7 @@ export SWWW_TRANSITION_TYPE=random
 
 # This controls (in seconds) when to switch to the next image
 INTERVAL=3600
+swww img $HOME/Pictures/wallpaper.png
 
 while true; do
 	find "$1" \
@@ -28,10 +29,10 @@ while true; do
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
             if [[ "$img" != "$1" ]]; then
-                swww img "$img"
-                magick $img ~/Pictures/wallpaper.png
-				cp ~/Pictures/wallpaper.png /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/bg.png
                 sleep $INTERVAL
+                magick $img $HOME/Pictures/wallpaper.png
+				cp $HOME/Pictures/wallpaper.png /usr/share/sddm/themes/sddm-astronaut-theme/Backgrounds/bg.png
+				swww img $HOME/Pictures/wallpaper.png
             fi 
 		done
 done

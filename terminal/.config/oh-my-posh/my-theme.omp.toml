@@ -121,7 +121,6 @@ final_space = true
   ]
   background = 'transparent'
   template = '$ '
-  # filler = '{{ .Shell }} > {{ .Code }}'
 
 [secondary_prompt]
   foreground = 'black'
