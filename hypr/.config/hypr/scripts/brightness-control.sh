@@ -11,6 +11,7 @@ savePath() {
         brightness=$(ddcutil --sleep-multiplier=0.01 --skip-ddc-checks --bus=$bus getvcp 10 | grep -oP 'current value =\s*\K\d+')
         echo $brightness > $XDG_RUNTIME_DIR/brightness/${bus}
     done
+    pkill -RTMIN+2 waybar
 }
 
 use_brightnessctl() {
