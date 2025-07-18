@@ -17,6 +17,8 @@
             "madwayl@HotSauce:(.*)": "$1",
             "(.*) — Mozilla Firefox": "󰈹 $1",
             "(.*)Mozilla Firefox": "󰈹 Firefox",
+            "(.*) — Zen Browser": "󱨧 $1",
+            "(.*)Zen Browser": "󱨧 Zen Browser",
             "(.*) - Visual Studio Code": "󰨞 $1",
             "(.*)Visual Studio Code": "󰨞 Code",
             "(.*) : VSCodium": " : $1",
