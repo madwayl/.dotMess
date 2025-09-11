@@ -25,7 +25,7 @@
     }
 
     50% {
-        background: linear-gradient(180deg, @green 10%, @green_s1 70%, @aqua_s1);
+        background: linear-gradient(180deg, @green 10%, @green_s1 70%);
     }
 
     75% {

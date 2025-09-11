@@ -24,6 +24,14 @@ handle_newmonitor() {
     $XDG_CONFIG_HOME/hypr/scripts/brightness-control.sh init &
 }
 
+handle_hyprscroller() {
+    $XDG_RUNTIME_DIR/hyprscroller/mode
+    if [[ ${1:10:9} == "mode, row" ]]; then
+        echo "row" > $XDG_RUNTIME_DIR/hyprscroller/mode
+    elif [[ ${1:10:12} == "mode, column" ]]; then
+        echo "col" > $XDG_RUNTIME_DIR/hyprscroller/mode
+}
+
 handle() {
     # $1 Format: `EVENT>>DATA`
     # example: `workspace>>2`
@@ -33,7 +41,8 @@ handle() {
 
     case $event in
         windowtitlev2) handle_windowtitlev2 "$data";;
-        monitoradded) handle_newmonitor
+        monitoradded) handle_newmonitor;;
+        scroller) handle_hyprscroller "$data";;
     #   anyotherevent) handle_otherevent "$data";;
         # *) echo "unhandled event: $event" ;;
     esac

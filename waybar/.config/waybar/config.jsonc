@@ -24,6 +24,7 @@
         "position": "top",
         // Choose the order of the modules
         "modules-left": [
+            "custom/hyprscroller-mode",
             "hyprland/workspaces",
             // "custom/media",
             "cava",
@@ -31,11 +32,11 @@
             "mpris"
         ],
         "modules-center": [
+            "custom/screen-sharing",
+            "custom/recording",
             "hyprland/window"
         ],
         "modules-right": [
-            "custom/screen-sharing",
-            "custom/recording",
             "idle_inhibitor",
             // "keyboard-state",
             // "load",
@@ -69,6 +70,7 @@
         "position": "top",
         // Choose the order of the modules
         "modules-left": [
+            "custom/hyprscroller-mode",
             "hyprland/workspaces",
             // "custom/media",
             // "cava",
@@ -76,11 +78,11 @@
             "mpris"
         ],
         "modules-center": [
+            "custom/screen-sharing",
+            "custom/recording",
             "hyprland/window"
         ],
         "modules-right": [
-            "custom/screen-sharing",
-            "custom/recording",
             "idle_inhibitor",
             // "keyboard-state",
             // "load",
@@ -92,9 +94,9 @@
             "backlight",
             "tray",
             "battery",
+            "clock",
             // "network",
             // "bluetooth",
-            "clock",
             "custom/powermenu",
             "custom/notification"
         ]
