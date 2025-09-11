@@ -12,3 +12,5 @@ ls /sys/devices/platform/msi-ec/
 ls
 echo "options msi_ec debug=1" | sudo tee /etc/modprobe.d/msi-ec.conf
 sudo mkinitcpio -P
+
+[NO LONGER WORKING]

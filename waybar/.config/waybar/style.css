@@ -17,7 +17,7 @@
     font-family:
         "FantasqueSansM Nerd Font Propo", "Font Awesome 6 Free",
         "Font Awesome 6 Brands", FontAwesome, monospace;
-    font-size: 14px;
+    font-size: 13.75px;
     font-weight: 600;
     /* Reset GTK Theme */
     /* border: none;
@@ -32,13 +32,12 @@
 
 window#waybar {
     /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)); */
-    background-color: rgba(22, 22, 22, 0.5);
+    background-color: rgba(0, 0, 0, 0.35);
     /* background-color: transparent; */
     border-bottom: 0px;
     color: @white;
     transition-property: background-color;
     transition-duration: .5s;
-    margin: 5px;
 }
 
 window#waybar.hidden {
@@ -50,17 +49,16 @@ window#waybar.empty #window {
 }
 
 .modules-right {
-    margin: 10px 10px 10px 0;
+    margin: 8px 8px 8px 0;
 }
 
 .modules-center {
-    margin: 10px 0 10px 0;
+    margin: 8px 0 8px 0;
 }
 
 .modules-left {
-    margin: 10px 0 10px 10px;
+    margin: 8px 0 8px 8px;
 }
-
 
 /* All Modules - Common Setup */
 #cava,
@@ -77,35 +75,16 @@ window#waybar.empty #window {
 #custom-backlight,
 #custom-recording,
 #custom-screen-sharing,
+#custom-hyprscroller-mode,
 #tray,
 #custom-notification,
 #network,
 #bluetooth {
     padding: 7px 12.5px;
-    background: linear-gradient(60deg, @bg_dim, @bg0);
+    /* background: linear-gradient(60deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.35)); */
+    background: rgba(13, 13, 13, 0.95);
     color: @fg0;
     border-radius: 3px;
-}
-
-#idle_inhibitor,
-#clock,
-#battery,
-#backlight,
-#wireplumber,
-#audio,
-#custom-powermenu,
-#custom-backlight,
-#custom-recording,
-#custom-screen-sharing,
-#tray,
-#custom-notification,
-#network,
-#bluetooth {
-    background: linear-gradient(120deg, @bg_dim, @bg0);
-}
-
-#window {
-    background: linear-gradient(270deg, @bg_dim, @bg0);
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -115,11 +94,19 @@ button:hover {
     box-shadow: inset 0 -3px @bg_visual_yellow;
 }
 
+#custom-hyprscroller-mode {
+    margin-right: -16px;
+    min-width: 24px;
+    border-radius: 3px;
+    padding: 7px 10px 7px 9px;
+    color: @yellow;
+}
+
 /* Workspaces */
 
 #workspaces {
     background-color: @bg_dim;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 #workspaces button {
@@ -132,7 +119,7 @@ button:hover {
     transition-property: background-color;
     transition-duration: .75s;
     min-width: 0;
-    background: linear-gradient(60deg, @o-black 20%, @bg_dim 80%);
+    /* background: linear-gradient(60deg, @o-black 20%, @bg_dim 80%); */
     transition: color 0.7s cubic-bezier(.55, -0.68, .48, 1.682), background 0.5s cubic-bezier(.55, -0.68, .48, 1.682), border 0.9s ease-in;
 }
 
@@ -179,7 +166,7 @@ button:hover {
 /* Submap */
 
 #submap {
-    background: linear-gradient(60deg, @bg_green 30%, @green 70%);
+    background: linear-gradient(60deg, @bg_yellow 30%, @yellow 70%);
     color: @bg_dim;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
@@ -203,6 +190,21 @@ button:hover {
     /* color: @black; */
     transition-property: color;
     transition-duration: .75s;
+}
+
+#custom-recording {
+    background: linear-gradient(240deg, @o-red, @red_s1, @red_sl1, @red, @red_sl1, @red_s1);
+    color: @bg_visual_red;
+    font-weight: 900;
+    background-size: 400% 400%;
+    animation: long-gradient 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-screen-sharing {
+    color: @red;
+    background-color: @fg;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 /* Audio */
@@ -243,39 +245,45 @@ button:hover {
 
 /* Battery */
 
+#battery {
+    transition: all 1.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
 #battery.good {
-    background: linear-gradient(240deg, @green_sl2, @green);
-    color: @bg_visual_green;
+    /* background: linear-gradient(240deg, @green_sl2, @green); */
+    /* color: @bg_visual_green; */
+    color: @green;
 }
 
 #battery.warning {
-    background: linear-gradient(240deg, @yellow_sl2, @yellow);
-    color: @bg_visual_yellow;
+    /* background: linear-gradient(240deg, @yellow_sl2, @yellow); */
+    /* color: @bg_visual_yellow; */
+    color: @yellow;
 }
 
 #battery.bad {
-    background: linear-gradient(240deg, @red_sl2, @red);
-    color: @bg_visual_red;
+    /* background: linear-gradient(240deg, @red_sl2, @red); */
+    /* color: @bg_visual_red; */
+    color: @red;
 }
 
 #battery.charging,
 #battery.plugged {
-    animation: wiggly-rotateGradient 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    color: @bg_diff_green;
+    /* animation: other-rotateGradient 15s cubic-bezier(0.4, 0, 0.6, 1) infinite; */
+    /* color: @bg_diff_green; */
+    color: @green;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background: @red;
-    color: @red_sl2;
-    animation-name: blink;
+    background: @red_sl1;
+    color: @bg_visual_red;
+    /* animation-name: blink;
     animation-duration: 1s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-direction: alternate; */
 }
-
-/* Clock */
 
 #clock {
     /* color: @green; */
@@ -283,31 +291,21 @@ button:hover {
 }
 
 #custom-powermenu {
-    color: @bg_visual_red;
-    background: linear-gradient(270deg, @o-red 0%, @red 80%);
+    color: @red;
+    /* background: linear-gradient(270deg, @o-red 0%, @red 80%); */
     transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #custom-powermenu:hover {
-    background: linear-gradient(240deg, @o-red 0%, @red 60%);
-}
-
-#custom-recording {
-    background: linear-gradient(240deg, @o-red, @red_s1, @red_sl1, @red, @red_sl1, @red_s1);
-    color: @bg_visual_red;
-    font-weight: 900;
-    background-size: 400% 400%;
-    animation: long-gradient 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
-}
-
-#custom-screen-sharing {
-    color: @red;
-    background-color: @fg;
-    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+    /* background: linear-gradient(240deg, @o-red 0%, @red 60%); */
+    color: @red_sl1;
 }
 
 /* #custom-notification {
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-notification:hover {
     background: linear-gradient(240deg, @bg5, @grey0, @grey1);
     color: @bg2;
 } */

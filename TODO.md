@@ -1,0 +1,3 @@
+- [ ] Install Grub Themes
+- [ ] Color switch accent colors with helwall
+- [ ] Use QShell - replace ags

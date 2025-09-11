@@ -17,8 +17,8 @@
         "max-volume": 100,
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
-        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     },
     "pulseaudio#output": {
         "format": "{icon} {volume}%",
@@ -41,8 +41,8 @@
         "smooth-scrolling-threshold": 1,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     },
     "wireplumber#sink": {
         "format": "{icon} {volume}%",
