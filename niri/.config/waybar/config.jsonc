@@ -1,0 +1,101 @@
+//
+// ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄                       
+// ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄                       
+// ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀                       
+// ░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░░░░▀▀█░█▀▀░█▀█░█▀█░█▀▀
+// ░█░░░█░█░█░█░█▀▀░░█░░█░█░░░░░░█░▀▀█░█░█░█░█░█░░
+// ░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀░░▀▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀
+//
+// -*- mode: jsonc -*-
+[
+    {
+        "layer": "top",
+        "output": [
+            "DP-1",
+            "HDMI*"
+        ],
+        "include": [
+            "~/.config/waybar/default.jsonc",
+            "~/.config/waybar/modules/niri.jsonc",
+            "~/.config/waybar/modules/media.jsonc",
+            "~/.config/waybar/modules/brightness.jsonc",
+            "~/.config/waybar/modules/network.jsonc",
+            "~/.config/waybar/modules/custom-modules.jsonc"
+        ],
+        "position": "top",
+        // Choose the order of the modules
+        "modules-left": [
+            "niri/workspaces",
+            "mpris",
+            "niri/window"
+        ],
+        "modules-center": [
+            "custom/screen-sharing",
+            "custom/recording",
+            "group/clocks",
+            "cava"
+        ],
+        "modules-right": [
+            "idle_inhibitor",
+            // "custom/idilizer",
+            // "keyboard-state",
+            // "load",
+            "group/audio",
+            // "pulseaudio#output",
+            // "wireplumber#sink",
+            // "wireplumber#source",
+            // "pulseaudio#input",
+            "custom/backlight",
+            "group/tray",
+            "battery",
+            // "network",
+            // "bluetooth",
+            "custom/powermenu",
+            "custom/notification"
+        ]
+    },
+    {
+        "layer": "top",
+        "output": [
+            "eDP-1"
+        ],
+        "include": [
+            "~/.config/waybar/default.jsonc",
+            "~/.config/waybar/modules/niri.jsonc",
+            "~/.config/waybar/modules/media.jsonc",
+            "~/.config/waybar/modules/brightness.jsonc",
+            "~/.config/waybar/modules/network.jsonc",
+            "~/.config/waybar/modules/custom-modules.jsonc"
+        ],
+        "position": "top",
+        // Choose the order of the modules
+        "modules-left": [
+            "niri/workspaces",
+            "mpris",
+            "niri/window"
+        ],
+        "modules-center": [
+            "custom/screen-sharing",
+            "custom/recording",
+            "group/clocks"
+        ],
+        "modules-right": [
+            "idle_inhibitor",
+            // "custom/idilizer",
+            // "keyboard-state",
+            // "load",
+            "group/audio",
+            // "pulseaudio#output",
+            // "wireplumber#sink",
+            // "wireplumber#source",
+            // "pulseaudio#input",
+            "backlight",
+            "group/tray",
+            "battery",
+            // "network",
+            // "bluetooth",
+            "custom/powermenu",
+            "custom/notification"
+        ]
+    }
+]

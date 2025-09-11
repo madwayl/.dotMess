@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match target="font">
+        <edit name="antialias" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hinting" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="hintstyle" mode="assign">
+            <const>hintslight</const>
+        </edit>
+        <edit name="rgba" mode="assign">
+            <const>rgb</const>
+        </edit>
+        <edit name="autohint" mode="assign">
+            <bool>true</bool>
+        </edit>
+        <edit name="lcdfilter" mode="assign">
+            <const>lcdnone</const>
+        </edit>
+        <edit name="dpi" mode="assign">
+            <double>300</double>
+        </edit>
+    </match>
+    <match target="font">
+        <test name="weight" compare="more">
+            <const>medium</const>
+        </test>
+        <edit name="autohint" mode="assign">
+            <bool>true</bool>
+        </edit>
+    </match>
+    <alias binding="same">
+        <family>Fluent Emoji Color</family>
+        <default><family>emoji</family></default>
+    </alias>
+
+    <alias binding="same">
+        <family>Fluent Emoji Flat</family>
+        <default><family>emoji</family></default>
+    </alias>
+
+    <alias binding="same">
+        <family>Fluent Emoji High Contrast</family>
+        <default><family>emoji</family></default>
+    </alias>
+
+    <!-- System fonts -->
+    <alias binding="strong">
+        <!-- Google -->
+        <family>Noto Color Emoji</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <!-- Apple -->
+        <family>Apple Color Emoji</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <!-- Microsoft -->
+        <family>Segoe UI Emoji</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <!-- Twitter -->
+        <family>Twitter Color Emoji</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <!-- Mozilla -->
+        <family>EmojiOne Mozilla</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+
+    <!-- Third-Party fonts -->
+    <alias binding="strong">
+        <family>Emoji Two</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <family>JoyPixels</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <family>Emoji One</family>
+        <prefer><family>Fluent Emoji Color</family></prefer>
+    </alias>
+
+    <!-- Non-color -->
+    <alias binding="strong">
+        <!-- Google -->
+        <family>Noto Emoji</family>
+        <prefer><family>Fluent High Contrast</family></prefer>
+    </alias>
+    <alias binding="strong">
+        <!-- Google -->
+        <family>Android Emoji</family>
+        <prefer><family>Fluent High Contrast</family></prefer>
+    </alias>
+</fontconfig>

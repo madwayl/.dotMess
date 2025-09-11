@@ -1,0 +1,120 @@
+/**
+ * ░█▀▄░█▀█░█▀▀░▀█▀░░░█▀▀░█▀█░█░░░█▀█░█▀▄░░░█▀▀░█▀▀░█░█░█▀▀░█▄█░█▀▀
+ * ░█▀▄░█░█░█▀▀░░█░░░░█░░░█░█░█░░░█░█░█▀▄░░░▀▀█░█░░░█▀█░█▀▀░█░█░█▀▀
+ * ░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀
+ * ░█▀▀░█▀▄░█░█░█░█░█▀▄░█▀█░█░█                                    
+ * ░█░█░█▀▄░█░█░▀▄▀░█▀▄░█░█░▄▀▄                                    
+ * ░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀                                    
+ */
+
+* {
+    /* Colors (original-gruvbox) */
+    o-black:        #181818FF;
+    o-red:          #cc241dFF;
+    o-green:        #98971aFF;
+    o-yellow:       #d79921FF;
+    o-blue:         #458588FF;
+    o-purple:       #b16286FF;
+    o-aqua:         #689d6aFF;
+    o-gray:         #a89984FF;
+    o-brgray:       #928374FF;
+    o-brred:        #fb4934FF;
+    o-brgreen:      #b8bb26FF;
+    o-bryellow:     #fabd2fFF;
+    o-brblue:       #83a598FF;
+    o-brpurple:     #d3869bFF;
+    o-braqua:       #8ec07cFF;
+    o-white:        #ebdbb2FF;
+    o-bg2:          #504945FF;
+
+    /* Gruvbox Material Scheme */
+    bg-dim:         #141617FF;
+    bg0:            #1d2021FF;
+    bg1:            #282828FF;
+    bg2:            #282828FF;
+    bg3:            #3c3836FF;
+    bg4:            #3c3836FF;
+    bg5:            #504945FF;
+
+    bg-statusline1: #282828FF;
+    bg-statusline2: #32302fFF;
+    bg-statusline3: #504945FF;
+
+    /* Red */
+    bg-diff-red:    #3c1f1eDD;
+    bg-visual-red:  #442e2dFF;
+
+    /* Orange */
+    bg-diff-orange:   #4a2e1aDD;
+    bg-visual-orange: #44372aFF;
+
+    /* Yellow */
+    bg-diff-yellow:   #3f3518FF;
+    bg-visual-yellow: #473c29FF;
+
+    /* Green */
+    bg-diff-green:   #32361aDD;
+    bg-visual-green: #333e34FF;
+
+    /* Aqua */
+    bg-diff-aqua:   #1e352dDD;
+    bg-visual-aqua: #2d3f35FF;
+
+    /* Blue */
+    bg-diff-blue:   #0d3138DD;
+    bg-visual-blue: #2e3b3bFF;
+
+    /* Purple */
+    bg-diff-purple:   #3f2d35DD;
+    bg-visual-purple: #463640FF;
+
+    bg-current-word: #32302fFF;
+
+    fg0: #e2cca9FF;
+    fg1: #e2cca9FF;
+
+    red:    #f2594bFF;
+    orange: #f28534FF;
+    yellow: #e9b143FF;
+    green:  #b0b846FF;
+    aqua:   #8bba7fFF;
+    blue:   #80aa9eFF;
+    purple: #d3869bFF;
+
+    bg-red:    #db4740FF;
+    bg-orange: #f28534FF;
+    bg-yellow: #e9b143FF;
+    bg-green:  #b0b846FF;
+    bg-aqua:   #8bba7fFF;
+    bg-blue:   #80aa9eFF;
+    bg-purple: #d3869bFF;
+
+    grey0: #7c6f64FF;
+    grey1: #928374FF;
+    grey2: #a89984FF;
+
+    /* Saturation 40% */
+    red-s1:    #ef4d40FF;
+    orange-s1: #ef8740FF;
+    yellow-s1: #efab40FF;
+    green-s1:  #a1fc33FF;
+    aqua-s1:   #40ef85FF;
+    blue-s1:   #40efccFF;
+    purple-s1: #ef4085FF;
+
+    red-sl1:    #cc3c32FF;
+    orange-sl1: #cc6d32FF;
+    yellow-sl1: #cc9832FF;
+    green-sl1:  #9ccc32FF;
+    aqua-sl1:   #32cc76FF;
+    blue-sl1:   #32ccafFF;
+    purple-sl1: #cc3273FF;
+
+    red-sl2:    #992e28FF;
+    orange-sl2: #995628FF;
+    yellow-sl2: #997c28FF;
+    green-sl2:  #789928FF;
+    aqua-sl2:   #28994fFF;
+    blue-sl2:   #289983FF;
+    purple-sl2: #992853FF;
+}
