@@ -1,0 +1,16 @@
+@import "./colors/gruvbox.rasi"
+
+* {
+    transparent:					#ffffff00;
+	window-background:				 Black/35%;
+    background:     @bg1;
+    // CHANGE HERE    
+    background-alt: @bg-diff-aqua;
+    foreground:     @fg1;
+
+    // CHANGE HERE    
+    selected:       @aqua; 
+    // CHANGE HERE    
+    active:         @aqua-sl1;
+    urgent:         @red-sl1;
+}

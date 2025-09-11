@@ -1,0 +1,35 @@
+.notification-row .notification-background .notification .notification-action {
+    /* CHANGE HERE */
+    background-color: @aqua-sl1;
+
+}
+
+.notification-background .notification.normal,
+.notification-background .notification.low {
+    /* CHANGE HERE */
+    background: linear-gradient(60deg, @bg-diff-aqua, rgba(18, 18, 18, .95));
+}
+
+.widget-dnd>switch:checked {
+    /* CHANGE HERE */
+    background: @aqua;
+    /* CHANGE HERE */
+    border: 1px solid @aqua;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+    /* OnePlus McClaren edition Orange accent */
+    /* CHANGE HERE */
+    background: linear-gradient(60deg, @o-aqua, @aqua, @aqua-s1);
+}
+
+.widget-volume highlight {
+    /* CHANGE HERE */
+    background-color: @aqua;
+}
+
+.widget-volume trough slider {
+    /* OnePlus McClaren edition Orange accent */
+    /* CHANGE HERE */
+    color: @aqua;
+}

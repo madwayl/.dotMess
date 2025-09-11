@@ -1,0 +1,378 @@
+/**
+ *
+ * ░█░█░█▀█░█░█░█▀▄░█▀█░█▀▄              
+ * ░█▄█░█▀█░░█░░█▀▄░█▀█░█▀▄              
+ * ░▀░▀░▀░▀░░▀░░▀▀░░▀░▀░▀░▀              
+ * ░█▀▀░█▀▀░█▀▀░░░█▀▀░▀█▀░█░█░█░░░█▀▀░█▀▀
+ * ░█░░░▀▀█░▀▀█░░░▀▀█░░█░░░█░░█░░░█▀▀░▀▀█
+ * ░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀░░▀░░░▀░░▀▀▀░▀▀▀░▀▀▀
+ *
+ */
+
+@import "../../.local/share/themes/gruvbox-material.css";
+@import "../../.local/share/themes/animations.css";
+
+* {
+    /* all: initial; */
+    font-family:
+        "FantasqueSansM Nerd Font Propo", "Font Awesome 6 Free",
+        "Font Awesome 6 Brands", FontAwesome, monospace;
+    font-size: 13.5px;
+    font-weight: 500;
+    /* Reset GTK Theme */
+    /* border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    icon-shadow: none; */
+}
+
+window#waybar {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 1%, rgba(0, 0, 0, 0.95));
+    /* background-color: @bg-dim; */
+    /* background-color: transparent; */
+    border-bottom: 0px;
+    color: @white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modules-right {
+    margin: 8px 8px 8px 0;
+}
+
+.modules-center {
+    margin: 8px 0 8px 0;
+}
+
+.modules-left {
+    margin: 8px 0 8px 8px;
+}
+
+/* All Modules - Common Setup */
+#cava,
+#submap,
+#mpris,
+#window,
+#idle_inhibitor,
+#clocks,
+#battery,
+#backlight,
+#wireplumber,
+#audio,
+#custom-powermenu,
+#custom-backlight,
+#custom-recording,
+#custom-screen-sharing,
+#custom-hyprscroller-mode,
+#networkb,
+#workspaces,
+#custom-idilizer,
+#custom-notification {
+    padding: 3px 12.5px;
+    /* background: @bg-diff-green; */
+    /* background: linear-gradient(60deg, @bg0, @bg1); */
+    color: @fg0;
+    border-radius: 3px;
+    /* border: @bg-dim solid 3px; */
+    /* box-shadow: inset 0 8px 30px @bg0; */
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 0px @bg-dim;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 0px;
+}
+
+#workspaces button {
+    padding: 2px 12.5px;
+
+    color: @o-gray;
+    border-radius: 0;
+    background: transparent;
+
+    /* nice color transitions for workspace buttons */
+    transition-property: background-color;
+    transition-duration: .75s;
+    min-width: 0;
+}
+
+#workspaces button.active {
+    color: @bg1;
+    box-shadow: none;
+    border-radius: 3px;
+    /* padding: 0px 10.5px; */
+}
+
+#workspaces button.urgent {
+    background-size: 400% 400%;
+    animation: long-gradient 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+/* ADD ON CHANGES */
+
+/* All Modules - Common Setup */
+#cava,
+#submap,
+#mpris,
+#window,
+#idle_inhibitor,
+#clocks,
+#battery,
+#backlight,
+#wireplumber,
+#audio,
+#custom-powermenu,
+#custom-backlight,
+#custom-recording,
+#custom-screen-sharing,
+#custom-hyprscroller-mode,
+#networkb,
+#workspaces,
+#custom-idilizer,
+#custom-notification {
+    /* CHANGE HERE */
+    background: linear-gradient(-60deg, @bg-diff-aqua 0%, rgba(18, 18, 18, .95)) 20%;
+}
+
+#clocks {
+    /* background: linear-gradient(60, rgba(18, 18, 18, .95) 0%, @bg-diff-aqua 30%, rgba(18, 18, 18, .95)) 60%; */
+}
+
+#cava,
+#submap,
+#mpris,
+#window,
+#workspaces {
+    /* CHANGE HERE */
+    background: linear-gradient(60deg, @bg-diff-aqua 0%, rgba(18, 18, 18, .95)) 20%;
+}
+
+#workspaces button.active {
+    color: @bg1;
+    /* CHANGE HERE */
+    background: linear-gradient(60deg, @o-aqua 0%, @aqua 80%);
+}
+
+#workspaces button.urgent {
+    background: linear-gradient(60deg, @o-aqua 0%, @aqua-sl1 80%);
+}
+
+/* MPRIS */
+
+#mpris {
+    /* CHANGE HERE */
+    color: @aqua;
+    /* color: @black; */
+    transition-property: color;
+    transition-duration: .75s;
+}
+
+#custom-powermenu {
+    /* color: @red; */
+    color: @bg1;
+    background: linear-gradient(270deg, @red-sl1 0%, @red-sl2 80%);
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-powermenu:hover {
+    background: linear-gradient(240deg, @o-red 0%, @red-sl2 60%);
+    /* color: @red-sl1; */
+}
+
+
+/* Submap */
+
+#submap {
+    background: linear-gradient(60deg, @bg-green 30%, @green 70%);
+    color: @bg-dim;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+/* CAVA */
+
+#cava {
+    padding: 5px;
+    color: @bg-dim;
+
+    background: linear-gradient(-45deg, @red-s1, @purple-s1, @blue-s1, @aqua-s1, @blue-s1, @purple-s1, @red-s1);
+    background-size: 400% 400%;
+    animation: long-gradient 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    /* color: @black; */
+}
+
+/* MPRIS */
+
+#mpris {
+    /* color: @black; */
+    transition-property: color;
+    transition-duration: .75s;
+}
+
+#custom-recording {
+    background: linear-gradient(240deg, @o-red, @red-s1, @red-sl1, @red, @red-sl1, @red-s1);
+    color: @bg-dim;
+    font-weight: 900;
+    background-size: 400% 400%;
+    animation: long-gradient 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+    /* border: none; */
+    /* box-shadow: none; */
+}
+
+#custom-screen-sharing {
+    color: @red;
+    background-color: @fg;
+    transition: all 0.6s cubic-bezier(.55, -0.68, .48, 1.682);
+    /* border: none; */
+    /* box-shadow: none; */
+}
+
+/* Audio */
+
+#audio {
+    padding-left: 5.5px;
+    padding-right: 5.5px;
+}
+
+#pulseaudio {
+    /* background-color: @bg-dim; */
+    padding-right: 7px;
+    padding-left: 7px;
+    /* color: @yellow; */
+}
+
+/* Backlight */
+
+#backlight,
+#custom-backlight {
+    /* color: @yellow; */
+}
+
+/* Tray */
+
+#networkb {
+    /* padding: 0px 10px; */
+    margin: 0px 2px 0px 6px;
+}
+
+#tray {
+    padding: unset;
+    padding: 0 7px 0 3px;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background: @red;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#network {
+    padding-left: 5px;
+    padding-right: 8.5px;
+}
+
+#bluetooth {
+    padding-left: 5.5px;
+    padding-right: 3px;
+}
+
+/* Battery */
+
+#battery {
+    transition: all 1.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#battery.good {
+    background: linear-gradient(240deg, @green-sl2, @green);
+    color: @bg-visual-green;
+    /* color: @green; */
+}
+
+#battery.warning {
+    background: linear-gradient(240deg, @yellow-sl2, @yellow);
+    color: @bg-visual-yellow;
+    /* color: @yellow; */
+}
+
+#battery.bad {
+    background: linear-gradient(240deg, @red-sl2, @red);
+    color: @bg-visual-red;
+    /* color: @red; */
+}
+
+#battery.charging,
+#battery.plugged {
+    animation: wiggly-rotateGradient 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    /* background: linear-gradient(240deg, @green-sl1, @green-sl2); */
+    color: @bg1;
+    /* color: @green; */
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background: @red-s1;
+    color: @bg-visual-red;
+    /* animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate; */
+}
+
+#clock {
+    padding-right: 10px;
+}
+
+#custom-powermenu {
+    /* color: @red; */
+    color: @bg1;
+    background: linear-gradient(270deg, @red-sl1 0%, @red-sl2 80%);
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+#custom-powermenu:hover {
+    background: linear-gradient(240deg, @o-red 0%, @red-sl2 60%);
+    /* color: @red-sl1; */
+}
+
+#custom-notification {
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+    min-width: 28px;
+}

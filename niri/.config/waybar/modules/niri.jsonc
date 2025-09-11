@@ -1,0 +1,39 @@
+{
+    "niri/workspaces": {
+        "all-outputs": false
+    },
+    "niri/window": {
+        "format": "{title}",
+        "rotate": 0,
+        "separate-outputs": true,
+        "rewrite": {
+            "madwayl": "",
+            "paru (.*)": " paru $1",
+            "python": "",
+            "btop": "󰬉",
+            "(.*) — Mozilla Firefox": "󰈹 $1",
+            "(.*)Mozilla Firefox": "󰈹 Firefox",
+            "(.*) — Zen Browser": "󱨧 $1",
+            "(.*)Zen Browser": "󱨧 Zen Browser",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "(.*)Visual Studio Code": "󰨞 Code",
+            "(.*) : VSCodium": " $1",
+            "(.*) - Code - OSS": "󰨞 $1",
+            "(.*)Code - OSS": "󰨞 Code",
+            "(.*) - Obsidian.*": "󰛹 $1",
+            "(.*)Obsidian.*": "󰛹 Obsidian",
+            "(.*) — nemo": "󰉋 $1",
+            "(.*)Spotify Free": "󰓇 Spotify",
+            "(.*)Spotify Premium": "󰓇 Spotify",
+            "(.*)Spotify": "󰓇 Spotify",
+            "(.*)Steam": "󰓓 Steam",
+            "(.*) - Discord": " $1",
+            "(.*)Discord": " Discord",
+            "(.*)Netflix": "󰝆 Netflix",
+            "(.*) — Google Chrome": " $1",
+            "(.*)Google Chrome": " Chrome",
+            "(.*) — GitHub": " $1"
+        },
+        "max-length": 30
+    }
+}
