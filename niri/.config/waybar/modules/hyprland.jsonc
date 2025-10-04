@@ -54,11 +54,11 @@
         "on-click": "hyprctl dispatch submap reset"
     },
     "custom/hyprscroller-mode": {
-        "exec": "~/.config/hypr/scripts/hyprscroller-mode.sh read",
+        "exec": "~/.local/share/scripts/hyprscroller-mode.sh read",
         "return-type": "json",
         "interval": "once",
         "signal": 8,
-        "on-click": "~/.config/hypr/scripts/hyprscroller-mode.sh implement && pkill -SIGRTMIN+8 waybar",
+        "on-click": "~/.local/share/scripts/hyprscroller-mode.sh implement && pkill -SIGRTMIN+8 waybar",
         "format": "{icon} ",
         "format-icons": [
             "",

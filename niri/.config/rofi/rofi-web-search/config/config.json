@@ -2,7 +2,7 @@
     "SEARCH_ENGINE": "duckduckgo",
     "BROWSER": "firefox",
     "TERMINAL": [
-        "kitty",
+        "wezterm",
         "--"
     ]
 }

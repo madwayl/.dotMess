@@ -1,0 +1,40 @@
+.notification-row .notification-background .notification .notification-action {
+    /* CHANGE HERE */
+    background-color: @{{ (ds "data").color }}-sl1;
+
+}
+
+.notification-background .notification.normal,
+.notification-background .notification.low {
+    /* CHANGE HERE */
+    background: @{{ (ds "data").bg_color }};
+}
+
+.widget-dnd>switch:checked {
+    /* CHANGE HERE */
+    background: @{{ (ds "data").color }};
+    /* CHANGE HERE */
+    border: 1px solid @{{ (ds "data").color }};
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+    /* CHANGE HERE */
+    background: @{{ (ds "data").color }};
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked:hover {
+    /* CHANGE HERE */
+    background: linear-gradient(60deg, @o-{{ (ds "data").color }}, @{{ (ds "data").color }}, @{{ (ds "data").color }}-s1);
+}
+.widget-backlight highlight,
+.widget-volume highlight {
+    /* CHANGE HERE */
+    background-color: @{{ (ds "data").color }};
+}
+
+.widget-backlight trough slider,
+.widget-volume trough slider {
+    /* OnePlus McClaren edition Orange accent */
+    /* CHANGE HERE */
+    color: @{{ (ds "data").color }};
+}

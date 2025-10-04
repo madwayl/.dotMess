@@ -1,0 +1,2 @@
+GTK_THEME='{{ (ds "data").theme }}'
+GTK_ICON='{{ (ds "data").icon_color }}'

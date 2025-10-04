@@ -5,12 +5,12 @@
 	window-background:				 Black/35%;
     background:     @bg1;
     // CHANGE HERE    
-    background-alt: @bg-diff-aqua;
+    background-alt: @bg-visual-orange;
     foreground:     @fg1;
 
     // CHANGE HERE    
-    selected:       @aqua; 
+    selected:       @orange; 
     // CHANGE HERE    
-    active:         @aqua-sl1;
+    active:         @orange-sl1;
     urgent:         @red-sl1;
 }

@@ -1,8 +1,8 @@
 @import "../../.local/share/themes/gruvbox-material.css";
 
 * {
-    font-size: 14px;
-    font-family: "FantasqueSansM Nerd Font Propo";
+    font-size: 12px;
+    font-family: "0xProto Nerd Font Propo";
     transition: 100ms;
     box-shadow: unset;
     color: @fg0;
@@ -19,6 +19,10 @@
     background-color: unset;
 }
 
+.notification {
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+}
+
 .notification-background .notification,
 .notification .notification-content {
     margin-bottom: unset;
@@ -26,7 +30,7 @@
 }
 
 .notification .notification-default-action {
-    background-color: none;
+    background-color: transparent;
 }
 
 .floating-notifications scrolledwindow {
@@ -68,12 +72,30 @@
 
 .notification-group {
     background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+    border-radius: 6px;
+}
+
+.notification-group-header.title-1 {
+    padding-left: 10px;
 }
 
 /*  Notification Button */
 
-.notification.critical .notification-action button {
+.notification .notification-action button {
     border-radius: 6px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.notification .notification-action button:hover {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .notification-row .notification-background .notification .notification-action {
@@ -103,6 +125,7 @@
 .notification-row .notification-background .notification .text-button label {
     color: @bg-dim;
     font-weight: 700;
+    padding: 5px 12.5px;
 }
 
 /* Notification (Low/Normal) + Control Center/Floating */
@@ -126,7 +149,7 @@
 .notification.normal .notification-content image {
     background-color: unset;
     color: @fg0;
-    padding-right: 10px;
+    padding-right: 8px;
     border-radius: 3px;
 }
 
@@ -157,6 +180,8 @@
 .notification.critical .notification-content image {
     background-color: unset;
     color: @red;
+    border-radius: 6px;
+    padding-right: 8px;
 }
 
 .notification.critical .notification-content label {
@@ -216,7 +241,6 @@
 
 .control-center {
     border-radius: 6px;
-    -gtk-outline-radius: 0px;
     /* border-top: 1px solid rgba(164, 162, 167, 0.19);
     border-left: 1px solid rgba(164, 162, 167, 0.19);
     border-right: 1px solid rgba(128, 127, 132, 0.145);
@@ -246,7 +270,6 @@
     border: unset;
     background-color: unset;
     border-radius: 6px;
-    -gtk-outline-radius: 1.159rem;
     padding: 0.141rem 0.141rem;
     margin-right: 0.841rem;
 }
@@ -275,7 +298,7 @@
 /* Control Center - DND widget */
 
 .widget-dnd {
-    background-color: @bg1;
+    background-color: @bg0;
 
     padding: 10px;
     margin: 10px;
@@ -319,13 +342,18 @@
     border-radius: 5px;
 }
 
+.widget-notifications stack,
+.widget-notifications scrolledwindow {
+    margin: 0;
+    padding: 0;
+}
+
 /* Buttons widget */
 
 .widget-buttons-grid {
     background: transparent;
 
     border-radius: 1.159rem;
-    -gtk-outline-radius: 1.159rem;
     padding: 0.341rem;
     padding: unset;
 }
@@ -333,6 +361,7 @@
 .widget-buttons-grid>flowbox {
     padding: 15px;
     padding-bottom: 5px;
+    padding: 0;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:first-child {
@@ -341,32 +370,37 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     border: none;
-    background-color: unset;
+    background-color: rgba(128, 128, 128, 0.25);
     border-radius: 6px;
     min-width: 5.522rem;
     min-height: 2.927rem;
     padding: unset;
     margin: unset;
+    padding-bottom: 2px;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.25);
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button label {
     font-size: 1.3027rem;
-    background-color: rgba(128, 128, 128, 0.25);
     border-radius: 6px;
 }
 
-/* .widget-buttons-grid>flowbox>flowboxchild>button:hover {} */
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25);
+}
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
     /* OnePlus McClaren edition Orange accent */
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked label {
-    color: #14141B;
+    color: @bg0;
 }
 
 
-/* Control Center - Volume widget */
+/* Control Center - Slider widget */
 
 .widget-volume,
 .widget-backlight,
@@ -375,83 +409,165 @@
     border: none;
     border-radius: 5px;
 
-    padding: 10px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     margin-bottom: 0px;
     padding: 0px;
-    -gtk-outline-radius: 1.159rem;
+}
+
+.widget-backlight {
+    padding-top: 0px;
+    margin-top: 0px;
 }
 
 .widget-volume label,
 .widget-backlight label,
 .widget-backlight#ddcci10 label {
-    padding: 10px;
+    padding: 5px;
     padding-left: 0px;
-    padding-top: 0px;
     padding-bottom: 0px;
+    color: @o-white;
+    /* margin-right: -3rem; */
+    margin-bottom: 5px;
+    min-width: 1.15rem;
+    -gtk-icon-size: 25px;
 }
 
-.widget-volume label {
-    margin-bottom: 10px;
-}
-
-.widget-volume highlight {}
-
-.widget-volume trough slider {
-    /* background-color: @yellow; */
-    border-radius: 100%;
-    min-height: 1.25rem;
-    min-width: 1.25rem;
-
-    border-radius: 9999px;
-    -gtk-outline-radius: 9999px;
+.widget-volume trough,
+.widget-backlight trough {
+    min-height: 1.5rem;
+    border-radius: 2px;
     background-color: @bg0;
 }
 
+.widget-volume highlight,
+.widget-backlight highlight {
+    border-radius: 2px;
+}
+
+.widget-backlight trough slider,
+.widget-volume trough slider {
+    /* background-color: @yellow; */
+    border-radius: 1px;
+    min-height: 0.2rem;
+    min-width: 0.2rem;
+
+    border-radius: 9999px;
+    background-color: transparent;
+    border-color: @bg0;
+    caret-color: @bg0;
+    color: @bg0;
+    text-decoration-color: @bg0;
+    --accent-bg-color: @bg0;
+}
+
+.widget-backlight slider:hover,
 .widget-volume slider:hover {
     background-color: rgba(128, 128, 128, 0.25);
 }
 
+.widget-backlight slider:active,
 .widget-volume slider:active {
     background-color: @bg0;
+    border-color: @bg0;
 }
 
+.widget-backlight button,
 .widget-volume button {
     padding: 1px;
     margin: 2px;
     margin-right: -1px;
-    background: none;
+    background: transparent;
 }
 
+.widget-backlight button label,
 .widget-volume button label {
     padding: 10px;
     padding-right: 0px;
+    padding-top: 20px;
 }
 
 /* Mpris widget */
 
 .widget-mpris {
-    background-color: transparent;
-    padding: 0 10px;
-    margin: 1px;
-    margin-top: 12px;
+    background: rgba(18, 18, 18, 0.25);
+    color: @fg0;
+    margin: 0;
+    margin: 10px;
+    border-radius: 6px;
 }
 
-.widget-mpris-player {
-    padding: 8px;
-    margin: 8px;
+.widget-mpris>box>button {
+    background: rgba(128, 128, 128, 0.25);
+    color: @bg0;
+    padding: 0;
+    min-width: 32px;
+    margin: 0 -32px;
+    opacity: 0;
+}
 
+.widget-mpris>box>button:hover {
+    background: rgba(128, 128, 128, 0.25);
+}
+
+.widget-mpris .widget-mpris-player {
+    margin: 0;
+    box-shadow: none;
     border-radius: 6px;
-    -gtk-outline-radius: 6px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-background {
+    filter: blur(4px) brightness(0.6);
+    --mpris-album-art-icon-size: 2rem;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay {
+    box-shadow: none;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay button {
+    border-radius: 4px;
+    margin: 0;
+    background: @bg0;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
+    background: @bg2;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
+    color: @fg0;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
+    color: @grey0;
+    font-size: 14px;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    box-shadow: none;
+    color: @bg3;
 }
 
 .widget-mpris-title {
+    font-size: 1.2rem;
     font-weight: bold;
-    font-size: 1.25rem;
+    margin: 0 8px 8px;
+    text-align: center;
 }
 
 .widget-mpris-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    text-align: center;
 }
 
-@import "./addon.style.css"
+.widget-mpris carouselindicatordots {
+    margin: 5px;
+}
+
+@import "./addon.style.css";

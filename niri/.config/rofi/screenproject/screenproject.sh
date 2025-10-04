@@ -22,7 +22,7 @@ mesg="Current Monitor Profile :: $profile"
 # elif [[ "$theme" == *'type-3'* ]]; then
 list_col='1'
 list_row='3'
-win_width='422px'
+win_width='454px'
 # elif [[ "$theme" == *'type-5'* ]]; then
 # 	list_col='1'
 # 	list_row='5'

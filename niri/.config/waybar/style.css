@@ -15,9 +15,9 @@
 * {
     /* all: initial; */
     font-family:
-        "FantasqueSansM Nerd Font Propo", "Font Awesome 6 Free",
+        "0xProto Nerd Font Propo", "Font Awesome 6 Free",
         "Font Awesome 6 Brands", FontAwesome, monospace;
-    font-size: 13.5px;
+    font-size: 11.75px;
     font-weight: 500;
     /* Reset GTK Theme */
     /* border: none;
@@ -82,20 +82,35 @@ window#waybar.empty #window {
 #workspaces,
 #custom-idilizer,
 #custom-notification {
-    padding: 3px 12.5px;
+    padding: 2px 12.5px 7px 12.5px;
     /* background: @bg-diff-green; */
     /* background: linear-gradient(60deg, @bg0, @bg1); */
     color: @fg0;
     border-radius: 3px;
     /* border: @bg-dim solid 3px; */
     /* box-shadow: inset 0 8px 30px @bg0; */
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.35);
+    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces {
+    box-shadow: unset;
+}
 
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 0px @bg-dim;
+#submap:hover,
+#mpris:hover,
+#idle_inhibitor:hover,
+#backlight:hover,
+#wireplumber:hover,
+#audio:hover,
+#custom-powermenu:hover,
+#custom-backlight:hover,
+#custom-recording:hover,
+#custom-screen-sharing:hover,
+#networkb:hover,
+#custom-idilizer:hover,
+#custom-notification:hover {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.35);
 }
 
 /* Workspaces */
@@ -114,6 +129,12 @@ button:hover {
     transition-property: background-color;
     transition-duration: .75s;
     min-width: 0;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.35);
+}
+
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.35);
 }
 
 #workspaces button.active {
@@ -121,6 +142,15 @@ button:hover {
     box-shadow: none;
     border-radius: 3px;
     /* padding: 0px 10.5px; */
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.35);
+}
+
+#workspaces button:first-child {
+    border-bottom-left-radius: 3px;
+}
+
+#workspaces button:last-child {
+    border-bottom-right-radius: 3px;
 }
 
 #workspaces button.urgent {
@@ -161,11 +191,7 @@ button:hover {
 #custom-idilizer,
 #custom-notification {
     /* CHANGE HERE */
-    background: linear-gradient(-60deg, @bg-diff-aqua 0%, rgba(18, 18, 18, .95)) 20%;
-}
-
-#clocks {
-    /* background: linear-gradient(60, rgba(18, 18, 18, .95) 0%, @bg-diff-aqua 30%, rgba(18, 18, 18, .95)) 60%; */
+    background: @bg-visual-orange;
 }
 
 #cava,
@@ -174,24 +200,30 @@ button:hover {
 #window,
 #workspaces {
     /* CHANGE HERE */
-    background: linear-gradient(60deg, @bg-diff-aqua 0%, rgba(18, 18, 18, .95)) 20%;
+    background: @bg-visual-orange
 }
 
 #workspaces button.active {
     color: @bg1;
     /* CHANGE HERE */
-    background: linear-gradient(60deg, @o-aqua 0%, @aqua 80%);
+    background: linear-gradient(60deg, @o-orange 0%, @orange 80%);
+}
+
+#workspaces button.active:hover {
+    /* CHANGE HERE */
+    background: linear-gradient(120deg, @o-orange 0%, @orange 80%);
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.35);
 }
 
 #workspaces button.urgent {
-    background: linear-gradient(60deg, @o-aqua 0%, @aqua-sl1 80%);
+    background: linear-gradient(60deg, @o-orange 0%, @orange-sl1 80%);
 }
 
 /* MPRIS */
 
 #mpris {
     /* CHANGE HERE */
-    color: @aqua;
+    color: @orange;
     /* color: @black; */
     transition-property: color;
     transition-duration: .75s;
@@ -201,14 +233,12 @@ button:hover {
     /* color: @red; */
     color: @bg1;
     background: linear-gradient(270deg, @red-sl1 0%, @red-sl2 80%);
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #custom-powermenu:hover {
     background: linear-gradient(240deg, @o-red 0%, @red-sl2 60%);
     /* color: @red-sl1; */
 }
-
 
 /* Submap */
 
@@ -364,7 +394,6 @@ button:hover {
     /* color: @red; */
     color: @bg1;
     background: linear-gradient(270deg, @red-sl1 0%, @red-sl2 80%);
-    transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
 
 #custom-powermenu:hover {

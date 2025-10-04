@@ -8,9 +8,5 @@
  **/
 
 * {
-    font: "FantasqueSansM Nerd Font Propo 12";
+    font: "0xProto Nerd Font Propo 10";
 }
-
-// element-text selected.active{
-//     font: "FantasqueSansM Nerd Font Propo bold 12";
-// }

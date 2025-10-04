@@ -19,7 +19,7 @@ handle_windowtitlev2 () {
 }
 
 handle_newmonitor() {
-    $HOME/.config/hypr/scripts/random-wallpaper.sh $HOME/.dotMess/wallpapers
+    $HOME/.config/hypr/scripts/random-wallpaper.sh $HOME/.dotMess/wallpapers-gruvbox
     ags quit && ags run
     $XDG_CONFIG_HOME/hypr/scripts/brightness-control.sh init &
 }
