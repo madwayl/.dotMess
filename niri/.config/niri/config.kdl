@@ -23,8 +23,7 @@ spawn-at-startup "niri-float-sticky"
 spawn-at-startup "ags" "run"
 spawn-at-startup "udiskie" "--no-automount" "--smart-tray"
 spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/redland" "--lat" "8.7" "--lon" "78.0" "--duration" "3600"
-spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/nirinit"
-
+spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/niri-session-manager"
 
 // ANCHOR Scripts
 spawn-at-startup "sh" "-c" "$XDG_DATA_HOME/scripts/brightness-control.sh" "init"
@@ -140,6 +139,7 @@ input {
         drag-lock
         natural-scroll
         accel-speed 0.5
+        accel-speed 0.5
         accel-profile "adaptive"
         scroll-method "two-finger"
         // disabled-on-external-mouse
@@ -203,9 +203,11 @@ output "eDP-1" {
 // SECTION Windows & Layouts
 // SECTION Layout Styles
 
+
 layout {
     gaps 7
 
+    background-color "#000"
     background-color "#000"
     center-focused-column "never"
 
@@ -229,6 +231,7 @@ layout {
     // default-column-width {}
 
     // ANCHOR Border
+
 
     focus-ring {
         // Uncomment this line to disable the focus ring.
@@ -259,6 +262,7 @@ layout {
     // ANCHOR Shadow
     shadow {
         on
+        on
         draw-behind-window true
         softness 30
         spread 5
@@ -281,6 +285,9 @@ layout {
 
 // ANCHOR CSD
 prefer-no-csd
+    // Alternatively, you can override it with a window rule called
+    // `draw-border-with-background`.
+
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
 
@@ -377,6 +384,7 @@ window-rule {
     match app-id="^(firefox)$" title="^(Library)$"
     match app-id="^(vlc)$"
     match app-id="^(mpv)$"
+    match app-id="^(mpv)$"
     match app-id="^(kvantummanager)$"
     match app-id="^(qt5ct)$"
     match app-id="^(qt6ct)$"
@@ -405,6 +413,7 @@ window-rule {
 
 // ANCHOR Copyq
 
+
 window-rule {
     match app-id="^(com.github.hluk.copyq)$"
 
@@ -416,6 +425,7 @@ window-rule {
 }
 
 // ANCHOR Secrets
+
 
 window-rule {
     // match app-id=r#"^org\.keepassxc\.KeePassXC$"#
@@ -430,8 +440,10 @@ window-rule {
 
 window-rule {
     opacity 0.95
+    opacity 0.95
     geometry-corner-radius 6
     clip-to-geometry true
+    default-column-width {}
     default-column-width {}
 }
 
@@ -461,6 +473,7 @@ window-rule {
 // !SECTION 
 
 // SECTION Animation
+
 
 animations {
 
@@ -520,16 +533,20 @@ cursor {
 
 // SECTION Keybindings
 
+
 binds {
+
 
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // ANCHOR App Launch
     Mod+Alt+Return hotkey-overlay-title="Open a Terminal: WezTerm" { spawn "wezterm"; }
+    Mod+Alt+Return hotkey-overlay-title="Open a Terminal: WezTerm" { spawn "wezterm"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     Super+Alt+C hotkey-overlay-title="Open Code Editor: VS Codium" { spawn "codium" "--password-store='gnome-libsecret'"; }
     Super+Alt+B hotkey-overlay-title="Open a Browser: Zen Browser" { spawn "zen-browser"; }
+    Super+Alt+F hotkey-overlay-title="Open File Manager: Nautilus" { spawn "nautilus" "-w"; }
     Super+Alt+F hotkey-overlay-title="Open File Manager: Nautilus" { spawn "nautilus" "-w"; }
     Super+Alt+V hotkey-overlay-title="Open Clipboard Manager: CopyQ" { spawn "copyq" "show"; }
     Super+Alt+N hotkey-overlay-title="Open PKM: Obsidian" { spawn "obsidian"; }
@@ -677,7 +694,9 @@ binds {
     Mod+Period { expel-window-from-column; }
 
     // Mod+R { switch-preset-column-width; }
+    // Mod+R { switch-preset-column-width; }
     // Cycling through the presets in reverse order is also possible.
+    Mod+R { switch-preset-column-width-back; }
     Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
@@ -726,6 +745,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
+    Mod+Shift+E { spawn-sh "sh -c 'systemctl --user --no-block stop niri.service'"; }
     Mod+Shift+E { spawn-sh "sh -c 'systemctl --user --no-block stop niri.service'"; }
     Ctrl+Alt+Delete { quit; }
 
