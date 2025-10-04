@@ -1,0 +1,17 @@
+environment {
+
+    // --- GTK / Icons / Theme ---
+    // CHANGE HERE
+    GTK_THEME "{{ (ds "data").theme }}"
+    // CHANGE HERE
+    ICON_THEME "{{ (ds "data").icon_color }}"
+    COLOR_SCHEME "prefer-dark"
+
+}
+
+layout {
+    insert-hint {
+        // off
+        gradient from="{{ (ds "data").sddm_color }}80" to="{{ (ds "data").sddm_bg_color }}D0" angle=60 relative-to="workspace-view"
+    }
+}

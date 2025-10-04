@@ -5,7 +5,7 @@ local addon = require("themes.addon-colors")
 local config = wezterm.config_builder()
 
 -- Font settings
-config.font = wezterm.font("0xProto Nerd Font Mono")
+config.font = wezterm.font("0xProto Nerd Font Propo")
 
 config.font_size = 9.75
 config.line_height = 1.3

@@ -1,6 +1,6 @@
 .notification-row .notification-background .notification .notification-action {
     /* CHANGE HERE */
-    background-color: @{{ (ds "data").color }}-sl1;
+    background-color: @{{ (ds "data").color }};
 
 }
 
@@ -29,12 +29,11 @@
 .widget-backlight highlight,
 .widget-volume highlight {
     /* CHANGE HERE */
-    background-color: @{{ (ds "data").color }};
+    background: linear-gradient(60deg, @o-{{ (ds "data").color }} 0%, @{{ (ds "data").color }} 80%);
 }
 
 .widget-backlight trough slider,
 .widget-volume trough slider {
-    /* OnePlus McClaren edition Orange accent */
     /* CHANGE HERE */
     color: @{{ (ds "data").color }};
 }

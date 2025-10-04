@@ -11,6 +11,6 @@
     // CHANGE HERE    
     selected:       @{{ (ds "data").color }}; 
     // CHANGE HERE    
-    active:         @{{ (ds "data").color }}-sl1;
+    active:         @{{ (ds "data").color }}-s1;
     urgent:         @red-sl1;
 }

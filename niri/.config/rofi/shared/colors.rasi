@@ -11,6 +11,6 @@
     // CHANGE HERE    
     selected:       @orange; 
     // CHANGE HERE    
-    active:         @orange-sl1;
+    active:         @orange-s1;
     urgent:         @red-sl1;
 }
