@@ -11,7 +11,7 @@
 /*****----- Configuration -----*****/
 configuration {
 	modi:                       "drun,run,filebrowser";
-    show-icons:                 false;
+    show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
@@ -78,8 +78,9 @@ window {
 	blur:						 80;
     location:                    center;
     anchor:                      center;
-    fullscreen:                  false;
-    width:                       800px;
+    fullscreen:                  true;
+    width:                       1366px;
+    height:                      768px;
     x-offset:                    0px;
     y-offset:                    0px;
 	background-color:           @window-background;
@@ -109,7 +110,7 @@ mainbox {
     enabled:                     true;
     spacing:                     20px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     300px 525px;
     border:                      0px solid;
     border-radius:               3px;
     border-color:                @border-colour;
@@ -158,11 +159,13 @@ prompt {
 }
 textbox-prompt-colon {
     enabled:                     true;
-    padding:                     10px 0px;
+    padding:                     10px 0px 10px 5px;
     expand:                      false;
-    str:                         "";
+    str:                         ">_<";
     //background-color:            inherit;
-    text-color:                  inherit;
+    // text-color:                  @foreground;
+    // background-color: @alternate-background;
+    // border-radius: 4px;
 }
 entry {
     enabled:                     true;
@@ -170,7 +173,7 @@ entry {
     //background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 "";
     placeholder-color:           @background-alt;
 }
 num-filtered-rows {
@@ -201,8 +204,8 @@ case-indicator {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     1;
-    lines:                       12;
+    columns:                     3;
+    lines:                       6;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -210,10 +213,11 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
+    flow:                        horizontal;
     
-    spacing:                     5px;
+    spacing:                     8px;
     margin:                      0px;
-    padding:                     0px;
+    padding:                     15px 25px;
     border:                      0px solid;
     border-radius:               3px;
     border-color:                @border-colour;
@@ -221,6 +225,7 @@ listview {
     text-color:                  @foreground-colour;
     cursor:                      "default";
 }
+
 scrollbar {
     handle-width:                4px ;
     handle-color:                @handle-colour;
@@ -231,9 +236,9 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     20px;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     12px;
     border:                      0px solid;
     border-radius:               3px;
     border-color:                @border-colour;
@@ -245,7 +250,7 @@ element {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        24px;
+    size:                        28px;
     cursor:                      inherit;
 }
 
@@ -288,6 +293,7 @@ mode-switcher{
     background-color:            transparent;
     text-color:                  @foreground-colour;
 }
+
 button {
     padding:                     10px;
     border:                      0px solid;
@@ -301,6 +307,7 @@ button {
     font:   "0xProto Nerd Font Propo 20";
     cursor:                      pointer;
 }
+
 button selected {
     text-color:            var(selected-normal-foreground);
     background-color:                  var(selected-normal-background);
@@ -309,18 +316,18 @@ button selected {
 /*****----- Message -----*****/
 message {
     enabled:                     true;
-    margin:                      2.5px 0px 0px;
-    padding:                     0px;
+    padding:                     15px 25px 0px;
     border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
+    border-radius:               4px;
     border-color:                @border-colour;
     background-color:            transparent;
     text-color:                  @foreground-colour;
 }
+
 textbox {
     padding:                     12px;
     border:                      0px solid;
-    border-radius:               2px;
+    border-radius:               4px;
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  @foreground-colour;
@@ -331,6 +338,7 @@ textbox {
     blink:                       true;
     markup:                      true;
 }
+
 error-message {
     padding:                     10px;
     border:                      2px solid;

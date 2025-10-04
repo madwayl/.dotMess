@@ -133,7 +133,7 @@ notify_view() {
 
 # 1
 shotnow () {
-	grim -o $(niri msg -j focused-output | jq '.name') -f ${dir}/${file}
+	grim -o $(niri msg -j focused-output | jq -r '.name') ${dir}/${file}
 	notify_view
 }
 
@@ -151,7 +151,7 @@ shotnow () {
 
 # 2
 shotwin () {
-	grim -g "$(slurp)" -t ppm -f ${dir}/${file}
+	grim -g "$(slurp)" ${dir}/${file}
 	notify_view
 }
 
@@ -159,7 +159,7 @@ shotwin () {
 cast() {
 	if [[ ! -e '/tmp/cast' ]]; then
 		file="Screenshot_${time}.mp4"
-		output=$(niri msg -j focused-output | jq '.name')
+		output=$(niri msg -j focused-output | jq -r '.name')
 		wl-screenrec --filename=${dir}/Recordings/${file} --output=$output --low-power=off > /dev/null 2>&1 &
 		echo "$!" > '/tmp/cast'
 	else

@@ -1,27 +1,39 @@
-@import "../../.local/share/themes/gruvbox-material.css";
-
 /* See https://docs.gtk.org/gtk4/css-properties.html for reference */
+
+@import "../../.local/share/themes/gruvbox-material.css";
 
 /* You can define variables this way */
 :root {
-    --default--border-radius: 0.7rem;
+    --default--border-radius: 0.4rem;
 }
 
 /* The top level window style */
 window {
     padding: 0.7rem;
     border-radius: var(--default--border-radius);
+    background-color: @{{ (ds "data").bg_color }};
 }
 
 /* The entire list of windows */
 window-list {
     border-radius: var(--default--border-radius);
+    background-color: @bg0;
 }
 
 /* An entry in the list of windows. */
 /* Use :selected pseudoclass to style the selected entry */
 /* Use :focus pseudoclass to style the focused entry */
 /* window-list row {} */
+
+window-list row {
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+}
+
+window-list row:selected,
+window-list row:focus {
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.5);
+}
 
 window-list row:first-child {
     border-top-left-radius: var(--default--border-radius);
@@ -33,32 +45,47 @@ window-list row:last-child {
     border-bottom-right-radius: var(--default--border-radius);
 }
 
-/* A wrapper around a label with a window name */
+/* A wrapper around an entry in the window list */
 window-item-box {
     /* Padding around the contents to make it more readable */
     padding: 1rem;
 }
 
-/* A label containing a window name */
-window-item-label {
-    /* Add some space between the icon and the label */
-    margin-left: 0.4rem;
+/* A wrapper around labels with app name and title */
+window-item-description {
+    /* Add some space between the icon and the labels */
+    margin-left: 0.7rem;
+}
+
+/* A label with the app name */
+/* window-item-label {} */
+
+/* Set gray font color for titles that are not selected.
+ * Remove this line if it conflicts with your GTK theme  */
+window-list row window-item-title {
+    font-size: 11px;
+    padding-top: 2px;
+    min-width: 6rem;
 }
 
 /* An application icon next to the label */
 window-item-icon {
-    -gtk-icon-size: 2.3rem;
-    padding-right: 0.5rem;
+    -gtk-icon-size: 2.7rem;
 }
 
-window {
-    background: rgba(0, 0, 0, 0.85);
+window-list row:focus {
+    background-color: @o-{{ (ds "data").color }};
 }
 
-window-list {
-    background-color: rgba(18, 18, 18, .95);
+window-list row:selected {
+    background-color: @{{ (ds "data").color }};
 }
 
-row:focus {
-    background: @{{ (ds "data").bg_color }};
+window-list row:focus window-item-description,
+window-list row:selected window-item-description {
+    color: @bg0;
+}
+
+window-item-description {
+    color: @{{ (ds "data").color }};
 }

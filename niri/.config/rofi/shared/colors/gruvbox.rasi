@@ -11,6 +11,7 @@
     /* Colors (original-gruvbox) */
     o-black:        #181818FF;
     o-red:          #cc241dFF;
+    o-orange:       #d65d0eFF;
     o-green:        #98971aFF;
     o-yellow:       #d79921FF;
     o-blue:         #458588FF;
@@ -19,6 +20,7 @@
     o-gray:         #a89984FF;
     o-brgray:       #928374FF;
     o-brred:        #fb4934FF;
+    o-brorange:     #fe8019FF;
     o-brgreen:      #b8bb26FF;
     o-bryellow:     #fabd2fFF;
     o-brblue:       #83a598FF;

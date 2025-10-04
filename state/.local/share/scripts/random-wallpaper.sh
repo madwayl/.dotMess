@@ -11,7 +11,8 @@ export SWWW_TRANSITION_STEP=255
 
 # This controls (in seconds) when to switch to the next image
 INTERVAL=6800
-WALLPAPER=$HOME/.dotMess/wallpapers
+WALLPAPER_DIR=$HOME/Pictures/Gruvbox-mix
+TEMP_FILE=$HOME/Pictures/wallpapers.txt
 
 swww img --namespace bg $HOME/Pictures/wallpaper.png
 swww img --namespace bg_overview $HOME/Pictures/wallpaper-blur.png
@@ -33,17 +34,20 @@ while true; do
 		sleep $INTERVAL
 	fi
 
-	img=$(find "$WALLPAPER" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.bmp' \) | shuf -n 1)
+	img=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.bmp' \) | shuf -n 1)
+
+	while grep -Fxq "$img" "$TEMP_FILE"; do
+		img=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.bmp' \) | shuf -n 1)
+	done
+
+	if [ "$(wc -l < "$TEMP_FILE")" -gt 10 ]; then
+		sed -i '1d' $TEMP_FILE
+	else
+		echo $img >> $TEMP_FILE
+	fi
 
 	positions=('center' 'top' 'left' 'right' 'bottom' 'top-left' 'top-right' 'bottom-left' 'bottom-right')
 	export SWWW_TRANSITION_POS=$(printf "%s\n" "${positions[@]}" | shuf -n 1)
-
-	lutgen apply -n 16 -l 16 -s 256 -o $HOME/Pictures/wallpaper-lut.png -P $img -- 181818 cc241d 98971a d79921 458588 b16286 689d6a a89984 d65d0e ebdbb2 928374 fb4934 b8bb26 fabd2f 83a598 d3869b 8ec07c 504945 fe8019 141617 1d2021 282828 3c3836 32302f 3c1f1e 442e2d 4a2e1a 44372a 3f3518 473c29 32361a 333e34 1e352d 2d3f35 0d3138 2e3b3b 3f2d35 463640 4a4640 53504a e2cca9 f2594b f28534 e9b143 b0b846 8bba7f 80aa9e d3869b db4740 e3e1dc 7c6f64 a7c000 65c26b 4eb9ac d34295 ef4d40 ef8740 efab40 a1fc33 40ef85 40efcc ef4085 cc3c32 cc6d32 cc9832 9ccc32 32cc76 32ccaf cc3273 992e28 995628 997c28 789928 28994f 289983 992853
-
-	magick $HOME/Pictures/wallpaper-lut.png -modulate 85,145 $HOME/Pictures/wallpaper.png
-	magick $HOME/Pictures/wallpaper-lut.png -modulate 85,145 -filter Gaussian -resize 20% -blur 0x3.5 $HOME/Pictures/wallpaper-blur.png
-
-	cp $HOME/Pictures/wallpaper.png /usr/share/sddm/themes/silent/backgrounds/default.png
 
 	filename=$(basename "$img")
 	BG_COLOR=$(jq --arg f "$filename" -r '.[$f]' $XDG_DATA_HOME/themes/image-themes.json)
@@ -136,10 +140,30 @@ while true; do
 			;;
 	esac
 
+	# find "$HOME/.dotMess/wallpapers" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.bmp' \) |
+	# while read -r img; do
+	# 	[ -e "$img" ] || continue  # skip if no matching files
+	# 	filename=$(basename "$img")
+	# 	lutgen apply -n 0 -l 16 -s 256 -L 0.5 \
+	# 	-o "$HOME/Pictures/Gruvbox-mix/$filename" \
+	# 	-P "$img" \
+	# 	-- 141617 181818 32302f 504945 992e28 992853 cc3c32 db4740 f2594b \
+	# 	ef4d40 cc241d fb4934 995628 d65d0e cc6d32 f28534 ef8740 fe8019 997c28 \
+	# 	cc9832 e9b143 efab40 d79921 fabd2f 789928 9ccc32 b0b846 a1fc33 98971a \
+	# 	b8bb26 28994f 32cc76 8bba7f 689d6a 8ec07c 40ef85 32ccaf 289983 80aa9e \
+	# 	458588 40efcc 83a598 cc3273 ef4085 d3869b b16286 7c6f64 928374 a89984 e2cca9 e3e1dc ebdbb2
+	# done
+
+	magick $img -modulate 80,145 $HOME/Pictures/wallpaper.png
+	magick $img -modulate 80,145 -filter Gaussian -resize 20% -blur 0x3.5 $HOME/Pictures/wallpaper-blur.png
+	magick $img -modulate 80,145 -set option:size '%[fx:min(w,h)]x%[fx:min(w,h)]' xc:none +swap -gravity center -composite -resize 150x150 -bordercolor "$SDDM_COLOR" -border 12%x12% $HOME/Pictures/wallpaper-square.png
+
+	cp $HOME/Pictures/wallpaper.png /usr/share/sddm/themes/silent/backgrounds/default.png
+
 	TEMPLATE_PATH="/home/madwayl/.dotMess/state/.local/share/templates/"
 
 	# 8 NIRI KDL
-	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-config.kdl.template -o ~/.config/niri/config.kdl -d data=stdin:///foo.json
+	echo "{'sddm_color': '$SDDM_COLOR', 'sddm_bg_color': '$SDDM_BG_COLOR', 'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-env.kdl.template -o ~/.config/niri/theme.kdl -d data=stdin:///foo.json
 
 	# GTK 4.0
 	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/gtk-4.0-settings.ini.template -o ~/.config/gtk-4.0/settings.ini -d data=stdin:///foo.json
@@ -147,18 +171,30 @@ while true; do
 	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/gtk-3.0-settings.ini.template -o ~/.config/gtk-3.0/settings.ini -d data=stdin:///foo.json
 	# GTK 2.0
 	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/gtkrc.template -o ~/.config/gtk-2.0/gtkrc -d data=stdin:///foo.json
-	# Profile
+	# PROFILE
 	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/profile.template -o ~/.profile -d data=stdin:///foo.json
+	# XSETTINGSD
+	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/xsettingsd.conf.template -o ~/.config/xsettingsd/xsettingsd.conf -d data=stdin:///foo.json
+
+	# ln -sfn /usr/share/themes/$THEME/gtk-3.0/assets /home/madwayl/.config/gtk-3.0/
+	# ln -sfn /usr/share/themes/$THEME/gtk-3.0/gtk.css /home/madwayl/.config/gtk-3.0/
+	# ln -sfn /usr/share/themes/$THEME/gtk-3.0/gtk-dark.css /home/madwayl/.config/gtk-3.0/
+	
+	# ln -sfn /usr/share/themes/$THEME/gtk-4.0/assets /home/madwayl/.config/gtk-4.0/
+	# ln -sfn /usr/share/themes/$THEME/gtk-4.0/gtk.css /home/madwayl/.config/gtk-4.0/
+	# ln -sfn /usr/share/themes/$THEME/gtk-4.0/gtk-dark.css /home/madwayl/.config/gtk-4.0/
 
 	gsettings set org.gnome.desktop.interface gtk-theme $THEME
 	gsettings set org.gnome.desktop.interface icon-theme $ICON_COLOR
+
+	gtk4-update-icon-cache
 
 	# 1 HYPRLOCK
 	echo "{'color': '$COLOR'}" | gomplate -f $TEMPLATE_PATH/hyprlock.conf.template -o ~/.config/hypr/hyprlock.conf -d data=stdin:///foo.json
 
 	# 2 WAYBAR
 	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/waybar-style.css.template -o ~/.config/waybar/style.css -d data=stdin:///foo.json
-
+	
 	# 3 SWAYNC
 	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/swaync-style.css.template -o ~/.config/swaync/addon.style.css -d data=stdin:///foo.json
 
@@ -186,7 +222,7 @@ while true; do
 	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/osd-colors.scss.template -o ~/.config/ags/widgets/osd/osd-colors.scss -d data=stdin:///foo.json
 
 	# 7 niri-switch
-	echo "{'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-switch.css.template -o ~/.config/niri-switch/style.css -d data=stdin:///foo.json
+	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-switch.css.template -o ~/.config/niri-switch/style.css -d data=stdin:///foo.json
 
 	killall niri-switch-daemon; $CARGO_HOME/bin/niri-switch-daemon &
 

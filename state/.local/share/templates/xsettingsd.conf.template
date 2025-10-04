@@ -1,5 +1,5 @@
-Net/ThemeName "Orchis-Grey-Dark"
-Net/IconThemeName "Adwaita-slate"
+Net/ThemeName "{{ (ds "data").theme }}"
+Net/IconThemeName "{{ (ds "data").icon_color }}"
 Gtk/CursorThemeName "Bibata-Modern-Classic"
 Net/EnableEventSounds 1
 EnableInputFeedbackSounds 1
