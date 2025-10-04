@@ -17,6 +17,7 @@
         "include": [
             "~/.config/waybar/default.jsonc",
             "~/.config/waybar/modules/niri.jsonc",
+            "~/.config/waybar/modules/hyprland.jsonc",
             "~/.config/waybar/modules/media.jsonc",
             "~/.config/waybar/modules/brightness.jsonc",
             "~/.config/waybar/modules/network.jsonc",
@@ -25,9 +26,12 @@
         "position": "top",
         // Choose the order of the modules
         "modules-left": [
+            // "custom/hyprscroller-mode",
             "niri/workspaces",
-            "mpris",
+            // "mpris",
             "niri/window"
+            // "hyprland/workspaces",
+            // "hyprland/window"
         ],
         "modules-center": [
             "custom/screen-sharing",
@@ -62,6 +66,7 @@
         "include": [
             "~/.config/waybar/default.jsonc",
             "~/.config/waybar/modules/niri.jsonc",
+            "~/.config/waybar/modules/hyprland.jsonc",
             "~/.config/waybar/modules/media.jsonc",
             "~/.config/waybar/modules/brightness.jsonc",
             "~/.config/waybar/modules/network.jsonc",
@@ -70,9 +75,12 @@
         "position": "top",
         // Choose the order of the modules
         "modules-left": [
+            // "custom/hyprscroller-mode",
             "niri/workspaces",
-            "mpris",
-            "niri/window"
+            "niri/window",
+            // "hyprland/workspaces",
+            // "hyprland/window",
+            "mpris"
         ],
         "modules-center": [
             "custom/screen-sharing",

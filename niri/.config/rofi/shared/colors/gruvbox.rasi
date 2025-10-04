@@ -68,6 +68,10 @@
     bg-diff-purple:   #3f2d35DD;
     bg-visual-purple: #463640FF;
 
+    /* Gray */
+    bg-diff-gray: #4a4640;
+    bg-visual-gray: #53504a;
+
     bg-current-word: #32302fFF;
 
     fg0: #e2cca9FF;
@@ -80,6 +84,7 @@
     aqua:   #8bba7fFF;
     blue:   #80aa9eFF;
     purple: #d3869bFF;
+    gray: #e2cca9;
 
     bg-red:    #db4740FF;
     bg-orange: #f28534FF;
@@ -88,6 +93,7 @@
     bg-aqua:   #8bba7fFF;
     bg-blue:   #80aa9eFF;
     bg-purple: #d3869bFF;
+    bg-gray: #e3e1dc;
 
     grey0: #7c6f64FF;
     grey1: #928374FF;
@@ -101,6 +107,7 @@
     aqua-s1:   #40ef85FF;
     blue-s1:   #40efccFF;
     purple-s1: #ef4085FF;
+    gray-s1: #7c6f64FF;
 
     red-sl1:    #cc3c32FF;
     orange-sl1: #cc6d32FF;
@@ -109,6 +116,7 @@
     aqua-sl1:   #32cc76FF;
     blue-sl1:   #32ccafFF;
     purple-sl1: #cc3273FF;
+    gray-sl1: #a89984FF;
 
     red-sl2:    #992e28FF;
     orange-sl2: #995628FF;
@@ -117,4 +125,5 @@
     aqua-sl2:   #28994fFF;
     blue-sl2:   #289983FF;
     purple-sl2: #992853FF;
+    gray-sl2: #928374FF;
 }

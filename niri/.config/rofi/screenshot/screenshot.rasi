@@ -35,7 +35,7 @@ window {
     location:                    south;
     anchor:                      south;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       800px; // onscript
     x-offset:                    0px;
     y-offset:                    -50px;
     margin:                      0px;
@@ -137,7 +137,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "FantasqueSansM Nerd Font Propo 24";
+    font:                        "0xProto Nerd Font Propo 24";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

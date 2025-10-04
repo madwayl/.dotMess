@@ -21,7 +21,7 @@ mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
 # elif [[ "$theme" == *'type-3'* ]]; then
 list_col='1'
 list_row='6'
-win_width='513px'
+win_width='544px'
 # elif [[ "$theme" == *'type-5'* ]]; then
 # 	list_col='1'
 # 	list_row='5'
@@ -133,8 +133,8 @@ notify_view() {
 
 # 1
 shotnow () {
-	niri msg action screenshot
-	# notify_view
+	grim -o $(niri msg -j focused-output | jq '.name') -f ${dir}/${file}
+	notify_view
 }
 
 # shot5 () {
@@ -151,15 +151,15 @@ shotnow () {
 
 # 2
 shotwin () {
-	niri msg action screenshot-screen
-	# notify_view
+	grim -g "$(slurp)" -t ppm -f ${dir}/${file}
+	notify_view
 }
 
 # 3
 cast() {
 	if [[ ! -e '/tmp/cast' ]]; then
 		file="Screenshot_${time}.mp4"
-		output=$(hyprctl -j monitors | jq --raw-output '.[] | select(.focused==true) | .name')
+		output=$(niri msg -j focused-output | jq '.name')
 		wl-screenrec --filename=${dir}/Recordings/${file} --output=$output --low-power=off > /dev/null 2>&1 &
 		echo "$!" > '/tmp/cast'
 	else

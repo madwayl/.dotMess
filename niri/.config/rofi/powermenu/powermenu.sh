@@ -73,7 +73,7 @@ run_cmd() {
 			elif [[ "$DESKTOP_SESSION" == 'hyprland' ]]; then
 				hyprctl dispatch exit
 			elif [[ "$DESKTOP_SESSION" == 'niri' ]]; then
-				niri msg action quit --skip-confirmation
+				systemctl --user --no-block stop niri.service
 			fi
 		fi
 	else

@@ -31,3 +31,9 @@ CVS
 .zsh_history
 .zcompdump
 .zcompdump.*
+
+addon-colors\.lua
+/waybar/style\.css
+addon\.style\.css
+colors\.rasi
+niri-switch/style\.css

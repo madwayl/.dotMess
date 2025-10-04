@@ -36,7 +36,7 @@ configuration {
     element-padding:             55px 10px;
     element-radius:              5px;
     general-radius:              5px;
-    element-font:                "FantasqueSansM Nerd Font Propo 48";
+    element-font:                "0xProto Nerd Font Propo 48";
 }
 
 /*****----- Main Window -----*****/
@@ -126,7 +126,7 @@ message {
 
 }
 textbox {
-    font: "FantasqueSansM Nerd Font Propo 16";
+    font: "0xProto Nerd Font Propo 16";
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;

@@ -3,6 +3,7 @@
     "exclusive": true,
     // Allows clicks to pass through Waybar — useful when you want to make it "click-through".
     // This means Waybar becomes "invisible" to mouse clicks, letting you interact with whatever is behind it.
+    "height": 46,
     "passthrough": false,
     // Enables GTK Layer Shell protocol, which is necessary for advanced Wayland features
     // like layer positioning (top/bottom), anchor, margins, etc.
