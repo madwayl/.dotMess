@@ -399,7 +399,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="kitty"
+    match app-id="wezterm"
     open-maximized false
 }
 
@@ -426,9 +426,6 @@ window-rule {
 
     match app-id="^(nemo)$" title="^(.*Properties)$"
     match app-id="^(firefox)$" title="^(Library)$"
-    match app-id="^(kitty)$" title="^(top)$"
-    match app-id="^(kitty)$" title="^(btop)$"
-    match app-id="^(kitty)$" title="^(htop)$"
     match app-id="^(vlc)$"
     match app-id="^(kvantummanager)$"
     match app-id="^(qt5ct)$"
@@ -557,7 +554,6 @@ spawn-sh-at-startup "$CARGO_HOME/bin/niri-switch-daemon"
 spawn-at-startup "swww-daemon" "--namespace" "bg"
 spawn-at-startup "swww-daemon" "--namespace" "bg_overview"
 spawn-at-startup "bitwarden-desktop"
-spawn-at-startup "kitty" "--server"
 spawn-at-startup "mcontrolcenter"
 spawn-at-startup "copyq" "--start-server"
 spawn-at-startup "niri-float-sticky"
@@ -598,7 +594,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 environment {
     // --- Terminals & Locks ---
-    TERMINAL "kitty"
+    TERMINAL "wezterm"
     LOCK "hyprlock"
     LOCKSCREEN "hyprlock"
 
@@ -679,7 +675,7 @@ binds {
 
     // ANCHOR App Launch
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+Alt+Return hotkey-overlay-title="Open a Terminal: Wezterm" { spawn "wezterm"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     Super+Alt+C hotkey-overlay-title="Open Code Editor: VS Codium" { spawn "codium" "--password-store='gnome-libsecret'"; }
@@ -933,8 +929,8 @@ binds {
     Mod+P { spawn-sh "$XDG_CONFIG_HOME/rofi/screenproject/screenproject.sh"; }
 
     // ROFI
-    Mod+Space {spawn-sh "pkill -x rofi || rofi -terminal kitty -modi 'drun,run,ssh,filebrowser' -show drun"; }
-    Mod+Alt+Space {spawn-sh "pkill -x rofi || rofi -terminal kitty -modi ':~/.config/rofi/rofi-web-search/rofi-web-search.py,calc' -show "; }
+    Mod+Space {spawn-sh "pkill -x rofi || rofi -terminal wezterm -modi 'drun,run,ssh,filebrowser' -show drun"; }
+    Mod+Alt+Space {spawn-sh "pkill -x rofi || rofi -terminal wezterm -modi ':~/.config/rofi/rofi-web-search/rofi-web-search.py,calc' -show "; }
 
     Alt+Tab { spawn "/home/madwayl/.local/share/cargo/bin/niri-switch"; }
 
