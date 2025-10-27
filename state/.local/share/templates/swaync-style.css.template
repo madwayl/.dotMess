@@ -1,13 +1,14 @@
 .notification-row .notification-background .notification .notification-action {
     /* CHANGE HERE */
-    background-color: @{{ (ds "data").color }};
-
+    background: @{{ (ds "data").color }};
+    background: linear-gradient(60deg, @o-{{ (ds "data").color }} 0%, @{{ (ds "data").color }} 80%);
 }
 
 .notification-background .notification.normal,
 .notification-background .notification.low {
     /* CHANGE HERE */
     background: @{{ (ds "data").bg_color }};
+    background: @bg0;
 }
 
 .widget-dnd>switch:checked {
@@ -19,12 +20,12 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked {
     /* CHANGE HERE */
-    background: @{{ (ds "data").color }};
+    background: linear-gradient(60deg, @o-{{ (ds "data").color }} 0%, @{{ (ds "data").color }} 80%);
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:checked:hover {
     /* CHANGE HERE */
-    background: linear-gradient(60deg, @o-{{ (ds "data").color }}, @{{ (ds "data").color }}, @{{ (ds "data").color }}-s1);
+    background: linear-gradient(120deg, @o-{{ (ds "data").color }} 0%, @{{ (ds "data").color }} 80%);
 }
 .widget-backlight highlight,
 .widget-volume highlight {

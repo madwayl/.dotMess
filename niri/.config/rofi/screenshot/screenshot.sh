@@ -134,6 +134,7 @@ notify_view() {
 # 1
 shotnow () {
 	grim -o $(niri msg -j focused-output | jq -r '.name') ${dir}/${file}
+	wl-copy < ${dir}/${file}
 	notify_view
 }
 
@@ -152,6 +153,7 @@ shotnow () {
 # 2
 shotwin () {
 	grim -g "$(slurp)" ${dir}/${file}
+	wl-copy < ${dir}/${file}
 	notify_view
 }
 

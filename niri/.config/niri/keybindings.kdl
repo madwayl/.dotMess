@@ -6,7 +6,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // ANCHOR App Launch
-    Mod+Alt+Return hotkey-overlay-title="Open a Terminal: WezTerm" { spawn "wezterm"; }
+    Mod+Alt+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     Super+Alt+C hotkey-overlay-title="Open Code Editor: VS Codium" { spawn "codium" "--password-store='gnome-libsecret'"; }
@@ -199,8 +199,8 @@ binds {
     Mod+P { spawn-sh "$XDG_CONFIG_HOME/rofi/screenproject/screenproject.sh"; }
 
     // ROFI
-    Mod+Space {spawn-sh "pkill -x rofi || rofi -terminal wezterm -modi 'drun,run,ssh,filebrowser' -show drun"; }
-    Mod+Alt+Space {spawn-sh "pkill -x rofi || rofi -terminal wezterm -modi ':~/.config/rofi/rofi-web-search/rofi-web-search.py,calc' -show "; }
+    Mod+Space {spawn-sh "pkill -x rofi || rofi -terminal ghostty -modi 'drun,run,ssh,filebrowser' -show drun"; }
+    Mod+Alt+Space {spawn-sh "pkill -x rofi || rofi -terminal ghostty -modi ':~/.config/rofi/rofi-web-search/rofi-web-search.py,calc' -show "; }
 
     Alt+Tab { spawn "/home/madwayl/.local/share/cargo/bin/niri-switch"; }
 

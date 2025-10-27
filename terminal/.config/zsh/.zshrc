@@ -1,4 +1,4 @@
-# 
+#
 # ░▀▀█░█▀▀░█░█░░░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀░█░█░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█
 # ░▄▀░░▀▀█░█▀█░░░█░░░█░█░█░█░█▀▀░░█░░█░█░█░█░█▀▄░█▀█░░█░░░█░░█░█░█░█
 # ░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
@@ -151,7 +151,7 @@ function print_centered {
 
 _load_if_terminal
 
-if [ -n "$WEZTERM_PANE" ] || [ -n "$WEZTERM_WINDOW" ]; then
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
     source $ZDOTDIR/.colors.zsh
     cbonsai -p -M 8 -b 2 -k $bonsai_list | grep --color=never -E "&|~|_|\)|\.|//"
     echo "\n"
@@ -180,8 +180,7 @@ if [ -n "$WEZTERM_PANE" ] || [ -n "$WEZTERM_WINDOW" ]; then
     echo "\n"
 fi
 
-export PATH="$PATH:/home/madwayl/.local/bin"
-export PATH="$PATH:$CARGO_HOME/bin"
+export PATH="$PATH:$CARGO_HOME/bin:$XDG_DATA_HOME/npm/bin"
 
 # ~/.gruvbox_colors.sh — simplified variable names
 export color_red="\033[38;5;167m"
@@ -194,3 +193,28 @@ export color_purple="\033[38;5;175m"
 export color_gray="\033[38;5;245m"
 export color_fg="\033[38;5;223m"
 export color_reset="\033[0m"
+
+function set_title() {
+    # $1 = text for title
+    echo -ne "\033]0; ${1}\007"
+}
+
+# Display shell and PWD when idle, command name when running
+function precmd() {
+    # Runs right before showing the prompt
+    local shell_name=${SHELL##*/}
+    local dir_name=$(print -P "%~")  # shorten $HOME to ~
+    set_title "${shell_name}: ${dir_name}"
+}
+
+function preexec() {
+    # Runs right before executing a command
+    local cmd=${1%% *}  # Extract command name
+    local shell_name=${SHELL##*/}
+    local dir_name=$(print -P "%~")
+    set_title "${cmd} — ${shell_name}: ${dir_name}"
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook precmd precmd
+add-zsh-hook preexec preexec

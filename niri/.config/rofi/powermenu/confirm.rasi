@@ -36,7 +36,7 @@ window {
     width:                       500px;
     border-radius:               4px;
     cursor:                      "default";
-	background-color:            Beige/5%;
+	background-color:            @window-background;
 
 }
 

@@ -1,6 +1,0 @@
-local M = require("themes.gruvbox-material")
-
-return {
-    accent = M["{{ (ds "data").color }}"],
-    bg_accent = M["{{ (ds "data").bg_color }}"]
-}

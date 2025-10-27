@@ -20,9 +20,9 @@ overview {
 // SECTION Layout Styles
 
 layout {
-    gaps 7
+    gaps 8
 
-    background-color "#000"
+    background-color "transparent"
     center-focused-column "never"
 
     preset-column-widths {

@@ -6,6 +6,7 @@
     background:     @bg1;
     // CHANGE HERE    
     background-alt: @{{ (ds "data").bg_color }};
+    background-alt: @bg0;
     foreground:     @fg1;
 
     // CHANGE HERE    

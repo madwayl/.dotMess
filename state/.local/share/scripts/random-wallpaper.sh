@@ -2,8 +2,6 @@
 
 # This script will randomly go through the files of a directory, setting it
 # up as the wallpaper at regular intervals
-#
-# NOTE: this script uses bash (not POSIX shell) for the RANDOM variable
 
 # Edit below to control the images transition
 export WAYLAND_DISPLAY=wayland-1
@@ -60,8 +58,9 @@ while true; do
 		"red")
 			ICON_COLOR="Adwaita-red"
 			THEME="Orchis-Red-Dark"
-			SDDM_COLOR="#cc241d"
-			SDDM_BG_COLOR="#3c1f1e"
+			COLOR_HEX="#cc241d"
+			COLOR_M_HEX="#f2594b"
+			BG_COLOR_HEX="#3c1f1e"
 			terminal_color="\033[38;5;167m"     # #ea6962  red
 			terminal_bg_color="\033[38;5;52m"
 			cbonsai_list="52,130,124,94"      # Red
@@ -69,8 +68,9 @@ while true; do
 		"gray")
 			ICON_COLOR="Adwaita-slate"
 			THEME="Orchis-Grey-Dark"
-			SDDM_COLOR="#a89984"
-			SDDM_BG_COLOR="#4a4640"
+			COLOR_HEX="#a89984"
+			COLOR_M_HEX="#e2cca9"
+			BG_COLOR_HEX="#4a4640"
 			terminal_color="\033[38;5;245m"    # #928374  gray
 			terminal_bg_color="\033[38;5;239m"
 			cbonsai_list="237,130,245,94"     # Gray
@@ -78,8 +78,9 @@ while true; do
 		"orange")
 			ICON_COLOR="Adwaita-orange"
 			THEME="Orchis-Orange-Dark"
-			SDDM_COLOR="#f28534"
-			SDDM_BG_COLOR="#4a2e1a"
+			COLOR_HEX="#f28534"
+			COLOR_M_HEX="#f28534"
+			BG_COLOR_HEX="#4a2e1a"
 			terminal_color="\033[38;5;208m"    # #e78a4e
 			terminal_bg_color="\033[38;5;94m"
 			cbonsai_list="166,130,208,94"     # Orange
@@ -87,8 +88,9 @@ while true; do
 		"yellow")
 			ICON_COLOR="Adwaita-yellow"
 			THEME="Orchis-Yellow-Dark"
-			SDDM_COLOR="#d79921"
-			SDDM_BG_COLOR="#3f3518"
+			COLOR_HEX="#d79921"
+			COLOR_M_HEX="#e9b143"
+			BG_COLOR_HEX="#3f3518"
 			terminal_color="\033[38;5;214m"  # #d8a657  yellow
 			terminal_bg_color="\033[38;5;136m"
 			cbonsai_list="136,130,229,94"     # Yellow
@@ -96,8 +98,9 @@ while true; do
 		"green")
 			ICON_COLOR="Adwaita-green"
 			THEME="Orchis-Green-Dark"
-			SDDM_COLOR="#98971a"
-			SDDM_BG_COLOR="#32361a"
+			COLOR_HEX="#98971a"
+			COLOR_M_HEX="#b0b846"
+			BG_COLOR_HEX="#32361a"
 			terminal_color="\033[38;5;142m"   # #a9b665  green
 			terminal_bg_color="\033[38;5;22m"
 			cbonsai_list="22,130,142,94"      # Green
@@ -105,8 +108,9 @@ while true; do
 		"aqua")
 			ICON_COLOR="Adwaita-teal"
 			THEME="Orchis-Teal-Dark"
-			SDDM_COLOR="#689d6a"
-			SDDM_BG_COLOR="#1e352d"
+			COLOR_HEX="#689d6a"
+			COLOR_M_HEX="#8bba7f"
+			BG_COLOR_HEX="#1e352d"
 			terminal_color="\033[38;5;108m"    # #89b482  aqua
 			terminal_bg_color="\033[38;5;23m"
 			cbonsai_list="23,130,108,94"      # Aqua
@@ -114,8 +118,9 @@ while true; do
 		"blue")
 			ICON_COLOR="Adwaita-blue"
 			THEME="Orchis-Teal-Dark"
-			SDDM_COLOR="#458588"
-			SDDM_BG_COLOR="#0d3138"
+			COLOR_HEX="#458588"
+			COLOR_M_HEX="#80aa9e"
+			BG_COLOR_HEX="#0d3138"
 			terminal_color="\033[38;5;109m"    # #7daea3  blue
 			terminal_bg_color="\033[38;5;17m"
 			cbonsai_list="17,130,109,94"      # Blue
@@ -123,8 +128,9 @@ while true; do
 		"purple")
 			ICON_COLOR="Adwaita-purple"
 			THEME="Orchis-Purple-Dark"
-			SDDM_COLOR="#b16286"
-			SDDM_BG_COLOR="#3f2d35"
+			COLOR_HEX="#b16286"
+			COLOR_M_HEX="#d3869b"
+			BG_COLOR_HEX="#3f2d35"
 			terminal_color="\033[38;5;175m"  # #d3869b  purple
 			terminal_bg_color="\033[38;5;54m"
 			cbonsai_list="54,130,175,94"      # Purple
@@ -132,8 +138,9 @@ while true; do
 		*)
 			ICON_COLOR="Adwaita-teal"
 			THEME="Orchis-Teal-Dark"
-			SDDM_COLOR="#458588"
-			SDDM_BG_COLOR="#1e352d"
+			COLOR_HEX="#458588"
+			COLOR_M_HEX="#80aa9e"
+			BG_COLOR_HEX="#1e352d"
 			terminal_color="\033[38;5;108m"    # #89b482  aqua
 			terminal_bg_color="\033[38;5;23m"
 			cbonsai_list="23,130,108,94"      # Aqua
@@ -154,16 +161,16 @@ while true; do
 	# 	458588 40efcc 83a598 cc3273 ef4085 d3869b b16286 7c6f64 928374 a89984 e2cca9 e3e1dc ebdbb2
 	# done
 
-	magick $img -modulate 80,145 $HOME/Pictures/wallpaper.png
-	magick $img -modulate 80,145 -filter Gaussian -resize 20% -blur 0x3.5 $HOME/Pictures/wallpaper-blur.png
-	magick $img -modulate 80,145 -set option:size '%[fx:min(w,h)]x%[fx:min(w,h)]' xc:none +swap -gravity center -composite -resize 150x150 -bordercolor "$SDDM_COLOR" -border 12%x12% $HOME/Pictures/wallpaper-square.png
+	magick $img -modulate 60,105 $HOME/Pictures/wallpaper.png
+	magick $img -modulate 60,105 -filter Gaussian -resize 20% -blur 0x3.5 $HOME/Pictures/wallpaper-blur.png
+	magick $img -modulate 60,105 -set option:size '%[fx:min(w,h)]x%[fx:min(w,h)]' xc:none +swap -gravity center -composite -resize 150x150 -bordercolor "$COLOR_HEX" -border 12%x12% $HOME/Pictures/wallpaper-square.png
 
 	cp $HOME/Pictures/wallpaper.png /usr/share/sddm/themes/silent/backgrounds/default.png
 
 	TEMPLATE_PATH="/home/madwayl/.dotMess/state/.local/share/templates/"
 
 	# 8 NIRI KDL
-	echo "{'sddm_color': '$SDDM_COLOR', 'sddm_bg_color': '$SDDM_BG_COLOR', 'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-env.kdl.template -o ~/.config/niri/theme.kdl -d data=stdin:///foo.json
+	echo "{'color_hex': '$COLOR_HEX', 'bg_color_hex': '$BG_COLOR_HEX', 'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/niri-env.kdl.template -o ~/.config/niri/theme.kdl -d data=stdin:///foo.json
 
 	# GTK 4.0
 	echo "{'theme': '$THEME', 'icon_color': '$ICON_COLOR'}" | gomplate -f $TEMPLATE_PATH/gtk-4.0-settings.ini.template -o ~/.config/gtk-4.0/settings.ini -d data=stdin:///foo.json
@@ -204,16 +211,21 @@ while true; do
 	swaync-client -rs
 
 	# 9 WezTerm
-	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/addon-colors.lua.template -o ~/.config/wezterm/themes/addon-colors.lua -d data=stdin:///foo.json
+	# echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/addon-colors.lua.template -o ~/.config/wezterm/themes/addon-colors.lua -d data=stdin:///foo.json
+	
+	# 9 Ghostty
+	echo "{'color_hex': '$COLOR_M_HEX', 'bg_color_hex': '$BG_COLOR_HEX'}" | gomplate -f $TEMPLATE_PATH/ghostty-colors.conf.template -o ~/.config/ghostty/themes/colors -d data=stdin:///foo.json
+	echo "{'color_hex': '$COLOR_M_HEX', 'bg_color_hex': '$BG_COLOR_HEX'}" | gomplate -f $TEMPLATE_PATH/ghostty-gtk.css.template -o ~/.config/ghostty/themes/gtk.css -d data=stdin:///foo.json
+	pkill -SIGUSR2 ghostty
 
 	# 9.2 Terminal Intro
 	echo "{'terminal_color': '$terminal_color', 'terminal_bg_color': '$terminal_bg_color', 'cbonsai_list': '$cbonsai_list'}" | gomplate -f $TEMPLATE_PATH/terminal-opening-colors.zsh.template -o ~/.config/zsh/.colors.zsh -d data=stdin:///foo.json
 
 	# 4 SDDM
-	# echo "{'sddm_color': '$SDDM_COLOR', 'sddm_bg_color': '$SDDM_BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/purple_leaves.conf.template -o /usr/share/sddm/themes/sddm-astronaut-theme/Themes/purple_leaves.conf -d data=stdin:///foo.json
+	# echo "{'sddm_color': '$COLOR_HEX', 'sddm_bg_color': '$BG_COLOR_HEX'}" | gomplate -f $TEMPLATE_PATH/purple_leaves.conf.template -o /usr/share/sddm/themes/sddm-astronaut-theme/Themes/purple_leaves.conf -d data=stdin:///foo.json
 
 	# 4 SDDM
-	echo "{'sddm_color': '$SDDM_COLOR', 'sddm_bg_color': '$SDDM_BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/silent-default.conf.template -o /usr/share/sddm/themes/silent/configs/default.conf -d data=stdin:///foo.json
+	echo "{'sddm_color': '$COLOR_HEX', 'sddm_bg_color': '$BG_COLOR_HEX'}" | gomplate -f $TEMPLATE_PATH/silent-default.conf.template -o /usr/share/sddm/themes/silent/configs/default.conf -d data=stdin:///foo.json
 
 	# 5 ROFI
 	echo "{'color': '$COLOR', 'bg_color': '$BG_COLOR'}" | gomplate -f $TEMPLATE_PATH/rofi-theme-color.rasi.template -o ~/.config/rofi/shared/colors.rasi -d data=stdin:///foo.json
@@ -226,8 +238,13 @@ while true; do
 
 	killall niri-switch-daemon; $CARGO_HOME/bin/niri-switch-daemon &
 
+	# 11 CopyQ
+	sed -i "207c\sel_bg=${COLOR_HEX}" ~/.dotMess/utilities/.config/copyq/copyq.conf &
+	killall copyq
+	copyq --start-server
+
 	if [[ $1 == '--retrigger' ]]; then
-		exit 1
+		exit 0
 	fi
 
 done

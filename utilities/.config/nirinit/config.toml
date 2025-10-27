@@ -1,0 +1,18 @@
+# Niri Session Manager Configuration
+
+# Apps that should only have one instance
+[skip]
+apps = [
+    "firefox",
+    "zen"
+]
+
+#Application remapping
+[launch]
+
+# Simple command remapping
+"com.mitchellh.ghostty" = "ghostty"
+"org.wezfurlong.wezterm" = "wezterm"
+"zen" = "zen-browser"
+"org.gnome.Nautilus" = "nautilus"
+"dev.zed.Zed" = "zeditor"

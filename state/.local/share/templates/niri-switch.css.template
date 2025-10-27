@@ -12,6 +12,7 @@ window {
     padding: 0.7rem;
     border-radius: var(--default--border-radius);
     background-color: @{{ (ds "data").bg_color }};
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 1%, rgba(0, 0, 0, 0.95));
 }
 
 /* The entire list of windows */
@@ -74,14 +75,13 @@ window-item-icon {
 }
 
 window-list row:focus {
-    background-color: @o-{{ (ds "data").color }};
+    background-color: @{{ (ds "data").bg_color }};
 }
 
 window-list row:selected {
     background-color: @{{ (ds "data").color }};
 }
 
-window-list row:focus window-item-description,
 window-list row:selected window-item-description {
     color: @bg0;
 }

@@ -1,3 +1,4 @@
 prim_color="{{ (ds "data").terminal_color }}"
 bg_color="{{ (ds "data").terminal_bg_color }}"
 bonsai_list={{ (ds "data").cbonsai_list }}
+alias tmatrix=tmatrix -C {{ (ds "data").colorc }} -c default

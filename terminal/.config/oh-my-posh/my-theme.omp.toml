@@ -1,6 +1,5 @@
 #:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 
-console_title_template = ' {{ .Folder }}'
 terminal_background = 'p:t-background'
 version = 3
 final_space = true
@@ -91,7 +90,7 @@ final_space = true
   newline = true
 
   [[blocks.segments]]
-    template = '$'
+    template = '{{if gt .Code 0}}<{{else}}>{{end}}'
     foreground = 'green'
     type = 'text'
     style = 'plain'
@@ -121,7 +120,7 @@ final_space = true
     "{{if eq .Code 0}}cyan{{end}}",
   ]
   background = 'transparent'
-  template = "{{ .PWD }}\n$ "
+  template = "{{ .PWD }}\n{{if gt .Code 0}}<{{else}}>{{end}} "
   newline = true
 
 [secondary_prompt]

@@ -21,7 +21,7 @@ spawn-at-startup "niri-float-sticky"
 spawn-at-startup "ags" "run"
 spawn-at-startup "udiskie" "--no-automount" "--smart-tray"
 spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/redland" "--lat" "8.7" "--lon" "78.0" "--duration" "3600"
-spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/niri-session-manager"
+spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/nirinit"
 
 // ANCHOR Scripts
 spawn-at-startup "sh" "-c" "$XDG_DATA_HOME/scripts/brightness-control.sh" "init"
