@@ -190,6 +190,7 @@ window#waybar.empty #window {
 #custom-notification {
     /* CHANGE HERE */
     background: @{{ (ds "data").bg_color }};
+    background: @bg0;
 }
 
 #cava,
@@ -198,7 +199,8 @@ window#waybar.empty #window {
 #window,
 #workspaces {
     /* CHANGE HERE */
-    background: @{{ (ds "data").bg_color }}
+    background: @{{ (ds "data").bg_color }};
+    background: @bg0;
 }
 
 #workspaces button.active {

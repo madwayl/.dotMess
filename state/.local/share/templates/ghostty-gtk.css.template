@@ -1,0 +1,47 @@
+sheet.background {
+    border-radius: 4px;
+}
+
+label.monospace.subtitle {
+    padding-top: .5rem;
+}
+
+box.box.horizontal {
+    background-color: #000000BB;
+}
+
+tabboxchild {
+    padding: 5px;
+    padding-bottom: 7px;
+}
+
+tab {
+    border-radius: 5px;
+}
+
+tab:selected {
+    background-color: {{ (ds "data").color_hex }}AB;
+    color: #141617;
+}
+
+tab:selected:hover {
+    background-color: {{ (ds "data").color_hex }}DD;
+}
+
+tab:selected > .tab-close-button {
+    color: #141617;
+}
+
+dialog.alert label, dialog.alert body, dialog.alert .response-area {
+    margin: 10px;
+}
+
+.text-button {
+    margin: 2px;
+    padding: 2px;
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.35);
+}
+
+.text-button:hover {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.35);
+}

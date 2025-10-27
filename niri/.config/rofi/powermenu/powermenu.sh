@@ -66,6 +66,8 @@ run_cmd() {
 		elif [[ $1 == '--logout' ]]; then
 			if [[ "$DESKTOP_SESSION" == 'sway' ]]; then
 				swaymsg exit
+			elif [[ "$DESKTOP_SESSION" == 'scroll' ]]; then
+				scrollmsg exit
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
 			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then

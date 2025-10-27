@@ -1,0 +1,2 @@
+selection-foreground = {{ (ds "data").bg_color_hex }}
+selection-background = {{ (ds "data").color_hex }}

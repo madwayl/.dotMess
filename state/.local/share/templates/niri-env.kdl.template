@@ -12,6 +12,6 @@ environment {
 layout {
     insert-hint {
         // off
-        gradient from="{{ (ds "data").sddm_color }}80" to="{{ (ds "data").sddm_bg_color }}D0" angle=60 relative-to="workspace-view"
+        gradient from="{{ (ds "data").color_hex }}80" to="{{ (ds "data").bg_color_hex }}D0" angle=60 relative-to="workspace-view"
     }
 }

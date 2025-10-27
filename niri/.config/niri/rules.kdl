@@ -5,7 +5,6 @@ layer-rule {
 
     geometry-corner-radius 4
     opacity 0.95
-    
     shadow {
         on
         softness 1
@@ -19,7 +18,6 @@ layer-rule {
 
     geometry-corner-radius 4
     opacity 0.99
-    
     shadow {
         on
         softness 1000
@@ -34,7 +32,7 @@ layer-rule {
 
     geometry-corner-radius 4
     opacity 0.99
-    
+
     shadow {
         off
         softness 100
@@ -108,7 +106,7 @@ window-rule {
     match app-id="^(io.gitlab.adhami3310.Impression)$"
     match app-id="^(io.missioncenter.MissionCenter)$"
     match app-id="^(org.qbittorrent.qBittorrent)$"
-    
+
     open-floating true
 }
 
@@ -119,9 +117,9 @@ window-rule {
 
     open-floating true
 
-    default-floating-position x=100 y=100 relative-to="bottom-right"
-    default-column-width { fixed 600; }
-    default-window-height { fixed 300; }
+    default-floating-position x=50 y=50 relative-to="bottom-right"
+    default-column-width { fixed 460; }
+    default-window-height { fixed 700; }
 }
 
 // ANCHOR Secrets

@@ -21,6 +21,8 @@ export SSH_AUTH_SOCK=$XDG_CONFIG_HOME/.bitwarden-ssh-agent.sock
 export BITWARDEN_SSH_AUTH_SOCK=$XDG_CONFIG_HOME/.bitwarden-ssh-agent.sock
 export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
 export PYTHONSTARTUP=$XDG_DATA_HOME/python/pythonrc
+export PYTHON_HISTORY_FILE=$XDG_DATA_HOME/python/.python_history
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 
 # /other directories
 
@@ -30,5 +32,7 @@ export GOPATH="$XDG_DATA_HOME"/go
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export WINEPREFIX="$XDG_DATA_HOME"/wine
+export ANDROID_USER_HOME="$XDG_DATA_HOME"/android
 
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"

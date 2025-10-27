@@ -10,11 +10,8 @@ zstyle ':fzf-tab:complete:*' fzf-flags \
     --bind 'focus:transform-header:file --brief {}' \
     --color 'fg:#e2cca9,hl:#a89984,fg+:#e2cca9,bg+:#32302f,hl+:#e2cca9' \
     --color 'info:#83a598,prompt:#a89984,spinner:#e9b143,pointer:#e2cca9,marker:#7c6f64,header:#e2cca9' \
-    --preview-window wrap
+    --preview-window hidden:wrap
 
-
-
-# zstyle ':fzf-tab:complete:*' fzf-flags --preview-window hidden:wrap
 zstyle ':fzf-tab:complete:*' fzf-bindings 'ctrl-/:toggle-preview'
 
 

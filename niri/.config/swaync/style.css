@@ -240,7 +240,7 @@
 /* Control Center */
 
 .control-center {
-    border-radius: 6px;
+    border-radius: 0px;
     /* border-top: 1px solid rgba(164, 162, 167, 0.19);
     border-left: 1px solid rgba(164, 162, 167, 0.19);
     border-right: 1px solid rgba(128, 127, 132, 0.145);
@@ -298,7 +298,7 @@
 /* Control Center - DND widget */
 
 .widget-dnd {
-    background-color: @bg0;
+    background-color: @bg-dim;
 
     padding: 10px;
     margin: 10px;
@@ -370,7 +370,7 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
     border: none;
-    background-color: rgba(128, 128, 128, 0.25);
+    background: @bg-dim;
     border-radius: 6px;
     min-width: 5.522rem;
     min-height: 2.927rem;

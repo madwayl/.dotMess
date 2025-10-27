@@ -1,0 +1,83 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/madwayl/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+font-family = "0xProto Nerd Font Mono"
+window-title-font-family = "0xProto Nerd Font Propo"
+font-size = 10
+
+# adjust-font-baseline = 2
+
+adjust-icon-height = 10
+adjust-cell-height = 5
+
+background = #000
+window-titlebar-background = #000
+foreground = #ebdbb2
+window-titlebar-foreground = #ebdbb2
+background-opacity = 0.7
+
+theme = Gruvbox Material Dark
+
+cursor-style = block_hollow
+cursor-color = #ebdbb2
+mouse-shift-capture = true
+
+clipboard-trim-trailing-spaces = true
+clipboard-write = allow
+
+window-padding-x = 25
+window-padding-y = 25,10
+window-padding-balance = true
+
+custom-shader-animation = true
+desktop-notifications = true
+
+shell-integration = detect
+shell-integration-features = cursor,sudo,no-title
+
+split-divider-color =
+term = xterm-ghostty
+
+unfocused-split-fill =
+unfocused-split-opacity = 0.5
+
+vt-kam-allowed = false
+wait-after-command = false
+
+window-colorspace = srgb
+window-decoration = auto
+window-inherit-working-directory = true
+window-theme = auto
+window-save-state = always
+
+bell-features = no-title
+
+gtk-toolbar-style = raised
+gtk-titlebar-style = native
+# gtk-single-instance = true
+# linux-cgroup = single-instance
+
+auto-update = off
+
+config-file = ?./themes/colors
+gtk-custom-css = ?./themes/gtk.css
