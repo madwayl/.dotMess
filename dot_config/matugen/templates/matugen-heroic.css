@@ -1,0 +1,82 @@
+/*
+ * Matugen Template for your custom CSS variables
+ * Replace the values in the CSS below with Matugen keywords.
+ * The variables below use the 'default' scheme and 'hex' format.
+ */
+
+body.matugen-theme {
+ /* Text Colors */
+ --text-default: {{colors.on_surface.dark.hex}};
+ --text-secondary: {{colors.on_surface_variant.dark.hex}};
+ --text-tertiary: {{colors.surface_container_highest.dark.hex}}; /* Lightest background tone in your original CSS */
+
+ /* Background Colors */
+ --background: {{colors.surface.dark.hex}};
+ --background-darker: {{colors.surface_container_low.dark.hex}};
+ --background-lighter: {{colors.surface_container_high.dark.hex}};
+ --body-background: {{colors.surface.dark.hex}};
+ --gradient-body-background: {{colors.surface.dark.hex}};
+ --input-background: {{colors.surface_container_high.dark.hex}};
+ --controller-hints-background: transparent;
+ --current-background: {{colors.surface.dark.hex}};
+ --modal-background: {{colors.surface_container_highest.dark.hex}};
+ --modal-border: {{colors.primary.dark.hex}}; /* Using primary for a highlight border */
+ --osk-background: {{colors.surface.dark.hex}};
+ --osk-button-background: {{colors.surface_container_high.dark.hex}};
+ --osk-button-border: {{colors.surface_container_highest.dark.hex}};
+ --search-bar-background: {{colors.surface_container_high.dark.hex}};
+ --search-bar-border: {{colors.surface_container_high.dark.hex}};
+
+ /* Icons */
+ --action-icon: {{colors.on_surface.dark.hex}};
+ --action-icon-hover: {{colors.on_surface_variant.dark.hex}};
+ --action-icon-active: {{colors.primary.dark.hex}};
+ --icons-background: {{colors.surface.dark.hex}};
+
+ /* Brand & Primary */
+ --brand-primary: {{colors.primary.dark.hex}};
+ --brand-primary-hover: {{colors.primary_container.dark.hex}}; /* Lighter shade */
+
+ /* Buttons */
+ --primary-button: {{colors.primary.dark.hex}};
+ --primary-button-overlay: {{colors.primary.dark.hex}};
+ --secondary-button: {{colors.secondary.dark.hex}};
+ --secondary-button-overlay: {{colors.secondary.dark.hex}};
+ --tertiary-button: {{colors.tertiary.dark.hex}};
+ --tertiary-button-overlay: {{colors.tertiary.dark.hex}};
+ --disabled-button: {{colors.surface_container_low.dark.hex}};
+ --disabled-button-overlay: {{colors.surface_container_highest.dark.hex}};
+
+ /* Navigation */
+ --navbar-active: {{colors.primary.dark.hex}};
+ --navbar-inactive: {{colors.on_surface.dark.hex}};
+ --navbar-active-background: {{colors.surface_container_high.dark.hex}};
+ --navbar-accent: {{colors.primary.dark.hex}};
+ --navbar-background: {{colors.surface_container_low.dark.hex}};
+ --divider: {{colors.surface_container_low.dark.hex}};
+
+ /* Status/Alerts */
+
+
+ /* General Palette */
+ --primary: {{colors.primary.dark.hex}};
+ --secondary: {{colors.secondary.dark.hex}};
+ --accent: {{colors.tertiary.dark.hex}};
+
+ /* Specific Status Tones */
+
+ --status-info: {{colors.primary.dark.hex}}; /* Often primary or tertiary */
+
+ /* Neutral Tones (Mapped to surface containers/variants) */
+ --neutral-01: {{colors.surface_container_highest.dark.hex}};
+ --neutral-02: {{colors.surface.dark.hex}};
+ --neutral-03: {{colors.surface_container_high.dark.hex}};
+ --neutral-04: {{colors.surface_variant.dark.hex}};
+ --neutral-05: {{colors.on_surface_variant.dark.hex}};
+ --neutral-06: {{colors.on_surface.dark.hex}};
+}
+
+body.matugen-theme select,
+body.matugen-theme input {
+ box-shadow: none !important;
+}

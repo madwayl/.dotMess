@@ -1,0 +1,39 @@
+// This config is in the KDL format: https://kdl.dev
+
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "ydotoold"
+
+// ANCHOR Apps
+spawn-at-startup "bitwarden-desktop"
+spawn-at-startup "mcontrolcenter"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "nm-applet"
+spawn-at-startup "copyq" "--start-server"
+spawn-at-startup "niri-float-sticky"
+spawn-at-startup "udiskie" "--no-automount" "--smart-tray"
+spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/nirinit"
+// Clipboard history
+// spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+
+    hide-when-typing
+    hide-after-inactive-ms 5000
+}
+
+config-notification {
+    disable-failed
+}
+
+include "inputs.kdl"
+include "outputs.kdl"
+include "env.kdl"
+include "rules.kdl"
+include "layouts.kdl"
+include "animations.kdl"
+include "keybindings.kdl"
+include "dms.kdl"
+include "dms/colors.kdl"
+include "dms/alttab.kdl"

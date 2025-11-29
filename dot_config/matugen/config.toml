@@ -1,0 +1,43 @@
+[config]
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/matugen'
+post_hook = "pkill -USR1 cava"
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.zed]
+input_path = '~/.config/matugen/templates/zed-colors.json'
+output_path = '~/.config/zed/themes/matugen.json'
+
+[templates.vencord]
+input_path = '~/.config/matugen/templates/discord.theme'
+output_path = '~/.config/vesktop/themes/matugen-theme.css'
+
+[templates.obsidian-notecs]
+input_path = '~/.config/matugen/templates/obsidian.css'
+output_path = '~/Code/notecs/.obsidian/snippets/matugne-theme.css'
+
+[templates.obsidian-cmnplcbk]
+input_path = '~/.config/matugen/templates/obsidian.css'
+output_path = '~/Code/cmnplcbk/.obsidian/snippets/matugne-theme.css'
+
+[templates.kvantum]
+input_path = '~/.config/matugen/templates/kvantum-colors.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+
+[templates.kvantum_svg]
+input_path = '~/.config/matugen/templates/kvantum-colors.svg'
+output_path = '~/.config/Kvantum/matugen/matugen.svg'
+post_hook = 'kvantummanager --set matugen'
+
+[templates.heroic]
+input_path = '~/.config/matugen/templates/matugen-heroic.css'
+output_path = '~/.config/heroic/themes/matugen-theme.css'
+
+[templates.ghostty]
+input_path = '~/.config/matugen/templates/ghostty-tab-top.css'
+output_path = '~/.config/ghostty/matugen-theme.css'

@@ -1,0 +1,56 @@
+
+// SECTION Input
+
+input {
+    // ANCHOR Keyboard
+    keyboard {
+        xkb {
+            options "grp:win_space_toggle,compose:ralt,numpad:pc"
+            // localectl set-x11-keymap.
+        }
+
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+
+    // ANCHOR Touchpad
+    touchpad {
+        // off
+        tap
+        dwt
+        dwtp
+        drag true
+        drag-lock
+        natural-scroll
+        accel-speed 0.5
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+        click-method "clickfinger"
+        // disabled-on-external-mouse
+    }
+
+    mouse {
+        // off
+        // natural-scroll
+        accel-speed 0.7
+        accel-profile "adaptive"
+        scroll-method "no-scroll"
+    }
+
+    trackpoint {
+        // off
+        // natural-scroll
+        // accel-speed 0.2
+        // accel-profile "flat"
+        // scroll-method "on-button-down"
+        // scroll-button 273
+        // scroll-button-lock
+        // middle-emulation
+    }
+
+    warp-mouse-to-focus mode="center-xy"
+    // focus-follows-mouse max-scroll-amount="0%"
+
+    mod-key "Super"
+}
+// !SECTION

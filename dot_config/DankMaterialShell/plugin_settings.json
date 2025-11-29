@@ -1,0 +1,36 @@
+{
+  "commandRunner": {
+    "enabled": true,
+    "terminal": "ghostty"
+  },
+  "niriWindows": {
+    "enabled": true
+  },
+  "displayMirror": {
+    "enabled": true
+  },
+  "dankHooks": {
+    "enabled": true,
+    "wallpaperPath": "/home/madwayl/.local/share/scripts/random.sh"
+  },
+  "dockerManager": {
+    "enabled": true,
+    "shellPath": "/bin/sh",
+    "terminalApp": "ghostty",
+    "groupByCompose": false
+  },
+  "displaySettings": {
+    "enabled": true
+  },
+  "gitmojiLauncher": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "webSearch": {
+    "enabled": true,
+    "defaultEngine": "duckduckgo",
+    "searchEngines": []
+  }
+}

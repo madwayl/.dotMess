@@ -1,0 +1,133 @@
+/* Colors (original-gruvbox) */
+
+@define-color o-black #181818;
+@define-color o-red #cc241d;
+@define-color o-green #98971a;
+@define-color o-yellow #d79921;
+@define-color o-blue #458588;
+@define-color o-purple #b16286;
+@define-color o-aqua #689d6a;
+@define-color o-gray #a89984;
+@define-color o-orange #d65d0e;
+@define-color o-white #ebdbb2;
+
+@define-color o-brgray #928374;
+@define-color o-brred #fb4934;
+@define-color o-brgreen #b8bb26;
+@define-color o-bryellow #fabd2f;
+@define-color o-brblue #83a598;
+@define-color o-brpurple #d3869b;
+@define-color o-braqua #8ec07c;
+@define-color o-bg2 #504945;
+@define-color o-brorange #fe8019;
+
+
+/* Gruvbox Material Scheme */
+
+@define-color bg-dim #141617;
+@define-color bg0 #1d2021;
+@define-color bg1 #282828;
+@define-color bg2 #282828;
+@define-color bg3 #3c3836;
+@define-color bg4 #3c3836;
+@define-color bg5 #504945;
+
+@define-color bg-statusline1 #282828;
+@define-color bg-statusline2 #32302f;
+@define-color bg-statusline3 #504945;
+
+/* Red */
+@define-color bg-diff-red #3c1f1e;
+@define-color bg-visual-red #442e2d;
+
+/* Orange */
+@define-color bg-diff-orange #4a2e1a;
+@define-color bg-visual-orange #44372a;
+
+/* Yellow */
+@define-color bg-diff-yellow #3f3518;
+@define-color bg-visual-yellow #473c29;
+
+/* Green */
+@define-color bg-diff-green #32361a;
+@define-color bg-visual-green #333e34;
+
+/* Aqua */
+@define-color bg-diff-aqua #1e352d;
+@define-color bg-visual-aqua #2d3f35;
+
+/* Blue */
+@define-color bg-diff-blue #0d3138;
+@define-color bg-visual-blue #2e3b3b;
+
+/* Purple */
+@define-color bg-diff-purple #3f2d35;
+@define-color bg-visual-purple #463640;
+
+/* Gray */
+@define-color bg-diff-gray #4a4640;
+@define-color bg-visual-gray #53504a;
+
+
+@define-color bg-current-word #32302f;
+
+@define-color fg0 #e2cca9;
+@define-color fg1 #e2cca9;
+
+@define-color red #f2594b;
+@define-color orange #f28534;
+@define-color yellow #e9b143;
+@define-color green #b0b846;
+@define-color aqua #8bba7f;
+@define-color blue #80aa9e;
+@define-color purple #d3869b;
+@define-color gray #e2cca9;
+
+@define-color bg-red #db4740;
+@define-color bg-orange #f28534;
+@define-color bg-yellow #e9b143;
+@define-color bg-green #b0b846;
+@define-color bg-aqua #8bba7f;
+@define-color bg-blue #80aa9e;
+@define-color bg-purple #d3869b;
+@define-color bg-gray #e3e1dc;
+
+@define-color grey0 #7c6f64;
+@define-color grey1 #928374;
+@define-color grey2 #a89984;
+
+/* Saturation 40% */
+@define-color red-s1 #f24739;
+@define-color orange-s1 #f2721d;
+@define-color yellow-s1 #e9a800;
+@define-color green-s1 #a7c000;
+@define-color aqua-s1 #65c26b;
+@define-color blue-s1 #4eb9ac;
+@define-color purple-s1 #d34295;
+
+@define-color red-s1 #ef4d40;
+@define-color orange-s1 #ef8740;
+@define-color yellow-s1 #efab40;
+@define-color green-s1 #a1fc33;
+@define-color aqua-s1 #40ef85;
+@define-color blue-s1 #40efcc;
+@define-color purple-s1 #ef4085;
+@define-color gray-s1 #7c6f64;
+
+@define-color red-sl1 #cc3c32;
+@define-color orange-sl1 #cc6d32;
+@define-color yellow-sl1 #cc9832;
+@define-color green-sl1 #9ccc32;
+@define-color aqua-sl1 #32cc76;
+@define-color blue-sl1 #32ccaf;
+@define-color purple-sl1 #cc3273;
+@define-color gray-sl1 #a89984;
+
+@define-color red-sl2 #992e28;
+@define-color orange-sl2 #995628;
+@define-color yellow-sl2 #997c28;
+@define-color green-sl2 #789928;
+@define-color aqua-sl2 #28994f;
+@define-color blue-sl2 #289983;
+@define-color purple-sl2 #992853;
+@define-color gray-sl2 #928374;

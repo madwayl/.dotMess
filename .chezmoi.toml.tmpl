@@ -1,0 +1,12 @@
+{{- $name := "madwayl" -}}
+{{- $email := "67217921+madwayl@users.noreply.github.com" -}}
+
+sourceDir = "{{ .chezmoi.workingTree }}"
+
+verbose = true
+
+[ data ]
+    email = "$email"
+    name = "$name"
+
+    editor = "nvim"

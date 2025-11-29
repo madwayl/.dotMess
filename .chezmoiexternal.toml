@@ -1,0 +1,58 @@
+[".config/mpv/scripts/autoload.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/mpv-player/mpv/refs/heads/master/TOOLS/lua/autoload.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/copy_paste_URL.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/zenyd/mpv-scripts/refs/heads/master/copy-paste-URL.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/copy_time.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/Arieleg/mpv-copyTime/refs/heads/master/copyTime.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/find_subtitles.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/directorscut82/find_subtitles/refs/heads/master/find_subtitles.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/recent.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/hacel/recent/refs/heads/master/recent.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/mpv_splice.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/pvpscript/mpv-video-splice/refs/heads/master/mpv-splice.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/thumbfast.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/po5/thumbfast/refs/heads/master/thumbfast.lua"
+    resfreshPeriod = "168h"
+
+[".config/mpv/scripts/modernz.lua"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/Samillion/ModernZ/refs/heads/main/modernz.lua"
+    resfreshPeriod = "168h"
+
+# MPV - Cut/splice
+[".config/mpv/scripts/mpv_cut"]
+    type = "archive"
+    url = "https://github.com/familyfriendlymikey/mpv-cut/archive/refs/heads/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    resfreshPeriod = "168h"
+    include = ["main.lua", "utils"]
+
+# MPV - Select Menu
+[".config/mpv/scripts/mpvselectmenu"]
+    type = "archive"
+    url = "https://gitlab.com/carmanaught/mpvselectmenu/-/archive/main/mpvselectmenu-main.tar.gz?ref_type=heads"
+    exact = true
+    stripComponents = 1
+    resfreshPeriod = "168h"
+    include = ["mpvselectmenu"]
+

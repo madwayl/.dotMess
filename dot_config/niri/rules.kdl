@@ -1,0 +1,138 @@
+
+// SECTION Layer Rules
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop false
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="dms:notification-popup"
+    block-out-from "screencast"
+}
+
+// !SECTION
+
+// SECTION Window Rules
+
+// ANCHOR Floating
+
+window-rule {
+
+    match title="^(About Mozilla Firefox)$"
+    match app-id="^(firefox)$" title="^(Picture-in-Picture)$"
+    match app-id="^(zen)$" title="^(Picture-in-Picture)$"
+
+    match app-id="^(org.kde.dolphin)$" title="^(Progress Dialog — Dolphin)$"
+    match app-id="^(org.kde.dolphin)$" title="^(Copying — Dolphin)$"
+
+    match app-id="^(nemo)$" title="^(.*Properties)$"
+    match app-id="^(firefox)$" title="^(Library)$"
+    match app-id="^(vlc)$"
+    match app-id="^(mpv)$"
+    match app-id="^(kvantummanager)$"
+    match app-id="^(qt5ct)$"
+    match app-id="^(qt6ct)$"
+    match app-id="^(nwg-look)$"
+    match app-id="^(org.kde.ark)$"
+    match app-id="^(org.pulseaudio.pavucontrol)$"
+    match app-id="^(blueman-manager)$"
+    match app-id="^(nm-applet)$"
+    match app-id="^(nm-connection-editor)$"
+    match app-id="^(org.kde.polkit-kde-authentication-agent-1)$"
+    match app-id="^(Signal)$"
+    match app-id="^(com.github.rafostar.Clapper)$"
+    match app-id="^(app.drey.Warp)$"
+    match app-id="^(net.davidotek.pupgui2)$"
+    match app-id="^(yad)$"
+    match app-id="^(eog)$"
+    match app-id="^(io.github.alainm23.planify)$"
+    match app-id="^(io.gitlab.theevilskeleton.Upscaler)$"
+    match app-id="^(com.github.unrud.VideoDownloader)$"
+    match app-id="^(io.gitlab.adhami3310.Impression)$"
+    match app-id="^(io.missioncenter.MissionCenter)$"
+    match app-id="^(org.qbittorrent.qBittorrent)$"
+
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"^org\.gnome\."#
+    draw-border-with-background false
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    match app-id="Alacritty"
+    match app-id="zen"
+    match app-id="com.mitchellh.ghostty"
+    match app-id="kitty"
+    draw-border-with-background false
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.9
+}
+
+// ANCHOR Copyq
+
+window-rule {
+    match app-id="^(com.github.hluk.copyq)$"
+
+    open-floating true
+
+    default-floating-position x=50 y=50 relative-to="bottom-right"
+    default-column-width { fixed 460; }
+    default-window-height { fixed 700; }
+}
+
+// ANCHOR Secrets
+
+window-rule {
+
+    match title="Bitwarden"
+
+    block-out-from "screen-capture"
+
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
+
+window-rule {
+    opacity 0.97
+    geometry-corner-radius 6
+    clip-to-geometry true
+    default-column-width {}
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        active-color "#db4740"
+        inactive-color "#7d0d2d"
+    }
+
+    border {
+        inactive-color "#db4740"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#db4740"
+        inactive-color "#7d0d2d"
+    }
+}
+
+// !SECTION

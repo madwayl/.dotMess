@@ -1,0 +1,129 @@
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+
+hotkey-overlay {
+    // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
+
+// Optionally, disable the workspace shadows in the overview.
+overview {
+    workspace-shadow {
+        // off
+        softness 100
+        spread 10
+        offset x=5 y=-5
+    }
+    backdrop-color "#0007"
+}
+
+// workspace "scratchpad"
+// workspace "main"
+
+// SECTION Windows & Layouts
+// SECTION Layout Styles
+
+layout {
+    gaps 8
+
+    background-color "transparent"
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 0.9999
+        // fixed 1920
+    }
+
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 0.9999
+        // fixed 1080
+    }
+
+    default-column-width { proportion 0.5; }
+    // default-column-width {}
+
+    // ANCHOR Border
+
+    focus-ring {
+        // Uncomment this line to disable the focus ring.
+        off
+
+        width 3
+
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+
+        active-gradient from="#32361a" to="#333e34" angle=45
+        inactive-gradient from="#1d2021" to="#282828" angle=45 relative-to="workspace-view"
+    }
+
+    border {
+        off
+
+        width 2
+        active-color "#ffc87f"
+        inactive-color "#505050"
+
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+        // active-gradient from="#e5989b" to="#ffb4a2" angle=45 relative-to="workspace-view" in="oklch longer hue"
+        // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
+    }
+
+    // ANCHOR Shadow
+    shadow {
+        on
+        draw-behind-window true
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    tab-indicator {
+        place-within-column
+        gaps-between-tabs 4
+    }
+
+    struts {
+        // left 1
+        // right 1
+        // top 1
+        // bottom 1
+    }
+}
+
+// ANCHOR CSD
+prefer-no-csd
+    // Alternatively, you can override it with a window rule called
+    // `draw-border-with-background`.
+
+
+// !SECTION
+recent-windows {
+    // off
+    open-delay-ms 150
+
+    highlight {
+        padding 20
+        corner-radius 6
+    }
+
+    previews {
+        max-height 420
+        max-scale 0.5
+    }
+
+    binds {
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}

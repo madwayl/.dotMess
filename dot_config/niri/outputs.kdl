@@ -1,0 +1,25 @@
+
+// SECTION Output
+
+// ...if HDMI-A-1 wasn't connected, focus DP-2 instead.
+output "DP-1" {
+    focus-at-startup
+}
+
+// Focus HDMI-A-1 by default.
+output "HDMI-A-1" {
+    focus-at-startup
+}
+
+output "eDP-1" {
+    // off
+
+    // mode "1920x1080@120.030"
+
+    // scale 2
+
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    // transform "normal"
+    focus-at-startup
+}
+// !SECTION
