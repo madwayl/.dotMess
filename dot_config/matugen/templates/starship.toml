@@ -1,0 +1,73 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = '''
+$os$fill$directory$cmd_duration$git_branch$git_status$fill$time
+
+$character'''
+
+palette = 'colors'
+
+continuation_prompt = '[   ](black)'
+
+[fill]
+symbol = ' '
+
+[palettes.colors]
+color1 = '{{colors.primary_fixed_dim.default.hex}}'
+color2 = '{{colors.on_primary.default.hex}}'
+color3 = '{{colors.on_surface_variant.default.hex}}'
+color4 = '{{colors.surface_container.default.hex}}'
+color5 = '{{colors.on_primary.default.hex}}'
+color6 = '{{colors.surface_dim.default.hex}}'
+color7 = '{{colors.surface.default.hex}}'
+color8 = '{{colors.primary.default.hex}}'
+color9 = '{{colors.tertiary.default.hex}}'
+error = '{{colors.red.default.hex}}'
+yellow = '{{colors.yellow.default.hex}}'
+black = '{{colors.black.default.hex}}'
+
+# Prompt symbols
+[character]
+success_symbol = "[ 󰻂 ](color1 bold)"
+error_symbol = "[ 󰅙 ](error)"
+vicmd_symbol = "[ 󰻂 ](#f9e2af)"
+
+[directory]
+format = "[ ](fg:color1 bg:none)[󰉋  $path](bg:color1 fg:color2)[](fg:color1 bg:none)"
+disabled = false
+
+[directory.substitutions]
+"Documents" = " 󰴉 "
+"Downloads" = " 󰉍 "
+"Music" = " 󱍙 "
+"Pictures" = " 󰉏 "
+".config" = " 󱁿 "
+"Code" = " 󱧼 "
+
+[os]
+format = "[░▒▓](fg:color1)[  ](bg:color1 fg:color2)[ ](fg:color1 bg:color4)[$symbol](fg:color3 bg:color4)[ ](fg:color4)"
+disabled = false
+
+[os.symbols]
+Arch = 'arc'
+Macos = 'mac'
+Windows = 'win'
+
+[cmd_duration]
+min_time = 10
+format = "[ ](fg:color4 bg:none)[ 󱎫 $duration ](bg:color4 fg:color1)[](fg:color4 bg:none)"
+disabled = false
+
+[git_branch]
+format = "[ ](fg:color4 bg:none)[ 󰘬 $branch](fg:color3 bg:color4)"
+
+[git_status]
+format = "[* [($ahead_behind )](fg:color1 bg:color4)](italic fg:color1 bg:color4)[](fg:color4 bg:none)"
+
+[time]
+format = "[](fg:color4 bg:none)[$time ](fg:color1 bg:color4)[](fg:color8 bg:color4)[  ](bg:color8 fg:color5)[▓▒░](fg:color8 bg:none)"
+disabled = false
+time_format = "%R" # Hour:Minute Format

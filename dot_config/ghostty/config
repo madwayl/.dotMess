@@ -1,14 +1,5 @@
 # This is the configuration file for Ghostty.
 #
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /home/madwayl/.config/ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
 # Run `ghostty +show-config --default --docs` to view a list of
 # all available config options and their default values.
 #
@@ -21,28 +12,27 @@
 # reloaded while running; some only apply to new windows and others may require
 # a full restart to take effect.
 
-font-family = "Google Sans Code NF"
-window-title-font-family = "Google Sans Code NF"
+font-family = "Rec Mono Linear"
+window-title-font-family = "Rec Mono Linear"
 font-size = 10.25
 
 # adjust-font-baseline = 2
 
 adjust-icon-height = 10
 adjust-cell-height = 5
-adjust-cell-width = -2
+adjust-cell-width = 0
 
-background-opacity = 0.9
+background-opacity = 0.6
 
 theme = Gruvbox Material Dark
 
 cursor-style = block_hollow
-cursor-color = #ebdbb2
 mouse-shift-capture = true
 
 clipboard-trim-trailing-spaces = true
 clipboard-write = allow
 
-window-padding-x = 25
+window-padding-x = 20
 window-padding-y = 25,10
 window-padding-balance = true
 
@@ -77,6 +67,6 @@ gtk-titlebar-style = native
 auto-update = off
 
 # DMS
-config-file = ./config-dankcolors
+config-file = ./matugen
 gtk-custom-css = ./matugen-theme.css
 app-notifications = no-clipboard-copy,no-config-reload

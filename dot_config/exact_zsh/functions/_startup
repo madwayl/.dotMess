@@ -1,0 +1,6 @@
+
+source $ZDOTDIR/opts/colors
+cbonsai -p -M 8 -b 2 -k $bonsai_list | grep --color=never -E "&|~|_|\)|\.|//"
+echo "\n$prim_color"
+_center_fortune
+echo "\033[0m"

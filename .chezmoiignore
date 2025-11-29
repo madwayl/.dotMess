@@ -1,4 +1,6 @@
 README.md
+LICENSE
+.gitignore
 
 *.txt   # ignore *.txt in the target directory
 */*.txt # ignore *.txt in subdirectories of the target directory
@@ -10,12 +12,15 @@ README.md
 backups/   # ignore the backups folder, but not its contents
 backups/** # ignore the contents of backups folder but not the folder itself
 
-docs/**
+_docs/**
+_screenshots/**
+_packages
 *.md
 **/dms/**
 
 Pictures/**
-!Pictures/Wallpapers
+!Pictures/
+!Pictures/Wallpapers/**
 
 **/themes/**
 **/matugen-theme.css
@@ -28,15 +33,13 @@ Pictures/**
 
 **/DankMaterialShell/plugins/
 
-**/copyq/**
-!**/copyq/
-!**/copyq/copyq-commands.ini
-!**/copyq/copyq.conf
-!**/copyq/wayland-support.ini
-
 **/lazy-lock.json
 
 **/zed/debug.json
 **/.colors.zsh
 **/.zsh_history
 **/.zcompdump
+**/zsh/opts/**
+
+**token**
+**/legacy/

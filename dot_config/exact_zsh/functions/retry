@@ -1,0 +1,17 @@
+local max_attempts=${1:-5}
+shift
+local attempt=1
+local delay=1
+local output
+
+until output=$("$@" 2>&1); do
+    if [ $attempt -ge $max_attempts ]; then
+    echo "Max retries reached, giving up."
+    return 1
+    fi
+    sleep $delay
+    delay=$((delay * 2))
+    ((attempt++))
+done
+
+echo "$output"

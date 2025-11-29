@@ -12,7 +12,6 @@ apps = [
 
 # Simple command remapping
 "com.mitchellh.ghostty" = "ghostty"
-"org.wezfurlong.wezterm" = "wezterm"
 "zen" = "zen-browser"
 "org.gnome.Nautilus" = "nautilus"
 "dev.zed.Zed" = "zeditor"

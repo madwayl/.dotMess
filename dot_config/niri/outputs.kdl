@@ -2,24 +2,37 @@
 // SECTION Output
 
 // ...if HDMI-A-1 wasn't connected, focus DP-2 instead.
-output "DP-1" {
-    focus-at-startup
+output "Lenovo Group Limited L32p-30 U5125YRF" {
+    mode "3840x2160@59.997"
+    scale 1.0
+    position x=0 y=0
+    variable-refresh-rate on-demand=true
+    // focus-at-startup
+
+    hot-corners {
+        top-left
+        top-right
+    }
 }
 
-// Focus HDMI-A-1 by default.
-output "HDMI-A-1" {
-    focus-at-startup
-}
-
-output "eDP-1" {
+output "Chimei Innolux Corporation 0x15E7 Unknown" {
     // off
-
-    // mode "1920x1080@120.030"
-
-    // scale 2
-
-    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
-    // transform "normal"
+    mode "1920x1080@60.001"
+    scale 1.0
+    transform "normal"
+    position x=960 y=2160
+    variable-refresh-rate on-demand=true
     focus-at-startup
+    // backdrop-color "#001100"
+
+    hot-corners {
+        // off
+        // top-left
+        // top-right
+        // bottom-left
+        bottom-right
+    }
+
 }
+
 // !SECTION

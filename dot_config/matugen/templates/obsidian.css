@@ -15,6 +15,7 @@
   --background-modifier-message:{{colors.surface_dim.dark.hex}};
   --background-modifier-form-field:{{colors.primary_container.dark.hex}};
   --interactive-accent:{{colors.primary_container.dark.hex}};
+  --ui1:{{colors.secondary_container.dark.hex}};
 
   --link-color:{{colors.primary.dark.hex}};
   --text-accent:{{colors.primary.dark.hex}};
@@ -33,7 +34,7 @@
   --nav-item-color-hover:{{colors.on_secondary_container.dark.hex}};
   --nav-item-background-hover:{{colors.secondary_container.dark.hex}};
 
-  --tab-background-active:{{colors.primary_container.dark.hex}};
+  --tab-background-active:{{colors.secondary_container.dark.hex}};
   --tab-text-color-active:{{colors.on_primary_container.dark.hex}};
   --tab-text-color:{{colors.on_surface_variant.dark.hex}};
 

@@ -29,6 +29,8 @@ input {
         // disabled-on-external-mouse
     }
 
+    warp-mouse-to-focus
+
     mouse {
         // off
         // natural-scroll
@@ -48,8 +50,10 @@ input {
         // middle-emulation
     }
 
-    warp-mouse-to-focus mode="center-xy"
+    // warp-mouse-to-focus mode="center-xy"
     // focus-follows-mouse max-scroll-amount="0%"
+
+    workspace-auto-back-and-forth
 
     mod-key "Super"
 }

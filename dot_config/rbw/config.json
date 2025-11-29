@@ -1,0 +1,12 @@
+{
+  "email": "mahmoodathil@proton.me",
+  "sso_id": null,
+  "base_url": null,
+  "identity_url": null,
+  "ui_url": null,
+  "notifications_url": null,
+  "lock_timeout": 3600,
+  "sync_interval": 3600,
+  "pinentry": "/home/MaWe/.config/rbw/rbw_pyentry",
+  "client_cert_path": null
+}

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+RBW_MASTER_PASSWORD=$(secret-tool lookup service rbw account personal 2>/dev/null)
+if [ $? -ne 0 ] || [ -z "$RBW_MASTER_PASSWORD" ]; then
+    echo "Error: Failed to retrieve master password" >&2
+    exec /usr/bin/pinentry-curses "$@"
+fi
+
+while read -r cmd args; do
+    case "$cmd" in
+        GETPIN)
+            echo "D ${RBW_MASTER_PASSWORD%$'\n'}"
+            echo "OK"
+            ;;
+        BYE)
+            echo "OK closing connection"
+            exit 0
+            ;;
+        *)
+            echo "OK"
+            ;;
+    esac
+done

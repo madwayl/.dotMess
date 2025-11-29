@@ -1,22 +1,21 @@
 
-// SECTION Layer Rules
-
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop false
+blur {
+  passes 3        // more passes = stronger blur (default: 3)
+  offset 3.2      // sample distance per pass (default: 3.0)
+  noise 0.03      // grain overlay (default: 0.02)
+  saturation 1.75  // color saturation boost (default: 1.5)
 }
 
-layer-rule {
-    match namespace="dms:blurwallpaper"
-    place-within-backdrop true
+window-rule {
+    opacity 0.85
+    geometry-corner-radius 6
+    clip-to-geometry true
+    default-column-width {}
+    background-effect {
+        xray true
+        blur true
+    }
 }
-
-layer-rule {
-    match namespace="dms:notification-popup"
-    block-out-from "screencast"
-}
-
-// !SECTION
 
 // SECTION Window Rules
 
@@ -27,6 +26,7 @@ window-rule {
     match title="^(About Mozilla Firefox)$"
     match app-id="^(firefox)$" title="^(Picture-in-Picture)$"
     match app-id="^(zen)$" title="^(Picture-in-Picture)$"
+    match app-id="zoom"
 
     match app-id="^(org.kde.dolphin)$" title="^(Progress Dialog — Dolphin)$"
     match app-id="^(org.kde.dolphin)$" title="^(Copying — Dolphin)$"
@@ -77,20 +77,47 @@ window-rule {
 }
 
 window-rule {
-    match is-active=false
-    opacity 0.9
+    match app-id=r#"^org\.gnome\."#
+    draw-border-with-background false
+    geometry-corner-radius 12
+    clip-to-geometry true
 }
 
-// ANCHOR Copyq
+window-rule {
+    match app-id=r#"^gnome-control-center$"#
+    match app-id=r#"^pavucontrol$"#
+    match app-id=r#"^nm-connection-editor$"#
+    default-column-width { proportion 0.5; }
+    open-floating false
+}
 
 window-rule {
-    match app-id="^(com.github.hluk.copyq)$"
-
+    match app-id=r#"^gnome-calculator$"#
+    match app-id=r#"^galculator$"#
+    match app-id=r#"^blueman-manager$"#
+    match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
+}
 
-    default-floating-position x=50 y=50 relative-to="bottom-right"
-    default-column-width { fixed 460; }
-    default-window-height { fixed 700; }
+window-rule {
+    match app-id=r#"^steam$"# title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-focused false
+}
+
+window-rule {
+    match title="GameThread"
+    match app-id="^mpv$"
+    variable-refresh-rate true
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.8
+
+    background-effect {
+        blur true
+    }
 }
 
 // ANCHOR Secrets
@@ -98,18 +125,9 @@ window-rule {
 window-rule {
 
     match title="Bitwarden"
-
     block-out-from "screen-capture"
-
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
-}
-
-window-rule {
-    opacity 0.97
-    geometry-corner-radius 6
-    clip-to-geometry true
-    default-column-width {}
 }
 
 // Indicate screencasted windows with red colors.

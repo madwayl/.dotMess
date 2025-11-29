@@ -1,7 +1,12 @@
 {
   "commandRunner": {
     "enabled": true,
-    "terminal": "ghostty"
+    "terminal": "ghostty",
+    "history": [
+      "helium-browser",
+      "niri-float-sticky",
+      "helium"
+    ]
   },
   "niriWindows": {
     "enabled": true
@@ -10,8 +15,8 @@
     "enabled": true
   },
   "dankHooks": {
-    "enabled": true,
-    "wallpaperPath": "/home/madwayl/.local/share/scripts/random.sh"
+    "enabled": false,
+    "wallpaperPath": ""
   },
   "dockerManager": {
     "enabled": true,
@@ -26,11 +31,167 @@
     "enabled": true
   },
   "emojiLauncher": {
-    "enabled": true
+    "enabled": true,
+    "pasteOnSelect": true,
+    "defaultSkinTone": "None (yellow)",
+    "trigger": ":e"
   },
   "webSearch": {
     "enabled": true,
     "defaultEngine": "duckduckgo",
-    "searchEngines": []
+    "searchEngines": [],
+    "disabledEngines": []
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "dankGifSearch": {
+    "enabled": true,
+    "preferredFormat": "mp4",
+    "trigger": ":g"
+  },
+  "dankBitwarden": {
+    "enabled": true,
+    "trigger": "[",
+    "noTrigger": false,
+    "copyToClipboard": false
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "calcEngine": "qalc"
+  },
+  "dankNotepadModule": {
+    "enabled": true,
+    "style": "gruvbox"
+  },
+  "displayManager": {
+    "enabled": true
+  },
+  "dankStickerSearch": {
+    "enabled": true,
+    "preferredFormat": "webp"
+  },
+  "dankObsidian": {
+    "enabled": true,
+    "isFlatpak": false
+  },
+  "audioSwitcher": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": false,
+    "selectedDeviceId": "53bff3f3d0e14bfca53b2533dd515d0d"
+  },
+  "developerUtilities": {
+    "enabled": false
+  },
+  "wallpaperShufflerPlugin": {
+    "enabled": false,
+    "shuffleInterval": "14400",
+    "wallpaperPath": "/home/MaWe/Pictures/Wallpapers/Dark"
+  },
+  "aiAssistant": {
+    "enabled": true,
+    "providers": {
+      "openai": {
+        "baseUrl": "https://api.openai.com",
+        "model": "gpt-5.2",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "anthropic": {
+        "baseUrl": "https://api.anthropic.com",
+        "model": "claude-sonnet-4-5",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "gemini": {
+        "baseUrl": "https://generativelanguage.googleapis.com",
+        "model": "gemini-3-flash-preview",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      },
+      "custom": {
+        "baseUrl": "https://api.openai.com",
+        "model": "gpt-5.2",
+        "apiKey": "",
+        "saveApiKey": false,
+        "apiKeyEnvVar": "",
+        "temperature": 0.7,
+        "maxTokens": 4096,
+        "timeout": 30
+      }
+    },
+    "provider": "openai",
+    "baseUrl": "https://api.openai.com",
+    "model": "gpt-5.2",
+    "apiKey": "",
+    "saveApiKey": false,
+    "apiKeyEnvVar": "",
+    "temperature": 0.7,
+    "maxTokens": 4096,
+    "timeout": 30
+  },
+  "usbManager": {
+    "enabled": false
+  },
+  "timeUntil": {
+    "enabled": true
+  },
+  "clipboardPlus": {
+    "enabled": true,
+    "backgroundOpacity": 70,
+    "maxPinnedImageMb": 100,
+    "fullscreenMode": true,
+    "tabOrder": "clipboard,search,category,pinned,todo",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
+    "showCloseButton": false,
+    "enableFullTextDecode": false,
+    "hidePanelBackground": true,
+    "showPanelSeparator": true,
+    "panelOpacityPinned": 35,
+    "autoPasteOnClick": true,
+    "autoPasteOnEnterSelect": true,
+    "autoPasteDelay": 700,
+    "listenClipboardWhileOpen": true,
+    "todoEnabled": true,
+    "panelOpacityClipboard": 90,
+    "maxPinnedTextMb": 5,
+    "enableTabNavigation": true,
+    "showBarWidget": true,
+    "autoPasteOnRightClick": true,
+    "useBuiltInDmsClipboard": false
+  },
+  "wallpaperCarousel": {
+    "enabled": true
+  },
+  "tailscale": {
+    "enabled": true,
+    "refreshInterval": 6
+  },
+  "fullscreenPowerMenu": {
+    "enabled": false,
+    "dimOpacity": 20,
+    "menuOpacity": 15,
+    "menuOrientation": "dynamic"
+  },
+  "displayOutput": {
+    "enabled": true
+  },
+  "ddcBrightness": {
+    "enabled": true
   }
 }

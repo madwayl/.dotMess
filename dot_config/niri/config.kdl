@@ -1,17 +1,16 @@
 // This config is in the KDL format: https://kdl.dev
 
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "ydotoold"
 
 // ANCHOR Apps
-spawn-at-startup "bitwarden-desktop"
 spawn-at-startup "mcontrolcenter"
-spawn-at-startup "blueman-applet"
-spawn-at-startup "nm-applet"
-spawn-at-startup "copyq" "--start-server"
+// spawn-at-startup "blueman-applet"
+// spawn-at-startup "nm-applet"
 spawn-at-startup "niri-float-sticky"
 spawn-at-startup "udiskie" "--no-automount" "--smart-tray"
-spawn-at-startup "sh" "-c" "$CARGO_HOME/bin/nirinit"
+spawn-at-startup "nirinit"
+spawn-at-startup "gnome-keyring-daemon" "--start"
+
 // Clipboard history
 // spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
 
@@ -27,13 +26,17 @@ config-notification {
     disable-failed
 }
 
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
 include "inputs.kdl"
 include "outputs.kdl"
-include "env.kdl"
+include "envs.kdl"
 include "rules.kdl"
 include "layouts.kdl"
 include "animations.kdl"
-include "keybindings.kdl"
-include "dms.kdl"
-include "dms/colors.kdl"
-include "dms/alttab.kdl"
+include "binds.kdl"
+
+include "specs/dms.kdl"
+include "specs/valent.kdl"

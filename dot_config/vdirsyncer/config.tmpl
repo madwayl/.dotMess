@@ -1,0 +1,34 @@
+[general]
+status_path = "~/.local/share/.calendars/status"
+
+[pair khal_pair_1]
+a = "googleCalendar"
+b = "khal_pair_1_local"
+collections = ["from a", "from b"]
+metadata = ["color"]
+
+[storage khal_pair_1_local]
+type = "filesystem"
+path = "~/.local/share/khal/calendars/private"
+fileext = ".ics"
+
+[storage googleCalendar]
+type = "google_calendar"
+token_file = "~/.local/share/vdirsyncer/google_calendar_token"
+client_id = "{{ index (rbwFields "Google") "oAuth Client ID" "value" }}"
+client_secret = "{{ index (rbwFields "Google") "oAuth Client Secret" "value" }}"
+
+[pair holidays]
+a = "holidays_local"
+b = "holidays_india"
+collections = null
+metadata = ["color"]
+
+[storage holidays_local]
+type = "filesystem"
+path = "~/.local/share/khal/calendars/holidays"
+fileext = ".ics"
+
+[storage holidays_india]
+type = "http"
+url = "https://calendar.google.com/calendar/ical/en.indian%23holiday%40group.v.calendar.google.com/public/basic.ics"

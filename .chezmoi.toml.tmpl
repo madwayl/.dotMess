@@ -1,12 +1,17 @@
-{{- $name := "madwayl" -}}
-{{- $email := "67217921+madwayl@users.noreply.github.com" -}}
+{{- $username := "mawev" -}}
+{{- $useremail := "67217921+mawev@users.noreply.github.com" -}}
 
 sourceDir = "{{ .chezmoi.workingTree }}"
-
 verbose = true
 
 [ data ]
-    email = "$email"
-    name = "$name"
-
+    name = "{{ $username }}"
+    email = "{{ $useremail }}"
     editor = "nvim"
+
+[diff]
+    pager = "delta --line-numbers"
+
+[merge]
+    command = "nvim"
+    args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}"]

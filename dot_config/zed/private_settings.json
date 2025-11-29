@@ -7,7 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "agent_servers": {
+    "your_agent": {
+      "type": "custom",
+      "command": "path_to_executable"
+    }
+  },
+  "autosave": "on_focus_change",
+  "soft_wrap": "editor_width",
+  "show_edit_predictions": false,
   "agent": {
+    "dock": "right",
     "default_profile": "ask",
     "default_model": {
       "provider": "lmstudio",
@@ -21,7 +34,8 @@
     "dark": "Matugen Dark"
   },
   "collaboration_panel": {
-    "dock": "right"
+    "dock": "left",
+    "button": false
   },
   "lsp_document_colors": "background",
   "indent_guides": {
@@ -37,7 +51,6 @@
   "prettier": {
     "allowed": true
   },
-  "autosave": "on_focus_change",
   "cursor_shape": "bar",
   "icon_theme": {
     "mode": "system",
@@ -52,18 +65,24 @@
     }
   },
   "git_panel": {
+    "dock": "left",
     "sort_by_path": true,
     "button": true
   },
   "terminal": {
-    "font_family": "Google Sans Code NF",
+    "font_family": "Recursive Mono Linear Static",
     "cursor_shape": "hollow",
     "toolbar": {
       "breadcrumbs": false
     },
-    "dock": "bottom"
+    "dock": "bottom",
+    "line_height": {
+      "custom": 1.499
+    },
+    "font_size": 11.7
   },
   "project_panel": {
+    "dock": "left",
     "hide_root": true,
     "hide_gitignore": false
   },
@@ -72,7 +91,7 @@
   },
   "use_system_window_tabs": true,
   "preview_tabs": {
-    "enable_preview_from_code_navigation": true,
+    "enable_keep_preview_on_code_navigation": true,
     "enable_preview_from_file_finder": true
   },
   "tabs": {
@@ -88,12 +107,15 @@
   },
   "ui_font_size": 14,
   "buffer_font_size": 13,
-  "buffer_font_family": "Google Sans Code NF",
+  "buffer_font_family": "Rec Mono Linear",
   "buffer_font_weight": 400,
   "buffer_line_height": "comfortable",
-  "ui_font_family": "Google Sans Code NF",
+  "ui_font_family": "Rec Mono Linear",
   "ui_font_weight": 400,
   "ui_font_features": {
     "calt": false
+  },
+  "experimental.theme_overrides": {
+    "background.appearance": "transparent"
   }
 }
