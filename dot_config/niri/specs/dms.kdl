@@ -1,0 +1,140 @@
+
+spawn-at-startup "dsearch" "serve"
+
+// SECTION Layer Rules
+
+layer-rule {
+  match namespace=".*"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+    match namespace="^dms-clipboardPlus-panel"
+
+    // opacity 0.85
+
+    background-effect {
+        blur true
+        xray false
+        noise 0.00000000001
+        saturation 1.75
+    }
+
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop false
+}
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="dms:notification-popup"
+    match namespace="^dms:clipboard$"
+    match namespace="^dms-clipboardPlus-panel"
+
+    block-out-from "screencast"
+}
+
+// !SECTION
+
+// Optional: Clipboard history
+// spawn-at-startup "dms" "cl" "watch"
+
+binds {
+
+    Mod+Space repeat=false {
+        spawn "dms" "ipc" "call" "launcher" "toggle";
+    }
+
+    Mod+Alt+V hotkey-overlay-title="Clipboard Manager" {
+        spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"
+    }
+
+    Mod+Ctrl+V hotkey-overlay-title="Add Clipboard to Note Card" {
+        spawn-sh "dms ipc call clipboardPlus addClipboardToNoteCard"
+    }
+
+    Super+Alt+Period repeat=false hotkey-overlay-title="Open Emoji Picker" {
+        spawn "dms" "ipc" "call" "launcher" "toggleQuery" ":e";
+    }
+
+    Mod+M hotkey-overlay-title="Task Manager" {
+        spawn "dms" "ipc" "call" "processlist" "toggle";
+    }
+    Mod+Comma hotkey-overlay-title="Settings" {
+        spawn "dms" "ipc" "call" "settings" "toggle";
+    }
+    Mod+N hotkey-overlay-title="Notification Center" {
+        spawn "dms" "ipc" "call" "notifications" "toggle";
+    }
+
+    // Security
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" {
+        spawn "dms" "ipc" "call" "lock" "lock";
+    }
+    Mod+Escape hotkey-overlay-title="Power Toggle" {
+        spawn "dms" "ipc" "call" "powermenu" "toggle"
+    }
+
+    // Audio Controls
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "increment" "3";
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "decrement" "3";
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "mute";
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn "dms" "ipc" "call" "audio" "micmute";
+    }
+
+    // Brightness Controls
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "dms" "ipc" "call" "brightness" "increment" "5" " ";
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "dms" "ipc" "call" "brightness" "decrement" "5" " ";
+    }
+
+    // Assistant
+    Super+Shift+F23 hotkey-overlay-title="Ai Assistant" {
+        spawn "dms" "ipc" "call" "plugins" "toggle" "ephemera";
+    }
+
+    // DMS Specific Applications
+    Mod+Shift+C { spawn "dms" "color" "pick" "-a"; }
+    Mod+Shift+N { spawn "dms" "ipc" "call" "notepad" "toggle"; }
+
+    // Screen Recording
+    Mod+Print { spawn "dms" "ipc" "call" "screenRecorder" "toggleRecording"; }
+    Mod+Shift+Print { spawn "dms" "ipc" "call" "screenRecorder" "togglePause"; }
+
+    // Display Manager
+    Mod+P { spawn "dms" "ipc" "call" "niriDS" "toggle"; }
+
+}
+
+environment {
+    DMS_SCREENSHOT_EDITOR "ksnip"
+    DMS_MODAL_LAYER "overlay"
+    }
+
+switch-events {
+    lid-close {spawn "dms" "ipc" "call" "lock" "lock";}
+}
+
+include optional=true "../dms/colors.kdl"
+// include optional=true "../dms/layout.kdl"
+// include optional=true "../dms/alttab.kdl"
+// include optional=true "../dms/binds.kdl"
+include optional=true "../dms/outputs.kdl"
+include optional=true "../dms/cursor.kdl"

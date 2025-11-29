@@ -1,0 +1,11 @@
+local cols=${COLUMNS:-$(tput cols)}
+local margin=6
+local max_width=$(( cols - margin * 2 ))
+local text=$(fortune | fold -s -w $max_width)
+
+echo
+echo "$text" | while IFS= read -r line; do
+    local pad=$(( (cols - ${#line}) / 2 ))
+    printf '%*s%s\n' $pad '' "$line"
+done
+echo

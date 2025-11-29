@@ -77,17 +77,21 @@ box.bottom.floating-bar {
     background-color: var(--card-bg-color);
     color: var(--card-fg-color);
     border-radius: 6px;
+    backdrop-filter: blur(8px) saturate(140%) !important;
+
 }
 
 popover > contents {
     background-color: var(--card-bg-color);
     color: var(--card-fg-color);
     border-radius: 6px;
-}
+    backdrop-filter: blur(8px) saturate(140%) !important;
+    }
 
 popover > arrow {
     background-color: var(--card-bg-color);
     color: var(--card-fg-color);
+    backdrop-filter: blur(8px) saturate(140%) !important;
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
@@ -158,7 +162,7 @@ tabbar tabbox > tabboxchild > tab {
     padding: 0px 6px;
     font-size: 14px;
     font-weight: 600;
-    font-family: "Google Sans Code NF";
+    font-family: "Maple Mono";
     min-width: 30px;
 }
 
@@ -272,7 +276,7 @@ tabgrid tabthumbnail button:hover {
 tabgrid tabthumbnail label,
 tabgrid tabthumbnail .title {
     color: oklch(from var(--window-fg-color) l c h / 0.9);
-    font-family: 'Google Sans Code NF', monospace;
+    font-family: 'Maple Mono', monospace;
     font-size: 13px;
     font-weight: 500;
     margin-top: 12px;

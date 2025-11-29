@@ -1,0 +1,6 @@
+autoload -Uz hex_to_256 print_c
+c1=$(hex_to_256 "{{colors.primary_fixed_dim.default.hex}}")
+c2=$(hex_to_256 "{{colors.on_primary_fixed_variant.default.hex}}")
+c3=$(hex_to_256 "{{colors.source_color.default.hex}}")
+prim_color="\033[38;5;$(($c1))m"
+bonsai_list="$(($c2)),130,$(($c1)),94"

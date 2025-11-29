@@ -1,0 +1,474 @@
+/* Matugen Template for userChrome.css */
+
+/*@import url(theme-mods/contextMenuIcons.css);*/
+@import url(theme-mods/lessRoundedTabs.css);
+@import url(theme-mods/minimalWorkspaceButton.css);
+@import url(theme-mods/noScrollbaronCompact.css);
+@import url(theme-mods/sideBar.css);
+@import url(theme-mods/urlBar.css);
+@import url(theme-mods/essentials.css);
+@import url(theme-mods/containerTabs.css);
+@import url(theme-mods/ctrlTab.css);
+@import url(theme-mods/statusBar.css);
+@import url(theme-mods/compactMode.css);
+
+/* Picked from Nebula */
+@import url(theme-mods/nebula/betterPDF.css);
+@import url(theme-mods/nebula/transparency.css);
+@import url(theme-mods/nebula/essentials.css);
+@import url(theme-mods/nebula/general.css);
+@import url(theme-mods/nebula/pinnedExtensions.css);
+@import url(theme-mods/nebula/soundIcons.css);
+@import url(theme-mods/nebula/tabAnimation.css);
+@import url(theme-mods/nebula/tabStyles.css);
+@import url(theme-mods/nebula/toolbar.css);
+@import url(theme-mods/nebula/topBarButton.css);
+@import url(theme-mods/nebula/urlBar.css);
+@import url(theme-mods/nebula/workspaceButton.css);
+
+/* Dark UI */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --zen-border-radius: 6px !important;
+    --zen-native-inner-radius: 6px !important;
+    --zen-colors-primary: {{colors.surface_variant.default.hex}} !important;
+    --zen-primary-color: {{colors.primary.default.hex}} !important;
+    --zen-colors-secondary: {{colors.surface_variant.default.hex}} !important;
+    --zen-colors-tertiary: {{colors.background.default.hex}} !important;
+    --zen-colors-border: {{colors.primary.default.hex}} !important;
+    --toolbarbutton-icon-fill: {{colors.primary.default.hex}} !important;
+    --lwt-text-color: {{colors.on_surface.default.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.default.hex}} !important;
+    --tab-selected-textcolor: {{colors.on_primary_container.default.hex}} !important;
+    --toolbar-field-focus-color: {{colors.on_surface.default.hex}} !important;
+    --toolbar-color: {{colors.on_surface.default.hex}} !important;
+    --newtab-text-primary-color: {{colors.on_surface.default.hex}} !important;
+    --arrowpanel-color: {{colors.on_surface.default.hex}} !important;
+    --arrowpanel-background: color-mix(in srgb, {{colors.surface.default.hex}} 95%, transparent) !important;
+    --sidebar-text-color: {{colors.on_surface.default.hex}} !important;
+    --lwt-sidebar-text-color: {{colors.on_surface.default.hex}} !important;
+    --lwt-sidebar-background-color: color-mix(in srgb, {{colors.background.default.hex}} 80%, transparent) !important;
+    --toolbar-bgcolor: {{colors.surface_variant.default.hex}} !important;
+    --newtab-background-color: color-mix(in srgb, {{colors.surface.default.hex}} 80%, transparent) !important;
+    --zen-themed-toolbar-bg: color-mix(in srgb, {{colors.background.default.hex}} 80%, transparent) !important;
+    --zen-main-browser-background: color-mix(in srgb, {{colors.background.default.hex}} 90%, transparent) !important;
+    --toolbox-bgcolor: color-mix(in srgb, {{colors.background.default.hex}} 80%, transparent) !important;
+    --toolbox-bgcolor-inactive: {{colors.background.default.hex}} !important;
+  }
+
+  #permissions-granted-icon {
+    color: {{colors.background.default.hex}} !important;
+  }
+
+  .sidebar-placesTree {
+    background-color: {{colors.surface.default.hex}} !important;
+  }
+
+  #zen-workspaces-button {
+    background-color: color-mix(in srgb, {{colors.surface.default.hex}} 0%, transparent) !important;
+  }
+
+  #TabsToolbar {
+    background-color: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent) !important;
+  }
+
+  #urlbar-background {
+    background-color: {{colors.surface.default.hex}} !important;
+  }
+
+  .content-shortcuts {
+    background-color: {{colors.surface.default.hex}} !important;
+    border-color: {{colors.primary.default.hex}} !important;
+  }
+
+  .urlbarView-url {
+    color: {{colors.primary.default.hex}} !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: {{colors.background.default.hex}} !important;
+  }
+
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: {{colors.surface_variant.default.hex}} !important;
+      }
+    }
+  }
+
+  toolbar .toolbarbutton-1 {
+    &:not([disabled]) {
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
+        fill: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent);
+      }
+    }
+  }
+
+  .zen-glance-sidebar-container {
+    & toolbarbutton {
+        background: {{colors.surface_variant.default.hex}};
+    }
+  }
+
+  .identity-color-blue {
+    --identity-tab-color: {{colors.blue.default.hex}} !important;
+    --identity-icon-color: {{colors.blue.default.hex}} !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: {{colors.cyan.default.hex}} !important;
+    --identity-icon-color: {{colors.cyan.default.hex}} !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: {{colors.green.default.hex}} !important;
+    --identity-icon-color: {{colors.green.default.hex}} !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: {{colors.yellow.default.hex}} !important;
+    --identity-icon-color: {{colors.yellow.default.hex}} !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: {{colors.error.default.hex}} !important;
+    --identity-icon-color: {{colors.error.default.hex}} !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: {{colors.red.default.hex}} !important;
+    --identity-icon-color: {{colors.red.default.hex}} !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: {{colors.magenta.default.hex}} !important;
+    --identity-icon-color: {{colors.magenta.default.hex}} !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: {{colors.ansiMagenta.default.hex}} !important;
+    --identity-icon-color: {{colors.ansiMagenta.default.hex}} !important;
+  }
+
+  hbox#titlebar {
+    background-color: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent) !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: {{colors.background.default.hex}} !important;
+  }
+
+  menu,
+  menuitem {
+      &:where([_moz-menuactive]:not([disabled="true"])) {
+          color: {{colors.primary.default.hex}} !important;
+          background-color: {{colors.on_primary.default.hex}} !important;
+      }
+  }
+
+  #navigator-toolbox {
+padding: 10px 9px 10px 15px !important;
+  }
+
+  #tabbrowser-tabpanels[zen-split-view="true"] .browserSidebarContainer.deck-selected {
+    &:not(.zen-glance-overlay) {
+      outline: var(--mod-sivtech-active_border_width, 2px) solid var(--zen-primary-color) !important;
+    }
+  }
+
+  menupopup, panel {
+   --panel-background: color-mix(in srgb, {{colors.background.default.hex | set_lightness: 0.2 }} 100%, #000 100% ) !important;
+   --panel-border-radius: var(--zen-native-inner-radius) !important;
+   }
+}
+
+
+/* Light UI */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --zen-border-radius: 6px !important;
+    --zen-native-inner-radius: 6px !important;
+    --zen-colors-primary: {{colors.surface_variant.default.hex}} !important;
+    --zen-primary-color: {{colors.primary.default.hex}} !important;
+    --zen-colors-secondary: {{colors.surface_variant.default.hex}} !important;
+    --zen-colors-tertiary: {{colors.background.default.hex}} !important;
+    --zen-colors-border: {{colors.primary.default.hex}} !important;
+    --toolbarbutton-icon-fill: {{colors.primary.default.hex}} !important;
+    --lwt-text-color: {{colors.on_surface.default.hex}} !important;
+    --toolbar-field-color: {{colors.on_surface.default.hex}} !important;
+    --tab-selected-textcolor: {{colors.on_primary_container.default.hex}} !important;
+    --toolbar-field-focus-color: {{colors.on_surface.default.hex}} !important;
+    --toolbar-color: {{colors.on_surface.default.hex}} !important;
+    --newtab-text-primary-color: {{colors.on_surface.default.hex}} !important;
+    --arrowpanel-color: {{colors.on_surface.default.hex}} !important;
+    --arrowpanel-background: color-mix(in srgb, {{colors.surface.default.hex}} 95%, white) !important;
+    --sidebar-text-color: {{colors.on_surface.default.hex}} !important;
+    --lwt-sidebar-text-color: {{colors.on_surface.default.hex}} !important;
+    --lwt-sidebar-background-color: color-mix(in srgb, {{colors.background.default.hex}} 80%, white) !important;
+    --toolbar-bgcolor: {{colors.surface_variant.default.hex}} !important;
+    --newtab-background-color: color-mix(in srgb, {{colors.surface.default.hex}} 80%, white) !important;
+    --zen-themed-toolbar-bg: color-mix(in srgb, {{colors.background.default.hex}} 80%, white) !important;
+    --zen-main-browser-background: color-mix(in srgb, {{colors.background.default.hex}} 90%, white) !important;
+    --toolbox-bgcolor: color-mix(in srgb, {{colors.background.default.hex}} 80%, white) !important;
+    --toolbox-bgcolor-inactive: {{colors.background.default.hex}} !important;
+  }
+
+  #permissions-granted-icon {
+    color: {{colors.background.default.hex}} !important;
+  }
+
+  .sidebar-placesTree {
+    background-color: {{colors.surface.default.hex}} !important;
+  }
+
+  #zen-workspaces-button {
+    background-color: color-mix(in srgb, {{colors.surface.default.hex}} 0%, transparent) !important;
+  }
+
+  #TabsToolbar {
+    background-color: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent) !important;
+  }
+
+  #urlbar-background {
+    background-color: {{colors.surface.default.hex}} !important;
+  }
+
+  .content-shortcuts {
+    background-color: {{colors.surface.default.hex}} !important;
+    border-color: {{colors.primary.default.hex}} !important;
+  }
+
+  .urlbarView-url {
+    color: {{colors.primary.default.hex}} !important;
+  }
+
+  #zenEditBookmarkPanelFaviconContainer {
+    background: {{colors.background.default.hex}} !important;
+  }
+
+  #zen-media-controls-toolbar {
+    & #zen-media-progress-bar {
+      &::-moz-range-track {
+        background: {{colors.surface_variant.default.hex}} !important;
+      }
+    }
+  }
+
+  toolbar .toolbarbutton-1 {
+    &:not([disabled]) {
+      &:is([open], [checked])
+        > :is(
+          .toolbarbutton-icon,
+          .toolbarbutton-text,
+          .toolbarbutton-badge-stack
+        ) {
+        fill: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent);
+      }
+    }
+  }
+
+  .zen-glance-sidebar-container {
+    & toolbarbutton {
+        background: {{colors.surface_variant.default.hex}};
+    }
+  }
+
+  .identity-color-blue {
+    --identity-tab-color: {{colors.blue.default.hex}} !important;
+    --identity-icon-color: {{colors.blue.default.hex}} !important;
+  }
+
+  .identity-color-turquoise {
+    --identity-tab-color: {{colors.cyan.default.hex}} !important;
+    --identity-icon-color: {{colors.cyan.default.hex}} !important;
+  }
+
+  .identity-color-green {
+    --identity-tab-color: {{colors.green.default.hex}} !important;
+    --identity-icon-color: {{colors.green.default.hex}} !important;
+  }
+
+  .identity-color-yellow {
+    --identity-tab-color: {{colors.yellow.default.hex}} !important;
+    --identity-icon-color: {{colors.yellow.default.hex}} !important;
+  }
+
+  .identity-color-orange {
+    --identity-tab-color: {{colors.error.default.hex}} !important;
+    --identity-icon-color: {{colors.error.default.hex}} !important;
+  }
+
+  .identity-color-red {
+    --identity-tab-color: {{colors.red.default.hex}} !important;
+    --identity-icon-color: {{colors.red.default.hex}} !important;
+  }
+
+  .identity-color-pink {
+    --identity-tab-color: {{colors.magenta.default.hex}} !important;
+    --identity-icon-color: {{colors.magenta.default.hex}} !important;
+  }
+
+  .identity-color-purple {
+    --identity-tab-color: {{colors.ansiMagenta.default.hex}} !important;
+    --identity-icon-color: {{colors.ansiMagenta.default.hex}} !important;
+  }
+
+  hbox#titlebar {
+    background-color: color-mix(in srgb, {{colors.background.default.hex}} 0%, transparent) !important;
+  }
+
+  #zen-appcontent-navbar-container {
+    background-color: {{colors.background.default.hex}} !important;
+  }
+
+  menu,
+  menuitem {
+      &:where([_moz-menuactive]:not([disabled="true"])) {
+          color: {{colors.primary.default.hex}} !important;
+          background-color: {{colors.on_primary.default.hex}} !important;
+      }
+  }
+
+  #navigator-toolbox {
+    padding: 10px 9px 10px 15px !important;
+  }
+
+  #tabbrowser-tabpanels[zen-split-view="true"] .browserSidebarContainer.deck-selected {
+    &:not(.zen-glance-overlay) {
+      outline: var(--mod-sivtech-active_border_width, 2px) solid var(--zen-primary-color) !important;
+    }
+  }
+
+  menupopup, panel {
+    --panel-background: color-mix(in srgb, {{colors.background.default.hex | set_lightness: 0.95 }} 100%, #fff 100%) !important;
+    --panel-border-radius: var(--zen-native-inner-radius) !important;
+  }
+}
+
+/* ------------------------- general zen ui ------------------------- */
+
+/* required for blur rendering */
+browser {
+    transform: translatez(0);
+}
+
+menupopup,
+panel {
+    &::part(content) {
+        display: flex;
+        box-sizing: border-box;
+        padding: var(--panel-padding);
+        color: var(--panel-color);
+        background: var(--panel-background);
+        border-radius: var(--panel-border-radius);
+        border: 1px solid var(--panel-border-color);
+        width: var(--panel-width);
+        box-shadow: var(--panel-shadow);
+        margin: var(--panel-shadow-margin);
+        min-width: 0;
+        min-height: 0;
+        max-height: round(up, 100% - 2 * var(--panel-shadow-margin), 1px);
+        max-width: round(up, 100% - 2 * var(--panel-shadow-margin), 1px);
+        overflow: clip;
+    }
+}
+
+/* Font Correction */
+
+*:not(
+    pre,
+    pre *,
+    code,
+    .far,
+    .fa,
+    [class*="fa-"],
+    .glyphicon,
+    [class*="vjs-"],
+    .fab,
+    .fa-github,
+    .fas,
+    .material-icons,
+    .icofont,
+    .typcn,
+    mu,
+    [class*="mu-"],
+    .glyphicon,
+    [class*="icon"],
+    [data-cds="Icon"],
+    .gog-icons,
+    .google-material-icons,
+    gf-load-icon-font,
+    gf-load-icon-font *,
+    [class="icon-asset material-symbols-outlined"],
+    [icon-item],
+    .bwi,
+    bit-icon,
+    .font-bwi,
+    .google-symbols,
+    .notranslate,
+    .ph,
+    [class*="ph-"],
+    .ri,
+    [class*="ri-"],
+    .bi,
+    [class*="bi-"],
+    .codicon,
+    [class*="codicon-"],
+    .devicons,
+    [class*="devicon-"],
+    .si,
+    [class*="si-"],
+    .feather,
+    [class*="heroicon-"],
+    [class*="lucide-"],
+    [class*="ti-"],
+    [class*="tabler-"],
+    ion-icon,
+    [class*="ion-"],
+    .octicon,
+    [class*="octicon-"],
+    .la,
+    [class*="la-"],
+    [class*="nf-"],
+    .wi,
+    [class*="wi-"],
+    .ti,
+    [class*="ti-"],
+    .devsite-nav-toggle, input,
+    .card-icon, .material-symbols-outlined,
+),
+.gf-body-medium {
+    font-family: system-ui, "Maple Mono" !important;
+}
+
+/* Reset Fonts */
+/* Anthropic */
+[data-cds="Icon"] {
+    font-family: var(--font-anthropicons, Anthropicons-Variable) !important;
+    font-feature-settings: "liga" 0;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: normal;
+    line-height: 1;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    user-select: none;
+    font-size: 20px;
+    font-weight: 433.3;
+}
+
+.devsite-expandable-nav > .devsite-nav-toggle, input[type="radio"] {
+    font-family: Material Icons !important;
+}

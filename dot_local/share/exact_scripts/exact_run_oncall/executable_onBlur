@@ -1,0 +1,2 @@
+CONFIG="$HOME/.config/niri/config.kdl"
+sed -i 's/off;/on;/' "$CONFIG"

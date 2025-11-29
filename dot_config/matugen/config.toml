@@ -3,7 +3,7 @@
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
 output_path = '~/.config/cava/themes/matugen'
-post_hook = "pkill -USR1 cava"
+post_hook = 'pkill -USR1 cava || true'
 
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
@@ -38,6 +38,89 @@ post_hook = 'kvantummanager --set matugen'
 input_path = '~/.config/matugen/templates/matugen-heroic.css'
 output_path = '~/.config/heroic/themes/matugen-theme.css'
 
-[templates.ghostty]
+[templates.ghostty-tabs]
 input_path = '~/.config/matugen/templates/ghostty-tab-top.css'
 output_path = '~/.config/ghostty/matugen-theme.css'
+
+[templates.ghostty-theme]
+input_path = '~/.config/matugen/templates/ghostty-colors'
+output_path = '~/.config/ghostty/matugen'
+
+[templates.zen-userchrome]
+input_path = '~/.config/matugen/templates/zen-userChrome.css'
+output_path = '~/.config/zen/Profile.MaWe.v/chrome/userChrome.css'
+
+[templates.zen-usercontent]
+input_path = '~/.config/matugen/templates/zen-userContent.css'
+output_path = '~/.config/zen/Profile.MaWe.v/chrome/userContent.css'
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.fastfetch]
+input_path = '~/.config/matugen/templates/fast-fetch.jsonc'
+output_path = '~/.config/fastfetch/config.jsonc'
+
+[templates.run_after-gtk]
+input_path = '~/.config/matugen/templates/sample'
+colors_to_compare = [
+    { name = "blue", color = "#0000ff" },
+    { name = "brown", color = "#a52a2a" },
+    { name = "green", color = "#008000" },
+    { name = "orange", color = "#ffa500" },
+    { name = "pink", color = "#ffc0cb" },
+    { name = "purple", color = "#800080" },
+    { name = "red", color = "#ff0000" },
+    { name = "slate", color = "#708090" },
+    { name = "teal", color = "#008080" },
+    { name = "yellow", color = "#ffff00" },
+]
+compare_to = "{{colors.primary.default.hex}}"
+post_hook = 'ICON_THEME=Adwaita-{{closest_color}}; gsettings set org.gnome.desktop.interface icon-theme $ICON_THEME && gtk4-update-icon-cache'
+
+[templates.run_after-terminal]
+input_path = '~/.config/matugen/templates/terminal-opening-colors.zsh.template'
+output_path = "~/.config/zsh/opts/colors"
+
+[templates.run_after-hooks-magick]
+input_path = '~/.config/matugen/templates/sample'
+post_hook = '~/.local/share/scripts/run_oncall/magick_profile.sh {{image}} {{colors.source_color.default.hex}}'
+
+[templates.run_after-hooks-cursor]
+input_path = '~/.config/matugen/templates/sample'
+post_hook = 'bibata_matugen "{{colors.source_color.default.hex}}" "{{colors.on_primary.default.hex}}" "{{colors.primary_container.default.hex}}"'
+index=100
+
+[templates.run_after-neo]
+input_path = '~/.config/matugen/templates/neo-matrix-check.sh'
+output_path = '~/.cache/neo-matrix.zsh'
+post_hook = 'chmod +x ~/.cache/neo-matrix.zsh && ~/.cache/neo-matrix.zsh'
+
+[config.custom_colors]
+black            = "#000000"
+red              = "#ff0000"
+green            = "#00ff00"
+yellow           = "#ffff00"
+blue             = "#0000ff"
+magenta          = "#ff00ff"
+cyan             = "#00ffff"
+white            = "#ffffff"
+
+ansiBlack        = "#090300"
+ansiRed          = "#db2d20"
+ansiGreen        = "#01a252"
+ansiYellow       = "#fded02"
+ansiBlue         = "#01a0e4"
+ansiMagenta      = "#a16a94"
+ansiCyan         = "#b5e4f4"
+ansiWhite        = "#a5a2a2"
+
+ansiBrightBlack  = "#5c5855"
+ansiBrightRed    = "#db2d20"
+ansiBrightGreen  = "#01a252"
+ansiBrightYellow = "#fded02"
+ansiBrightBlue   = "#01a0e4"
+ansiBrightMagenta= "#a16a94"
+ansiBrightCyan   = "#b5e4f4"
+ansiBrightWhite  = "#f7f7f7"

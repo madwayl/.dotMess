@@ -1,0 +1,14 @@
+
+// ...if HDMI-A-1 wasn't connected, focus DP-2 instead.
+output "Lenovo Group Limited L32p-30 U5125YRF" {
+    mode "3840x2160@59.997"
+    scale 1.0
+    position x=0 y=0
+    variable-refresh-rate on-demand=true
+    // focus-at-startup
+
+    hot-corners {
+        top-left
+        top-right
+    }
+}

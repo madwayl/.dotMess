@@ -9,7 +9,7 @@ hotkey-overlay {
 // Optionally, disable the workspace shadows in the overview.
 overview {
     workspace-shadow {
-        // off
+        off
         softness 100
         spread 10
         offset x=5 y=-5
@@ -78,17 +78,20 @@ layout {
 
     // ANCHOR Shadow
     shadow {
-        on
-        draw-behind-window true
+        // on
+        off
+        draw-behind-window false
         softness 30
-        spread 5
+        spread 2
         offset x=0 y=5
         color "#0007"
     }
 
     tab-indicator {
         place-within-column
-        gaps-between-tabs 4
+        gaps-between-tabs 8
+        corner-radius 6
+        gap 8
     }
 
     struts {
@@ -97,6 +100,8 @@ layout {
         // top 1
         // bottom 1
     }
+
+    always-center-single-column
 }
 
 // ANCHOR CSD
@@ -116,8 +121,8 @@ recent-windows {
     }
 
     previews {
-        max-height 420
-        max-scale 0.5
+        max-height 1080
+        max-scale 0.8
     }
 
     binds {

@@ -62,6 +62,7 @@ body.matugen-theme {
  --primary: {{colors.primary.dark.hex}};
  --secondary: {{colors.secondary.dark.hex}};
  --accent: {{colors.tertiary.dark.hex}};
+ --success: {{colors.primary.dark.hex}};
 
  /* Specific Status Tones */
 

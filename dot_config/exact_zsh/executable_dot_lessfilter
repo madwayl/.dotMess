@@ -1,0 +1,19 @@
+#! /usr/bin/env sh
+# this is a example of .lessfilter, you can change it
+mime=$(file -bL --mime-type "$1")
+category=${mime%%/*}
+kind=${mime##*/}
+if [ "$category" = text ]; then
+	bat --color=always "$1"
+elif [ -d "$1" ]; then
+	eza --git -hl --color=always --icons "$1"
+elif [ "$category" = image ]; then
+	chafa -f symbols --clear --optimize=9 --size=${FZF_PREVIEW_COLUMNS-100}x${FZF_PREVIEW_LINES-100} "$1"
+	echo
+	exiv2 "$1"
+elif [ "$kind" = vnd.openxmlformats-officedocument.spreadsheetml.sheet ] || \
+	[ "$kind" = vnd.ms-excel ]; then
+	in2csv "$1" | xsv table | bat -ltsv --color=always
+else
+	lesspipe.sh "$1" | bat --color=always
+fi

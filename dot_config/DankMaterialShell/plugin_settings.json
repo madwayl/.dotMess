@@ -1,7 +1,13 @@
 {
   "commandRunner": {
     "enabled": true,
-    "terminal": "ghostty"
+    "terminal": "ghostty",
+    "history": [
+      "rclone bisync --resync megaPrime:Wallpapers ~/Pictures/Wallpapers/",
+      "helium-browser",
+      "niri-float-sticky",
+      "helium"
+    ]
   },
   "niriWindows": {
     "enabled": true
@@ -11,7 +17,10 @@
   },
   "dankHooks": {
     "enabled": true,
-    "wallpaperPath": "/home/madwayl/.local/share/scripts/random.sh"
+    "wallpaperPath": "",
+    "lightMode": "/home/mawe/.local/share/scripts/run_oncall/dms_next_wall.sh",
+    "dankHooksStarted": "",
+    "nightMode": "/home/mawe/.local/share/scripts/run_oncall/dms_next_wall.sh\\"
   },
   "dockerManager": {
     "enabled": true,
@@ -26,11 +35,206 @@
     "enabled": true
   },
   "emojiLauncher": {
-    "enabled": true
+    "enabled": true,
+    "pasteOnSelect": true,
+    "defaultSkinTone": "None (yellow)",
+    "trigger": ":e"
   },
   "webSearch": {
     "enabled": true,
     "defaultEngine": "duckduckgo",
-    "searchEngines": []
+    "searchEngines": [],
+    "disabledEngines": []
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  },
+  "dankGifSearch": {
+    "enabled": true,
+    "preferredFormat": "mp4",
+    "trigger": ":g"
+  },
+  "dankBitwarden": {
+    "enabled": true,
+    "trigger": "[",
+    "noTrigger": false,
+    "copyToClipboard": false,
+    "loginAction": "type:password"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "calcEngine": "qalc"
+  },
+  "dankNotepadModule": {
+    "enabled": true,
+    "style": "gruvbox"
+  },
+  "displayManager": {
+    "enabled": true,
+    "brightness_eDP-1": 51.06411637931034,
+    "brightness_DP-1": 100,
+    "contrast_DP-1": 100
+  },
+  "dankStickerSearch": {
+    "enabled": true,
+    "preferredFormat": "webp"
+  },
+  "dankObsidian": {
+    "enabled": false,
+    "isFlatpak": false,
+    "trigger": "\\o"
+  },
+  "audioSwitcher": {
+    "enabled": true
+  },
+  "dankKDEConnect": {
+    "enabled": true,
+    "selectedDeviceId": "53bff3f3d0e14bfca53b2533dd515d0d"
+  },
+  "developerUtilities": {
+    "enabled": false
+  },
+  "wallpaperShufflerPlugin": {
+    "enabled": false,
+    "shuffleInterval": "14400",
+    "wallpaperPath": "/home/mawe/Pictures/Wallpapers/Dark"
+  },
+  "usbManager": {
+    "enabled": false
+  },
+  "timeUntil": {
+    "enabled": true
+  },
+  "clipboardPlus": {
+    "enabled": true,
+    "backgroundOpacity": 30,
+    "maxPinnedImageMb": 100,
+    "fullscreenMode": true,
+    "tabOrder": "clipboard,search,category,pinned,todo,emoji",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
+    "showCloseButton": false,
+    "enableFullTextDecode": false,
+    "hidePanelBackground": false,
+    "showPanelSeparator": true,
+    "panelOpacityPinned": 35,
+    "autoPasteOnClick": true,
+    "autoPasteOnEnterSelect": true,
+    "autoPasteDelay": 700,
+    "listenClipboardWhileOpen": true,
+    "todoEnabled": true,
+    "panelOpacityClipboard": 100,
+    "maxPinnedTextMb": 5,
+    "enableTabNavigation": true,
+    "showBarWidget": true,
+    "autoPasteOnRightClick": true,
+    "useBuiltInDmsClipboard": false,
+    "panelMarginLeft": 0,
+    "useDmsClipboard": true,
+    "exportPath": "~/Documents/Clipboard",
+    "dataBasePath": ""
+  },
+  "wallpaperCarousel": {
+    "enabled": true
+  },
+  "tailscale": {
+    "enabled": true,
+    "refreshInterval": 600,
+    "isConnected": false
+  },
+  "fullscreenPowerMenu": {
+    "enabled": false,
+    "dimOpacity": 20,
+    "menuOpacity": 15,
+    "menuOrientation": "dynamic"
+  },
+  "displayOutput": {
+    "enabled": true
+  },
+  "ddcBrightness": {
+    "enabled": true
+  },
+  "audioInhibit": {
+    "enabled": true
+  },
+  "worldClock": {
+    "enabled": true,
+    "iconOnly": true,
+    "timezones": [
+      {
+        "timezone": "America/Anchorage",
+        "label": "ANC"
+      },
+      {
+        "timezone": "Europe/Berlin",
+        "label": "BLN"
+      },
+      {
+        "timezone": "Europe/Helsinki",
+        "label": "HLK"
+      },
+      {
+        "timezone": "Asia/Seoul",
+        "label": "SOL"
+      }
+    ]
+  },
+  "dankVault": {
+    "enabled": true,
+    "backend": "rbw",
+    "trigger": "]"
+  },
+  "dankCleaner": {
+    "enabled": true,
+    "cacheExcludeNames": "paru"
+  },
+  "screenRecorder": {
+    "enabled": true,
+    "quality": "high"
+  },
+  "cavaVisualizer": {
+    "enabled": false
+  },
+  "dankActions": {
+    "enabled": false,
+    "variants": []
+  },
+  "hiddenBar": {
+    "enabled": true,
+    "usePopout": false,
+    "popoutLayout": "row",
+    "autoExpand": true,
+    "hideIconPillWhenCollapsed": true,
+    "showRegionPreview": false,
+    "hoverDelay": 342,
+    "collapseDelay": 10
+  },
+  "ocrScanner": {
+    "enabled": true
+  },
+  "ephemera": {
+    "enabled": true,
+    "provider": "gemini",
+    "model": "gemini-2.5-pro",
+    "unlimitedTokens": false,
+    "systemPrompt": "Pretend to be a Dr. Hanibal Lecter from the series Hanibal, and have a conversation with me. \n\nDespite your a psyciatrist in this world of prompting, you know everything and you're a master of everything. Along with your suggestions, you'll also provide more information concerning the information asked/shared.\n\nBelow are your additional responsibilties:\n\nYou are a writing editor. Improve clarity, grammar, and flow while preserving the author's voice and intent.\n\nBut also a, You are a translator. Translate the user's text to the target language they specify. If no language is specified, translate to English.\n\nAnd you also, You are an expert programmer. Provide clean, well-structured code with brief explanations. Prefer practical solutions.",
+    "maxTokens": 4096,
+    "maxTurns": 11,
+    "temperature": 0,
+    "persistChat": true,
+    "chatHistory": "",
+    "chatVariants": ""
+  },
+  "obsidianSearch": {
+    "enabled": true,
+    "trigger": "\\ob",
+    "vaultPath": ""
+  },
+  "niriDS": {
+    "enabled": true,
+    "usageGuideExpanded": true
+  },
+  "caffeine": {
+    "enabled": true
   }
 }
